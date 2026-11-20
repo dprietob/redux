@@ -57,7 +57,7 @@ namespace Redux.Conversion {
                 status_icon.icon_name = "dialog-warning-symbolic";
                 headline_label.label = _("Conversion Finished with Errors");
             } else {
-                status_icon.icon_name = "emblem-ok-symbolic";
+                status_icon.icon_name = "object-select-symbolic";
                 headline_label.label = _("Conversion Finished");
             }
 

@@ -23,7 +23,7 @@ namespace Redux.Conversion {
 
         private void show_success(ConversionResult result)
         {
-            status_icon.icon_name = "emblem-ok-symbolic";
+            status_icon.icon_name = "object-select-symbolic";
             status_icon.add_css_class("success");
 
             subtitle = _("Saved as %s").printf(result.output_name) + "\n"
