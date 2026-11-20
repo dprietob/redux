@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Redux
+GenericName=Image Converter
+Comment=Convert, compress and resize images
+Exec=redux
+Icon=io.github.dprietob.redux
+Terminal=false
+Type=Application
+Categories=Graphics;RasterGraphics;Utility;
+Keywords=image;picture;photo;convert;compress;resize;webp;jpeg;png;

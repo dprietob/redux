@@ -1,0 +1,17 @@
+src/Main.vala
+src/Window.vala
+src/modules/Images/validators/ImageDirectoryValidator.vala
+src/modules/Images/ui/ImageListPanel.vala
+src/modules/Images/ui/image-list-panel.ui
+src/modules/Images/ui/image-row.ui
+src/modules/Conversion/services/ImageEncoderService.vala
+src/modules/Conversion/validators/ConversionValidator.vala
+src/modules/Conversion/ui/ConversionSettingsPanel.vala
+src/modules/Conversion/ui/conversion-settings-panel.ui
+src/modules/Conversion/ui/ConversionProgressDialog.vala
+src/modules/Conversion/ui/conversion-progress-dialog.ui
+src/modules/Conversion/ui/ConversionResultRow.vala
+src/modules/Conversion/ui/ConversionReportDialog.vala
+src/modules/Conversion/ui/conversion-report-dialog.ui
+data/io.github.dprietob.redux.desktop.in
+data/io.github.dprietob.redux.metainfo.xml.in

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.5"/>
+  <template class="ReduxConversionConversionSettingsPanel" parent="AdwNavigationPage">
+    <property name="title" translatable="yes">Conversion</property>
+    <property name="tag">conversion</property>
+    <property name="child">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar">
+            <child type="end">
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Convert</property>
+                <property name="tooltip-text" translatable="yes">Convert the Selected Images</property>
+                <property name="action-name">win.convert</property>
+                <style>
+                  <class name="suggested-action"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <property name="content">
+          <object class="AdwPreferencesPage">
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Output</property>
+                <child>
+                  <object class="AdwActionRow" id="output_directory_row">
+                    <property name="title" translatable="yes">Output Folder</property>
+                    <property name="use-markup">false</property>
+                    <property name="subtitle-lines">2</property>
+                    <property name="activatable-widget">output_directory_button</property>
+                    <child type="suffix">
+                      <object class="GtkButton" id="output_directory_button">
+                        <property name="icon-name">folder-open-symbolic</property>
+                        <property name="valign">center</property>
+                        <property name="tooltip-text" translatable="yes">Choose Output Folder</property>
+                        <property name="action-name">win.choose-output-folder</property>
+                        <style>
+                          <class name="flat"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwComboRow" id="format_row">
+                    <property name="title" translatable="yes">Format</property>
+                    <property name="model">
+                      <object class="GtkStringList">
+                        <items>
+                          <item>WebP</item>
+                          <item>JPEG</item>
+                          <item>PNG</item>
+                        </items>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSpinRow" id="quality_row">
+                    <property name="title" translatable="yes">Quality</property>
+                    <property name="subtitle" translatable="yes">Higher values keep more detail and produce larger files</property>
+                    <property name="numeric">true</property>
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="lower">1</property>
+                        <property name="upper">100</property>
+                        <property name="step-increment">1</property>
+                        <property name="page-increment">10</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwSpinRow" id="compression_row">
+                    <property name="title" translatable="yes">Compression Level</property>
+                    <property name="subtitle" translatable="yes">Higher values produce smaller files but take longer</property>
+                    <property name="numeric">true</property>
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="lower">0</property>
+                        <property name="upper">9</property>
+                        <property name="step-increment">1</property>
+                        <property name="page-increment">3</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Size</property>
+                <child>
+                  <object class="AdwExpanderRow" id="resize_row">
+                    <property name="title" translatable="yes">Resize Images</property>
+                    <property name="subtitle" translatable="yes">Change the size of the converted images</property>
+                    <property name="show-enable-switch">true</property>
+                    <child>
+                      <object class="AdwComboRow" id="resize_mode_row">
+                        <property name="title" translatable="yes">Unit</property>
+                        <property name="model">
+                          <object class="GtkStringList">
+                            <items>
+                              <item translatable="yes">Pixels</item>
+                              <item translatable="yes">Percentage</item>
+                            </items>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSwitchRow" id="keep_aspect_ratio_row">
+                        <property name="title" translatable="yes">Keep Aspect Ratio</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSpinRow" id="width_row">
+                        <property name="title" translatable="yes">Width</property>
+                        <property name="numeric">true</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">65535</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">100</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSpinRow" id="height_row">
+                        <property name="title" translatable="yes">Height</property>
+                        <property name="numeric">true</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">65535</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">100</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSpinRow" id="width_percentage_row">
+                        <property name="numeric">true</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">1</property>
+                            <property name="upper">1000</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">10</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSpinRow" id="height_percentage_row">
+                        <property name="title" translatable="yes">Height</property>
+                        <property name="subtitle" translatable="yes">Percentage of the original height</property>
+                        <property name="numeric">true</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">1</property>
+                            <property name="upper">1000</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">10</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

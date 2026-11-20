@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.5"/>
+  <template class="ReduxWindow" parent="AdwApplicationWindow">
+    <property name="title">Redux</property>
+    <property name="default-width">1000</property>
+    <property name="default-height">680</property>
+    <property name="width-request">720</property>
+    <property name="height-request">480</property>
+    <property name="content">
+      <object class="AdwToastOverlay" id="toast_overlay">
+        <property name="child">
+          <object class="AdwNavigationSplitView" id="split_view">
+            <property name="min-sidebar-width">320</property>
+            <property name="max-sidebar-width">480</property>
+            <property name="sidebar-width-fraction">0.42</property>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

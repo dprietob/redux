@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="board-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#62a0ea"/>
+      <stop offset="1" stop-color="#1c71d8"/>
+    </linearGradient>
+    <linearGradient id="sky-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#99c1f1"/>
+      <stop offset="1" stop-color="#e5effb"/>
+    </linearGradient>
+    <clipPath id="photo">
+      <rect x="136" y="128" width="240" height="240" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <!-- Board with a darker base edge -->
+  <rect x="32" y="40" width="448" height="448" rx="88" fill="#1a5fb4"/>
+  <rect x="32" y="24" width="448" height="448" rx="88" fill="url(#board-gradient)"/>
+
+  <!-- Photo -->
+  <rect x="136" y="136" width="240" height="240" rx="28" fill="#000000" fill-opacity="0.18"/>
+  <g clip-path="url(#photo)">
+    <rect x="136" y="128" width="240" height="240" fill="url(#sky-gradient)"/>
+    <circle cx="310" cy="190" r="28" fill="#f6d32d"/>
+    <path d="M136 318 L214 240 L272 298 L310 262 L376 326 L376 368 L136 368 Z" fill="#57e389"/>
+    <path d="M136 344 L218 282 L292 340 L376 300 L376 368 L136 368 Z" fill="#26a269"/>
+  </g>
+  <rect x="136" y="128" width="240" height="240" rx="28" fill="none" stroke="#ffffff" stroke-width="12"/>
+
+  <!-- Four arrows pointing inwards: the image gets smaller -->
+  <g fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <g id="arrow">
+      <path d="M74 66 L118 110"/>
+      <path d="M80 116 H122 V74"/>
+    </g>
+    <use href="#arrow" transform="rotate(90 256 248)"/>
+    <use href="#arrow" transform="rotate(180 256 248)"/>
+    <use href="#arrow" transform="rotate(270 256 248)"/>
+  </g>
+</svg>

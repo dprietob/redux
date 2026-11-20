@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/dprietob/redux/ui">
+    <file alias="window.ui" preprocess="xml-stripblanks">data/ui/window.ui</file>
+    <file alias="image-list-panel.ui" preprocess="xml-stripblanks">src/modules/Images/ui/image-list-panel.ui</file>
+    <file alias="image-row.ui" preprocess="xml-stripblanks">src/modules/Images/ui/image-row.ui</file>
+    <file alias="conversion-settings-panel.ui" preprocess="xml-stripblanks">src/modules/Conversion/ui/conversion-settings-panel.ui</file>
+    <file alias="conversion-progress-dialog.ui" preprocess="xml-stripblanks">src/modules/Conversion/ui/conversion-progress-dialog.ui</file>
+    <file alias="conversion-result-row.ui" preprocess="xml-stripblanks">src/modules/Conversion/ui/conversion-result-row.ui</file>
+    <file alias="conversion-report-dialog.ui" preprocess="xml-stripblanks">src/modules/Conversion/ui/conversion-report-dialog.ui</file>
+  </gresource>
+  <gresource prefix="/io/github/dprietob/redux/icons/scalable/apps">
+    <file alias="io.github.dprietob.redux.svg" preprocess="xml-stripblanks">data/icons/hicolor/scalable/apps/io.github.dprietob.redux.svg</file>
+  </gresource>
+  <gresource prefix="/io/github/dprietob/redux/icons/256x256/apps">
+    <file alias="io.github.dprietob.redux.png">data/icons/hicolor/256x256/apps/io.github.dprietob.redux.png</file>
+  </gresource>
+</gresources>

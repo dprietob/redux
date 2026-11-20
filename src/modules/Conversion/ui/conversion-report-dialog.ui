@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.5"/>
+  <template class="ReduxConversionConversionReportDialog" parent="AdwDialog">
+    <property name="title" translatable="yes">Conversion Report</property>
+    <property name="content-width">560</property>
+    <property name="content-height">680</property>
+    <property name="child">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar">
+            <child type="start">
+              <object class="GtkButton" id="open_folder_button">
+                <property name="icon-name">folder-open-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Open Output Folder</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <property name="content">
+          <object class="AdwPreferencesPage">
+            <child>
+              <object class="AdwPreferencesGroup">
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">6</property>
+                    <child>
+                      <object class="GtkImage" id="status_icon">
+                        <property name="pixel-size">64</property>
+                        <property name="margin-bottom">6</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="headline_label">
+                        <property name="wrap">true</property>
+                        <property name="justify">center</property>
+                        <style>
+                          <class name="title-1"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="description_label">
+                        <property name="wrap">true</property>
+                        <property name="justify">center</property>
+                        <style>
+                          <class name="dim-label"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Summary</property>
+                <child>
+                  <object class="AdwActionRow" id="converted_row">
+                    <property name="title" translatable="yes">Converted Images</property>
+                    <child type="suffix">
+                      <object class="GtkLabel" id="converted_label">
+                        <property name="valign">center</property>
+                        <property name="selectable">true</property>
+                        <style>
+                          <class name="numeric"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow" id="failed_row">
+                    <property name="title" translatable="yes">Failed Images</property>
+                    <child type="suffix">
+                      <object class="GtkLabel" id="failed_label">
+                        <property name="valign">center</property>
+                        <property name="selectable">true</property>
+                        <style>
+                          <class name="numeric"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow" id="original_size_row">
+                    <property name="title" translatable="yes">Original Size</property>
+                    <child type="suffix">
+                      <object class="GtkLabel" id="original_size_label">
+                        <property name="valign">center</property>
+                        <property name="selectable">true</property>
+                        <style>
+                          <class name="numeric"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow" id="output_size_row">
+                    <property name="title" translatable="yes">Converted Size</property>
+                    <child type="suffix">
+                      <object class="GtkLabel" id="output_size_label">
+                        <property name="valign">center</property>
+                        <property name="selectable">true</property>
+                        <style>
+                          <class name="numeric"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow" id="saved_row">
+                    <property name="title" translatable="yes">Space Saved</property>
+                    <child type="suffix">
+                      <object class="GtkLabel" id="saved_label">
+                        <property name="valign">center</property>
+                        <property name="selectable">true</property>
+                        <style>
+                          <class name="numeric"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwActionRow" id="reduction_row">
+                    <property name="title" translatable="yes">Size Change</property>
+                    <child type="suffix">
+                      <object class="GtkLabel" id="reduction_label">
+                        <property name="valign">center</property>
+                        <property name="selectable">true</property>
+                        <style>
+                          <class name="numeric"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Images</property>
+                <child>
+                  <object class="GtkListBox" id="results_list">
+                    <property name="selection-mode">none</property>
+                    <style>
+                      <class name="boxed-list"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

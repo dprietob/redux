@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.5"/>
+  <template class="ReduxImagesImageRow" parent="AdwActionRow">
+    <property name="use-markup">false</property>
+    <property name="title-lines">1</property>
+    <property name="activatable-widget">check_button</property>
+    <child type="prefix">
+      <object class="GtkCheckButton" id="check_button">
+        <property name="valign">center</property>
+        <property name="tooltip-text" translatable="yes">Include in Conversion</property>
+      </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkButton" id="remove_button">
+        <property name="icon-name">list-remove-symbolic</property>
+        <property name="valign">center</property>
+        <property name="tooltip-text" translatable="yes">Remove from List</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

@@ -1,0 +1,465 @@
+# Spanish translation for Redux.
+# Copyleft (🄯) 2026 Daniel Prieto
+# This file is distributed under the same license as the Redux package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: redux\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-20 19:19+0100\n"
+"PO-Revision-Date: 2026-11-20 19:16+0100\n"
+"Last-Translator: Daniel Prieto\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/Main.vala:69 data/io.github.dprietob.redux.desktop.in:4
+#: data/io.github.dprietob.redux.metainfo.xml.in:6
+msgid "Convert, compress and resize images"
+msgstr "Convierte, comprime y redimensiona imágenes"
+
+#: src/Window.vala:62 src/modules/Images/ui/image-list-panel.ui:43
+msgid "Open Folder"
+msgstr "Abrir carpeta"
+
+#: src/Window.vala:77 src/modules/Images/ui/image-list-panel.ui:50
+msgid "Add Images"
+msgstr "Añadir imágenes"
+
+#: src/Window.vala:100 src/modules/Images/ui/image-list-panel.ui:34
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:148
+msgid "Images"
+msgstr "Imágenes"
+
+#: src/Window.vala:111
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:39
+msgid "Choose Output Folder"
+msgstr "Elegir carpeta de salida"
+
+#: src/Window.vala:168
+#, c-format
+msgid ""
+"%u file was skipped because it is not a supported image or is already in the "
+"list."
+msgid_plural ""
+"%u files were skipped because they are not supported images or are already "
+"in the list."
+msgstr[0] ""
+"Se ha omitido %u fichero porque no es una imagen compatible o ya está en la "
+"lista."
+msgstr[1] ""
+"Se han omitido %u ficheros porque no son imágenes compatibles o ya están en "
+"la lista."
+
+#: src/modules/Images/validators/ImageDirectoryValidator.vala:24
+msgid "Choose a folder with images."
+msgstr "Elige una carpeta con imágenes."
+
+#: src/modules/Images/validators/ImageDirectoryValidator.vala:25
+msgid "The selected input folder does not exist."
+msgstr "La carpeta de entrada seleccionada no existe."
+
+#: src/modules/Images/ui/ImageListPanel.vala:62
+#, c-format
+msgid "%u of %u selected · %s"
+msgstr "%u de %u seleccionadas · %s"
+
+#: src/modules/Images/ui/image-list-panel.ui:8
+msgid "Theme"
+msgstr "Tema"
+
+#: src/modules/Images/ui/image-list-panel.ui:10
+msgid "Follow System"
+msgstr "Seguir al sistema"
+
+#: src/modules/Images/ui/image-list-panel.ui:15
+msgid "Light"
+msgstr "Claro"
+
+#: src/modules/Images/ui/image-list-panel.ui:20
+msgid "Dark"
+msgstr "Oscuro"
+
+#: src/modules/Images/ui/image-list-panel.ui:28
+msgid "About Redux"
+msgstr "Acerca de Redux"
+
+#: src/modules/Images/ui/image-list-panel.ui:57
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: src/modules/Images/ui/image-list-panel.ui:72
+msgid "No Images"
+msgstr "No hay imágenes"
+
+#: src/modules/Images/ui/image-list-panel.ui:73
+msgid "Open a folder or add images to convert them."
+msgstr "Abre una carpeta o añade imágenes para convertirlas."
+
+#: src/modules/Images/ui/image-list-panel.ui:81
+msgid "Open Folder…"
+msgstr "Abrir carpeta…"
+
+#: src/modules/Images/ui/image-list-panel.ui:91
+msgid "Add Images…"
+msgstr "Añadir imágenes…"
+
+#: src/modules/Images/ui/image-list-panel.ui:145
+msgid "Select All"
+msgstr "Seleccionar todas"
+
+#: src/modules/Images/ui/image-list-panel.ui:162
+msgid "Clear List"
+msgstr "Vaciar lista"
+
+#: src/modules/Images/ui/image-row.ui:12
+msgid "Include in Conversion"
+msgstr "Incluir en la conversión"
+
+#: src/modules/Images/ui/image-row.ui:19
+msgid "Remove from List"
+msgstr "Quitar de la lista"
+
+#: src/modules/Conversion/services/ImageEncoderService.vala:58
+msgid "The image could not be encoded as WebP."
+msgstr "No se ha podido codificar la imagen como WebP."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:39
+msgid "Select at least one image to convert."
+msgstr "Selecciona al menos una imagen para convertir."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:40
+msgid "Choose an output folder."
+msgstr "Elige una carpeta de salida."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:41
+msgid "The output folder does not exist."
+msgstr "La carpeta de salida no existe."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:42
+msgid "The output folder is not writable."
+msgstr "No se puede escribir en la carpeta de salida."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:44
+msgid ""
+"Converting would overwrite an original image. Choose another output folder "
+"or format."
+msgstr ""
+"La conversión sobrescribiría una imagen original. Elige otra carpeta de "
+"salida u otro formato."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:46
+msgid ""
+"Several images would be saved with the same name. Convert them separately."
+msgstr ""
+"Varias imágenes se guardarían con el mismo nombre. Conviértelas por separado."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:47
+#, c-format
+msgid "The quality must be between %d and %d."
+msgstr "La calidad debe estar entre %d y %d."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:49
+#, c-format
+msgid "The compression level must be between %d and %d."
+msgstr "El nivel de compresión debe estar entre %d y %d."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:52
+msgid "Enter a width, a height or both."
+msgstr "Introduce un ancho, un alto o ambos."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:53
+msgid "Enter both a width and a height."
+msgstr "Introduce un ancho y un alto."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:54
+#, c-format
+msgid "The width and height must be at most %d pixels."
+msgstr "El ancho y el alto deben ser como máximo de %d píxeles."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:56
+#, c-format
+msgid "The percentages must be between %d and %d."
+msgstr "Los porcentajes deben estar entre %d y %d."
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:84
+msgid "No folder selected"
+msgstr "Ninguna carpeta seleccionada"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:105
+msgid "Pixels, maximum size; 0 adapts to the other side"
+msgstr "Píxeles, tamaño máximo; 0 se adapta al otro lado"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:106
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:108
+msgid "Pixels"
+msgstr "Píxeles"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+msgid "Scale"
+msgstr "Escala"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:122
+msgid "Width"
+msgstr "Ancho"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:112
+msgid "Percentage of the original size"
+msgstr "Porcentaje del tamaño original"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:113
+msgid "Percentage of the original width"
+msgstr "Porcentaje del ancho original"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:6
+msgid "Conversion"
+msgstr "Conversión"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:14
+msgid "Convert"
+msgstr "Convertir"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:15
+msgid "Convert the Selected Images"
+msgstr "Convertir las imágenes seleccionadas"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:28
+msgid "Output"
+msgstr "Salida"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:31
+msgid "Output Folder"
+msgstr "Carpeta de salida"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:50
+msgid "Format"
+msgstr "Formato"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:64
+msgid "Quality"
+msgstr "Calidad"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:65
+msgid "Higher values keep more detail and produce larger files"
+msgstr "Los valores altos conservan más detalle y generan ficheros más grandes"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:79
+msgid "Compression Level"
+msgstr "Nivel de compresión"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:80
+msgid "Higher values produce smaller files but take longer"
+msgstr "Los valores altos generan ficheros más pequeños pero tardan más"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:96
+msgid "Size"
+msgstr "Tamaño"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:99
+msgid "Resize Images"
+msgstr "Redimensionar imágenes"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:100
+msgid "Change the size of the converted images"
+msgstr "Cambia el tamaño de las imágenes convertidas"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:104
+msgid "Unit"
+msgstr "Unidad"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:109
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:117
+msgid "Keep Aspect Ratio"
+msgstr "Mantener la relación de aspecto"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:136
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:163
+msgid "Height"
+msgstr "Alto"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:164
+msgid "Percentage of the original height"
+msgstr "Porcentaje del alto original"
+
+#: src/modules/Conversion/ui/ConversionProgressDialog.vala:23
+msgid "Cancelling after the current image…"
+msgstr "Cancelando tras la imagen actual…"
+
+#: src/modules/Conversion/ui/ConversionProgressDialog.vala:30
+#, c-format
+msgid "%u of %u"
+msgstr "%u de %u"
+
+#: src/modules/Conversion/ui/conversion-progress-dialog.ui:6
+msgid "Converting Images"
+msgstr "Convirtiendo imágenes"
+
+#: src/modules/Conversion/ui/conversion-progress-dialog.ui:19
+msgid "Converting Images…"
+msgstr "Convirtiendo imágenes…"
+
+#: src/modules/Conversion/ui/conversion-progress-dialog.ui:43
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:29
+#, c-format
+msgid "Saved as %s"
+msgstr "Guardada como %s"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:30
+#, c-format
+msgid "%s → %s · %d × %d → %d × %d"
+msgstr "%s → %s · %d × %d → %d × %d"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:37
+msgid "Size reduction"
+msgstr "Reducción de tamaño"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:37
+msgid "Size increase"
+msgstr "Aumento de tamaño"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:52
+msgid "Conversion Cancelled"
+msgstr "Conversión cancelada"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:55
+msgid "No Images Converted"
+msgstr "No se ha convertido ninguna imagen"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:58
+msgid "Conversion Finished with Errors"
+msgstr "Conversión terminada con errores"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:61
+msgid "Conversion Finished"
+msgstr "Conversión terminada"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:65
+#, c-format
+msgid "The converted images take up %s less space."
+msgstr "Las imágenes convertidas ocupan %s menos."
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:66
+#, c-format
+msgid "The converted images take up %s more space."
+msgstr "Las imágenes convertidas ocupan %s más."
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:79
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:118
+msgid "Space Saved"
+msgstr "Espacio ahorrado"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:82
+msgid "Size Increase"
+msgstr "Aumento de tamaño"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:6
+msgid "Conversion Report"
+msgstr "Informe de conversión"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:16
+msgid "Open Output Folder"
+msgstr "Abrir carpeta de salida"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:59
+msgid "Summary"
+msgstr "Resumen"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:62
+msgid "Converted Images"
+msgstr "Imágenes convertidas"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:76
+msgid "Failed Images"
+msgstr "Imágenes con errores"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:90
+msgid "Original Size"
+msgstr "Tamaño original"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:104
+msgid "Converted Size"
+msgstr "Tamaño convertido"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:132
+msgid "Size Change"
+msgstr "Variación de tamaño"
+
+#: data/io.github.dprietob.redux.desktop.in:2
+#: data/io.github.dprietob.redux.metainfo.xml.in:5
+msgid "Redux"
+msgstr "Redux"
+
+#: data/io.github.dprietob.redux.desktop.in:3
+msgid "Image Converter"
+msgstr "Conversor de imágenes"
+
+#: data/io.github.dprietob.redux.desktop.in:10
+msgid "image;picture;photo;convert;compress;resize;webp;jpeg;png;"
+msgstr "imagen;foto;fotografía;convertir;comprimir;redimensionar;webp;jpeg;png;"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:12
+msgid "Daniel Prieto"
+msgstr "Daniel Prieto"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:16
+msgid "Redux is a simple, fast batch image converter."
+msgstr "Redux es un conversor de imágenes por lotes sencillo y rápido."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:19
+msgid ""
+"Pick a folder or a set of images, choose the output format, quality and "
+"size, and convert them all at once. When it finishes, Redux shows how much "
+"space you saved."
+msgstr ""
+"Elige una carpeta o un conjunto de imágenes, selecciona el formato de "
+"salida, la calidad y el tamaño, y conviértelas todas a la vez. Al terminar, "
+"Redux muestra cuánto espacio has ahorrado."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:24
+msgid "Features:"
+msgstr "Características:"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:26
+msgid "Convert images to WebP, JPEG and PNG."
+msgstr "Convierte imágenes a WebP, JPEG y PNG."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:27
+msgid ""
+"Adjust the quality of WebP and JPEG images and the compression level of PNG "
+"images."
+msgstr ""
+"Ajusta la calidad de las imágenes WebP y JPEG y el nivel de compresión de "
+"las imágenes PNG."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:28
+msgid ""
+"Resize images in pixels or by percentage, keeping the aspect ratio or not."
+msgstr ""
+"Redimensiona imágenes en píxeles o por porcentaje, manteniendo o no la "
+"relación de aspecto."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:29
+msgid "Choose the input and output folders."
+msgstr "Elige las carpetas de entrada y de salida."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:30
+msgid "See a report with the size reduction of every image."
+msgstr "Consulta un informe con la reducción de tamaño de cada imagen."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:31
+msgid "Light and dark styles."
+msgstr "Estilos claro y oscuro."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:49
+msgid "Initial release."
+msgstr "Versión inicial."

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="io.github.dprietob.redux.OutputFormat">
+    <value nick="webp" value="0"/>
+    <value nick="jpeg" value="1"/>
+    <value nick="png" value="2"/>
+  </enum>
+  <enum id="io.github.dprietob.redux.ResizeMode">
+    <value nick="pixels" value="0"/>
+    <value nick="percentage" value="1"/>
+  </enum>
+  <schema id="io.github.dprietob.redux" path="/io/github/dprietob/redux/">
+    <key name="color-scheme" type="s">
+      <choices>
+        <choice value="system"/>
+        <choice value="light"/>
+        <choice value="dark"/>
+      </choices>
+      <default>"system"</default>
+      <summary>Color scheme</summary>
+      <description>Preferred color scheme: follow the system, light or dark.</description>
+    </key>
+    <key name="window-width" type="i">
+      <default>1000</default>
+      <summary>Window width</summary>
+      <description>The last width of the main window.</description>
+    </key>
+    <key name="window-height" type="i">
+      <default>680</default>
+      <summary>Window height</summary>
+      <description>The last height of the main window.</description>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+      <summary>Window maximized</summary>
+      <description>Whether the main window was maximized.</description>
+    </key>
+    <key name="output-format" enum="io.github.dprietob.redux.OutputFormat">
+      <default>"webp"</default>
+      <summary>Output format</summary>
+      <description>The image format the images are converted to.</description>
+    </key>
+    <key name="quality" type="i">
+      <range min="1" max="100"/>
+      <default>80</default>
+      <summary>Quality</summary>
+      <description>Encoding quality used for WebP and JPEG output.</description>
+    </key>
+    <key name="compression-level" type="i">
+      <range min="0" max="9"/>
+      <default>6</default>
+      <summary>Compression level</summary>
+      <description>Compression level used for PNG output.</description>
+    </key>
+    <key name="resize-enabled" type="b">
+      <default>false</default>
+      <summary>Resize images</summary>
+      <description>Whether the images are resized while being converted.</description>
+    </key>
+    <key name="resize-mode" enum="io.github.dprietob.redux.ResizeMode">
+      <default>"pixels"</default>
+      <summary>Resize mode</summary>
+      <description>Whether the new size is given in pixels or as a percentage.</description>
+    </key>
+    <key name="width" type="i">
+      <default>1920</default>
+      <summary>Width in pixels</summary>
+      <description>Target width in pixels; zero means automatic when keeping the aspect ratio.</description>
+    </key>
+    <key name="height" type="i">
+      <default>0</default>
+      <summary>Height in pixels</summary>
+      <description>Target height in pixels; zero means automatic when keeping the aspect ratio.</description>
+    </key>
+    <key name="width-percentage" type="i">
+      <default>50</default>
+      <summary>Width percentage</summary>
+      <description>Target width as a percentage of the original width.</description>
+    </key>
+    <key name="height-percentage" type="i">
+      <default>50</default>
+      <summary>Height percentage</summary>
+      <description>Target height as a percentage of the original height.</description>
+    </key>
+    <key name="keep-aspect-ratio" type="b">
+      <default>true</default>
+      <summary>Keep aspect ratio</summary>
+      <description>Whether resizing preserves the proportions of the original image.</description>
+    </key>
+  </schema>
+</schemalist>

@@ -1,0 +1,24 @@
+app-id: io.github.dprietob.redux
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: redux
+
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - '*.a'
+  - '*.la'
+
+modules:
+  - name: redux
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .
