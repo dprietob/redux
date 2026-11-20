@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 21:16+0100\n"
+"POT-Creation-Date: 2026-11-20 21:23+0100\n"
 "PO-Revision-Date: 2026-11-20 19:16+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Spanish\n"
@@ -16,10 +16,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Main.vala:68 data/io.github.dprietob.redux.desktop.in:4
-#: data/io.github.dprietob.redux.metainfo.xml.in:6
-msgid "Convert, compress and resize images"
-msgstr "Convierte, comprime y redimensiona imágenes"
+#: src/Main.vala:70
+msgid "Redux converts batches of images to WebP, JPEG or PNG, adjusting their quality and size. It can also rename them with a pattern and remove their metadata, and it shows a report of the space saved. Your original images are never modified."
+msgstr "Redux convierte lotes de imágenes a WebP, JPEG o PNG ajustando su calidad y tamaño. También puede renombrarlas con un patrón y eliminar sus metadatos, y muestra un informe del espacio ahorrado. Tus imágenes originales nunca se modifican."
 
 #: src/Window.vala:72 src/modules/Images/ui/image-list-panel.ui:43
 msgid "Add Images"
@@ -545,6 +544,11 @@ msgstr "Redux"
 msgid "Image Converter"
 msgstr "Conversor de imágenes"
 
+#: data/io.github.dprietob.redux.desktop.in:4
+#: data/io.github.dprietob.redux.metainfo.xml.in:6
+msgid "Convert, compress and resize images"
+msgstr "Convierte, comprime y redimensiona imágenes"
+
 #: data/io.github.dprietob.redux.desktop.in:10
 msgid "image;picture;photo;convert;compress;resize;webp;jpeg;png;"
 msgstr "imagen;foto;fotografía;convertir;comprimir;redimensionar;webp;jpeg;png;"
@@ -596,21 +600,3 @@ msgstr "Estilos claro y oscuro."
 #: data/io.github.dprietob.redux.metainfo.xml.in:50
 msgid "Initial release."
 msgstr "Versión inicial."
-
-#~ msgid "Open Folder"
-#~ msgstr "Abrir carpeta"
-
-#~ msgid "Choose a folder with images."
-#~ msgstr "Elige una carpeta con imágenes."
-
-#~ msgid "The selected input folder does not exist."
-#~ msgstr "La carpeta de entrada seleccionada no existe."
-
-#~ msgid "Open a folder or add images to convert them."
-#~ msgstr "Abre una carpeta o añade imágenes para convertirlas."
-
-#~ msgid "Open Folder…"
-#~ msgstr "Abrir carpeta…"
-
-#~ msgid "Choose the input and output folders."
-#~ msgstr "Elige las carpetas de entrada y de salida."

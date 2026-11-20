@@ -65,7 +65,9 @@ namespace Redux {
         {
             var about = new Adw.AboutDialog() {
                 application_name = "Redux",
-                comments = _("Convert, compress and resize images"),
+                comments =
+                    _(
+                    "Redux converts batches of images to WebP, JPEG or PNG, adjusting their quality and size. It can also rename them with a pattern and remove their metadata, and it shows a report of the space saved. Your original images are never modified."),
                 website = "https://github.com/dprietob/redux",
                 issue_url = "https://github.com/dprietob/redux/issues",
                 application_icon = Config.APP_ID,

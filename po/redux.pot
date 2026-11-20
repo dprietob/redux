@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 21:16+0100\n"
+"POT-Creation-Date: 2026-11-20 21:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/Main.vala:68 data/io.github.dprietob.redux.desktop.in:4
-#: data/io.github.dprietob.redux.metainfo.xml.in:6
-msgid "Convert, compress and resize images"
+#: src/Main.vala:70
+msgid ""
+"Redux converts batches of images to WebP, JPEG or PNG, adjusting their "
+"quality and size. It can also rename them with a pattern and remove their "
+"metadata, and it shows a report of the space saved. Your original images are "
+"never modified."
 msgstr ""
 
 #: src/Window.vala:72 src/modules/Images/ui/image-list-panel.ui:43
@@ -565,6 +568,11 @@ msgstr ""
 
 #: data/io.github.dprietob.redux.desktop.in:3
 msgid "Image Converter"
+msgstr ""
+
+#: data/io.github.dprietob.redux.desktop.in:4
+#: data/io.github.dprietob.redux.metainfo.xml.in:6
+msgid "Convert, compress and resize images"
 msgstr ""
 
 #: data/io.github.dprietob.redux.desktop.in:10
