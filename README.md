@@ -90,7 +90,7 @@ Flatpak build, because glycin cannot sandbox its image loaders while
 To build the Flatpak from the command line:
 
 ```shell
-flatpak install flathub org.gnome.Platform//50 org.gnome.Sdk//50
+flatpak install flathub org.gnome.Platform//51 org.gnome.Sdk//51
 flatpak-builder --user --install --force-clean build-flatpak io.github.dprietob.redux.yaml
 flatpak run io.github.dprietob.redux
 ```

@@ -14,7 +14,7 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     container:
-      image: registry.fedoraproject.org/fedora:44
+      image: registry.fedoraproject.org/fedora:45
       # glycin isolates its image loaders with bubblewrap, which needs
       # namespaces that unprivileged containers do not allow. The tests run
       # here instead of in the Flatpak build, where glycin cannot sandbox.
@@ -43,7 +43,7 @@ jobs:
     name: Build Flatpak
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-50
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-51
       options: --privileged
     steps:
       - name: Check out
