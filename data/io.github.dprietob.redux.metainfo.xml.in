@@ -80,7 +80,7 @@
   </branding>
 
   <releases>
-    <release version="0.1.0" date="2026-11-20" type="development">
+    <release version="1.0.0" date="2026-11-20" type="stable">
       <description>
         <p translatable="yes">Initial release.</p>
       </description>
