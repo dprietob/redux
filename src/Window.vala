@@ -52,7 +52,6 @@ namespace Redux {
 
         private void register_actions()
         {
-            add_simple_action("open-folder", on_open_folder);
             add_simple_action("add-images", on_add_images);
             add_simple_action("clear-images", () => image_controller.clear());
             add_simple_action("choose-output-folder", on_choose_output_folder);
@@ -65,21 +64,6 @@ namespace Redux {
             action.activate.connect(() => callback());
             add_action(action);
             return action;
-        }
-
-        private void on_open_folder()
-        {
-            var dialog = new Gtk.FileDialog() {
-                title = _("Open Folder")
-            };
-            dialog.select_folder.begin(this, null, (object, result) => {
-                try {
-                    report(image_controller.open_directory(dialog.select_folder.end(result)));
-                } catch (Error error) {
-                    // Dismissing the dialog is not an error worth reporting.
-                    return;
-                }
-            });
         }
 
         private void on_add_images()

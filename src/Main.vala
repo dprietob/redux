@@ -51,8 +51,7 @@ namespace Redux {
             // Stateful actions backed by GSettings, so the choices are persisted.
             add_action(settings.create_action("color-scheme"));
 
-            set_accels_for_action("win.open-folder", { "<Control>o" });
-            set_accels_for_action("win.add-images", { "<Control><Shift>o" });
+            set_accels_for_action("win.add-images", { "<Control>o" });
             set_accels_for_action("win.choose-output-folder", { "<Control><Shift>s" });
             set_accels_for_action("win.convert", { "<Control>Return" });
 

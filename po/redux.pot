@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 21:02+0100\n"
+"POT-Creation-Date: 2026-11-20 21:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: src/Main.vala:69 data/io.github.dprietob.redux.desktop.in:4
+#: src/Main.vala:68 data/io.github.dprietob.redux.desktop.in:4
 #: data/io.github.dprietob.redux.metainfo.xml.in:6
 msgid "Convert, compress and resize images"
 msgstr ""
 
-#: src/Window.vala:73 src/modules/Images/ui/image-list-panel.ui:43
-msgid "Open Folder"
-msgstr ""
-
-#: src/Window.vala:88 src/modules/Images/ui/image-list-panel.ui:50
+#: src/Window.vala:72 src/modules/Images/ui/image-list-panel.ui:43
 msgid "Add Images"
 msgstr ""
 
-#: src/Window.vala:111 src/modules/Images/ui/image-list-panel.ui:34
+#: src/Window.vala:95 src/modules/Images/ui/image-list-panel.ui:34
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:148
 msgid "Images"
 msgstr ""
 
-#: src/Window.vala:122
+#: src/Window.vala:106
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:63
 msgid "Choose Output Folder"
 msgstr ""
 
-#: src/Window.vala:139
+#: src/Window.vala:123
 #, c-format
 msgid "The metadata of “%s” could not be read: %s"
 msgstr ""
 
-#: src/Window.vala:191
+#: src/Window.vala:175
 #, c-format
 msgid ""
 "%u file was skipped because it is not a supported image or is already in the "
@@ -57,15 +53,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/modules/Images/validators/ImageDirectoryValidator.vala:24
-msgid "Choose a folder with images."
-msgstr ""
-
-#: src/modules/Images/validators/ImageDirectoryValidator.vala:25
-msgid "The selected input folder does not exist."
-msgstr ""
-
-#: src/modules/Images/ui/ImageListPanel.vala:67
+#: src/modules/Images/ui/ImageListPanel.vala:63
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr ""
@@ -90,31 +78,27 @@ msgstr ""
 msgid "About Redux"
 msgstr ""
 
-#: src/modules/Images/ui/image-list-panel.ui:57
+#: src/modules/Images/ui/image-list-panel.ui:50
 msgid "Main Menu"
 msgstr ""
 
-#: src/modules/Images/ui/image-list-panel.ui:72
+#: src/modules/Images/ui/image-list-panel.ui:65
 msgid "No Images"
 msgstr ""
 
-#: src/modules/Images/ui/image-list-panel.ui:73
-msgid "Open a folder or add images to convert them."
+#: src/modules/Images/ui/image-list-panel.ui:66
+msgid "Add the images you want to convert."
 msgstr ""
 
-#: src/modules/Images/ui/image-list-panel.ui:81
-msgid "Open Folder…"
-msgstr ""
-
-#: src/modules/Images/ui/image-list-panel.ui:91
+#: src/modules/Images/ui/image-list-panel.ui:69
 msgid "Add Images…"
 msgstr ""
 
-#: src/modules/Images/ui/image-list-panel.ui:145
+#: src/modules/Images/ui/image-list-panel.ui:119
 msgid "Select All"
 msgstr ""
 
-#: src/modules/Images/ui/image-list-panel.ui:162
+#: src/modules/Images/ui/image-list-panel.ui:136
 msgid "Clear List"
 msgstr ""
 
@@ -597,9 +581,9 @@ msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:19
 msgid ""
-"Pick a folder or a set of images, choose the output format, quality and "
-"size, and convert them all at once. When it finishes, Redux shows how much "
-"space you saved."
+"Pick a set of images, choose the output format, quality and size, and "
+"convert them all at once. When it finishes, Redux shows how much space you "
+"saved."
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:24
@@ -622,17 +606,21 @@ msgid ""
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:29
-msgid "Choose the input and output folders."
+msgid "Rename the converted images with a pattern."
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:30
-msgid "See a report with the size reduction of every image."
+msgid "Keep or remove the metadata of every image."
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:31
+msgid "See a report with the size reduction of every image."
+msgstr ""
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:32
 msgid "Light and dark styles."
 msgstr ""
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:49
+#: data/io.github.dprietob.redux.metainfo.xml.in:50
 msgid "Initial release."
 msgstr ""

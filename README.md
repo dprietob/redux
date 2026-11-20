@@ -7,14 +7,12 @@
 
 A simple, fast batch image converter for the GNOME desktop.
 
-Redux converts a whole folder of images, or just the ones you pick, to WebP,
-JPEG or PNG in one go. Choose the quality, shrink the images if you like, and
+Redux converts all the images you pick to WebP, JPEG or PNG in one go. Choose the quality, shrink the images if you like, and
 see at a glance how much space you saved.
 
 Redux lets you:
 
-- Open a folder of images or add individual image files, and choose which ones
-  to convert
+- Add the images to convert and choose which ones to include
 - Convert to WebP, JPEG or PNG
 - Set the quality of WebP and JPEG images, or the compression level of PNG
   images

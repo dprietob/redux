@@ -14,7 +14,7 @@ int main(string[] arguments)
     Redux.Tests.register_conversion_controller_tests();
     Redux.Tests.register_convert_image_metadata_tests();
     Redux.Tests.register_metadata_reader_service_tests();
-    Redux.Tests.register_list_images_in_directory_tests();
+    Redux.Tests.register_load_image_files_tests();
 
     return Test.run();
 }

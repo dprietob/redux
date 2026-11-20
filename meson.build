@@ -39,8 +39,6 @@ redux_module_sources = files(
   'src/modules/Metadata/controllers/MetadataController.vala',
   'src/modules/Images/models/SourceImage.vala',
   'src/modules/Images/services/ImageFileService.vala',
-  'src/modules/Images/validators/ImageDirectoryValidator.vala',
-  'src/modules/Images/actions/ListImagesInDirectoryAction.vala',
   'src/modules/Images/actions/LoadImageFilesAction.vala',
   'src/modules/Images/controllers/ImageListController.vala',
   'src/modules/Conversion/models/OutputFormat.vala',

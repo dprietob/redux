@@ -39,13 +39,6 @@
           <object class="AdwHeaderBar">
             <child type="start">
               <object class="GtkButton">
-                <property name="icon-name">folder-open-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Open Folder</property>
-                <property name="action-name">win.open-folder</property>
-              </object>
-            </child>
-            <child type="start">
-              <object class="GtkButton">
                 <property name="icon-name">list-add-symbolic</property>
                 <property name="tooltip-text" translatable="yes">Add Images</property>
                 <property name="action-name">win.add-images</property>
@@ -70,31 +63,16 @@
                   <object class="AdwStatusPage">
                     <property name="icon-name">image-x-generic-symbolic</property>
                     <property name="title" translatable="yes">No Images</property>
-                    <property name="description" translatable="yes">Open a folder or add images to convert them.</property>
+                    <property name="description" translatable="yes">Add the images you want to convert.</property>
                     <property name="child">
-                      <object class="GtkBox">
-                        <property name="orientation">vertical</property>
-                        <property name="spacing">12</property>
+                      <object class="GtkButton">
+                        <property name="label" translatable="yes">Add Images…</property>
+                        <property name="action-name">win.add-images</property>
                         <property name="halign">center</property>
-                        <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">Open Folder…</property>
-                            <property name="action-name">win.open-folder</property>
-                            <style>
-                              <class name="pill"/>
-                              <class name="suggested-action"/>
-                            </style>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">Add Images…</property>
-                            <property name="action-name">win.add-images</property>
-                            <style>
-                              <class name="pill"/>
-                            </style>
-                          </object>
-                        </child>
+                        <style>
+                          <class name="pill"/>
+                          <class name="suggested-action"/>
+                        </style>
                       </object>
                     </property>
                     <style>
@@ -131,50 +109,34 @@
         </property>
         <child type="bottom">
           <object class="GtkBox" id="status_bar">
-            <property name="orientation">vertical</property>
-            <property name="spacing">6</property>
+            <property name="spacing">12</property>
             <property name="margin-top">6</property>
             <property name="margin-bottom">6</property>
             <property name="margin-start">12</property>
             <property name="margin-end">12</property>
             <child>
-              <object class="GtkBox">
-                <property name="spacing">12</property>
-                <child>
-                  <object class="GtkCheckButton" id="select_all_button">
-                    <property name="label" translatable="yes">Select All</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="summary_label">
-                    <property name="hexpand">true</property>
-                    <property name="xalign">1</property>
-                    <property name="ellipsize">end</property>
-                    <style>
-                      <class name="dim-label"/>
-                      <class name="caption"/>
-                    </style>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkButton">
-                    <property name="icon-name">edit-clear-all-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Clear List</property>
-                    <property name="action-name">win.clear-images</property>
-                    <style>
-                      <class name="flat"/>
-                    </style>
-                  </object>
-                </child>
+              <object class="GtkCheckButton" id="select_all_button">
+                <property name="label" translatable="yes">Select All</property>
               </object>
             </child>
             <child>
-              <object class="GtkLabel" id="directory_label">
-                <property name="xalign">0</property>
-                <property name="ellipsize">middle</property>
+              <object class="GtkLabel" id="summary_label">
+                <property name="hexpand">true</property>
+                <property name="xalign">1</property>
+                <property name="ellipsize">end</property>
                 <style>
                   <class name="dim-label"/>
                   <class name="caption"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="icon-name">edit-clear-all-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Clear List</property>
+                <property name="action-name">win.clear-images</property>
+                <style>
+                  <class name="flat"/>
                 </style>
               </object>
             </child>

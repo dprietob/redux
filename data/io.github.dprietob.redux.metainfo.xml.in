@@ -17,7 +17,7 @@
       Redux is a simple, fast batch image converter.
     </p>
     <p translatable="yes">
-      Pick a folder or a set of images, choose the output format, quality and
+      Pick a set of images, choose the output format, quality and
       size, and convert them all at once. When it finishes, Redux shows how much
       space you saved.
     </p>
@@ -26,7 +26,8 @@
       <li translatable="yes">Convert images to WebP, JPEG and PNG.</li>
       <li translatable="yes">Adjust the quality of WebP and JPEG images and the compression level of PNG images.</li>
       <li translatable="yes">Resize images in pixels or by percentage, keeping the aspect ratio or not.</li>
-      <li translatable="yes">Choose the input and output folders.</li>
+      <li translatable="yes">Rename the converted images with a pattern.</li>
+      <li translatable="yes">Keep or remove the metadata of every image.</li>
       <li translatable="yes">See a report with the size reduction of every image.</li>
       <li translatable="yes">Light and dark styles.</li>
     </ul>

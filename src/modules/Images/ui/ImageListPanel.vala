@@ -2,7 +2,7 @@ namespace Redux.Images {
 
     // Presents the input images and turns user gestures into controller calls.
     // Shows an empty state when there are no images and a status bar with the
-    // selection summary and the input folder.
+    // selection summary.
     [GtkTemplate(ui = "/io/github/dprietob/redux/ui/image-list-panel.ui")]
     public class ImageListPanel : Adw.NavigationPage
     {
@@ -17,8 +17,6 @@ namespace Redux.Images {
         private unowned Gtk.CheckButton select_all_button;
         [GtkChild]
         private unowned Gtk.Label summary_label;
-        [GtkChild]
-        private unowned Gtk.Label directory_label;
 
         private ImageListController controller;
 
@@ -35,11 +33,9 @@ namespace Redux.Images {
             this.controller = controller;
             list_box.bind_model(controller.images, build_row);
             controller.images.items_changed.connect(() => refresh());
-            controller.notify["input-directory"].connect(() => refresh_directory());
             select_all_button.toggled.connect(on_select_all_toggled);
 
             refresh();
-            refresh_directory();
         }
 
         private void refresh()
@@ -70,14 +66,6 @@ namespace Redux.Images {
             select_all_button.inconsistent = selected > 0 && selected < total;
             select_all_button.active = total > 0 && selected == total;
             reflecting_selection = false;
-        }
-
-        private void refresh_directory()
-        {
-            var directory = controller.input_directory;
-            directory_label.visible = directory != null;
-            directory_label.label = directory != null ? directory.get_path() : "";
-            directory_label.tooltip_text = directory_label.label;
         }
 
         private void on_select_all_toggled()
