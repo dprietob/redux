@@ -2,8 +2,7 @@ namespace Redux.Images {
 
     // Presents the input images and turns user gestures into controller calls.
     // Shows an empty state when there are no images and a status bar with the
-    // selection summary. Image files can be dropped anywhere on the panel and
-    // rows can be dragged to reorder them.
+    // selection summary. Image files can be dropped anywhere on the panel.
     [GtkTemplate(ui = "/io/github/dprietob/redux/ui/image-list-panel.ui")]
     public class ImageListPanel : Adw.NavigationPage
     {
@@ -40,6 +39,7 @@ namespace Redux.Images {
             this.controller = controller;
             list_box.bind_model(controller.images, build_row);
             controller.images.items_changed.connect(() => refresh());
+            controller.selection_changed.connect(() => refresh_selection());
             select_all_button.toggled.connect(on_select_all_toggled);
             accept_dropped_files();
             bind_property("narrow", options_button, "visible", BindingFlags.SYNC_CREATE);
@@ -69,6 +69,18 @@ namespace Redux.Images {
             stack.visible_child_name = has_images ? "images" : "empty";
             status_bar.visible = has_images;
             refresh_selection();
+            refresh_move_buttons();
+        }
+
+        // The first image cannot move up and the last one cannot move down.
+        private void refresh_move_buttons()
+        {
+            var last_index = (int) controller.images.get_n_items() - 1;
+            for (int index = 0; index <= last_index; index++) {
+                var row = (ImageRow) list_box.get_row_at_index(index);
+                row.can_move_up = index > 0;
+                row.can_move_down = index < last_index;
+            }
         }
 
         // Updates the selection summary and the state of the select-all check.
@@ -101,48 +113,22 @@ namespace Redux.Images {
             controller.select_all(select_all_button.active);
         }
 
+        // The handlers only use the panel, never the row: a closure keeping the
+        // row would be stored in the row itself and it would never be freed.
         private Gtk.Widget build_row(Object item)
         {
-            var image = (SourceImage) item;
-            var row = new ImageRow(image);
-            image.notify["selected"].connect(() => refresh_selection());
-            row.remove_requested.connect((target) => controller.remove(target));
-            row.metadata_requested.connect((target) => metadata_requested(target));
-            row.preview_requested.connect((target) => load_preview(row, target));
-            enable_reordering(row, image);
+            var row = new ImageRow((SourceImage) item);
+            row.remove_requested.connect((image) => controller.remove(image));
+            row.metadata_requested.connect((image) => metadata_requested(image));
+            row.move_requested.connect((dragged, target, after) => controller.move(dragged, target, after));
+            row.move_by_requested.connect((image, offset) => controller.move_by(image, offset));
+            row.preview_requested.connect(on_preview_requested);
             bind_property("metadata-editable", row, "metadata-editable", BindingFlags.SYNC_CREATE);
+            bind_property("narrow", row, "narrow", BindingFlags.SYNC_CREATE);
             return row;
         }
 
-        // Lets the user reorder images by dragging a row onto another one.
-        private void enable_reordering(ImageRow row, SourceImage image)
-        {
-            var source = new Gtk.DragSource() {
-                actions = Gdk.DragAction.MOVE
-            };
-            source.prepare.connect((x, y) => {
-                var dragged = Value(typeof (SourceImage));
-                dragged.set_object(image);
-                return new Gdk.ContentProvider.for_value(dragged);
-            });
-            source.drag_begin.connect((drag) => {
-                source.set_icon(new Gtk.WidgetPaintable(row), 0, 0);
-            });
-            row.add_controller(source);
-
-            var target = new Gtk.DropTarget(typeof (SourceImage), Gdk.DragAction.MOVE);
-            target.drop.connect((value, x, y) => {
-                var dragged = value.get_object() as SourceImage;
-                if (dragged == null) {
-                    return false;
-                }
-                controller.move(dragged, image, y > row.get_height() / 2);
-                return true;
-            });
-            row.add_controller(target);
-        }
-
-        private void load_preview(ImageRow row, SourceImage image)
+        private void on_preview_requested(ImageRow row, SourceImage image)
         {
             controller.load_preview.begin(image, (object, result) => {
                 var preview = controller.load_preview.end(result);

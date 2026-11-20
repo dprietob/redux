@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 23:13+0100\n"
+"POT-Creation-Date: 2026-11-21 00:18+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Hindi\n"
@@ -49,7 +49,7 @@ msgid_plural "%u files were skipped because they are not supported images or are
 msgstr[0] "%u फ़ाइल छोड़ दी गई क्योंकि वह समर्थित छवि नहीं है या पहले से सूची में है।"
 msgstr[1] "%u फ़ाइलें छोड़ दी गईं क्योंकि वे समर्थित छवियाँ नहीं हैं या पहले से सूची में हैं।"
 
-#: src/modules/Images/ui/ImageListPanel.vala:88
+#: src/modules/Images/ui/ImageListPanel.vala:100
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u में से %u चयनित · %s"
@@ -114,11 +114,23 @@ msgstr "क्रम बदलने के लिए खींचें"
 msgid "Include in Conversion"
 msgstr "रूपांतरण में शामिल करें"
 
-#: src/modules/Images/ui/image-row.ui:30
+#: src/modules/Images/ui/image-row.ui:32
+msgid "Move Up"
+msgstr "ऊपर ले जाएँ"
+
+#: src/modules/Images/ui/image-row.ui:43
+msgid "Move Down"
+msgstr "नीचे ले जाएँ"
+
+#: src/modules/Images/ui/image-row.ui:54
+msgid "Show Preview"
+msgstr "पूर्वावलोकन दिखाएँ"
+
+#: src/modules/Images/ui/image-row.ui:68
 msgid "Choose Metadata to Keep"
 msgstr "रखने के लिए मेटाडेटा चुनें"
 
-#: src/modules/Images/ui/image-row.ui:40
+#: src/modules/Images/ui/image-row.ui:78
 msgid "Remove from List"
 msgstr "सूची से हटाएँ"
 
@@ -460,12 +472,12 @@ msgstr "आकार में कमी"
 msgid "Size increase"
 msgstr "आकार में वृद्धि"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:73
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:83
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:118
 msgid "Space Saved"
 msgstr "बचाई गई जगह"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:76
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:86
 msgid "Size Increase"
 msgstr "आकार में वृद्धि"
 
@@ -502,11 +514,11 @@ msgid "Size Change"
 msgstr "आकार में बदलाव"
 
 #: src/modules/Metadata/services/MetadataReaderService.vala:35
-#: src/modules/Metadata/ui/MetadataDialog.vala:66
+#: src/modules/Metadata/ui/MetadataDialog.vala:77
 msgid "Comment"
 msgstr "टिप्पणी"
 
-#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:40
 #, c-format
 msgid "%u of %u kept"
 msgstr "%u में से %u रखे गए"
@@ -574,6 +586,7 @@ msgid "Features:"
 msgstr "सुविधाएँ:"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:28
+#: data/io.github.dprietob.redux.metainfo.xml.in:89
 msgid "Convert images to WebP, JPEG and PNG."
 msgstr "छवियों को WebP, JPEG और PNG में बदलें।"
 
@@ -582,14 +595,17 @@ msgid "Adjust the quality of WebP and JPEG images and the compression level of P
 msgstr "WebP और JPEG छवियों की गुणवत्ता और PNG छवियों का संपीड़न स्तर समायोजित करें।"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:30
+#: data/io.github.dprietob.redux.metainfo.xml.in:90
 msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
 msgstr "पहलू अनुपात बनाए रखते हुए या उसके बिना, पिक्सेल में या प्रतिशत से छवियों का आकार बदलें।"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:31
+#: data/io.github.dprietob.redux.metainfo.xml.in:91
 msgid "Rename the converted images with a pattern."
 msgstr "बदली गई छवियों का नाम पैटर्न से बदलें।"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:32
+#: data/io.github.dprietob.redux.metainfo.xml.in:92
 msgid "Keep or remove the metadata of every image."
 msgstr "हर छवि का मेटाडेटा रखें या हटाएँ।"
 
@@ -634,5 +650,17 @@ msgid "Image list in the light style"
 msgstr "हल्की शैली में छवि सूची"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:87
-msgid "Initial release."
-msgstr "प्रारंभिक रिलीज़।"
+msgid "The first version of Redux:"
+msgstr "Redux का पहला संस्करण:"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:93
+msgid "Add images by dragging them from the file manager and put them in any order."
+msgstr "फ़ाइल प्रबंधक से खींचकर छवियाँ जोड़ें और उन्हें किसी भी क्रम में रखें।"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:94
+msgid "Get a notification when a long conversion finishes."
+msgstr "लंबा रूपांतरण पूरा होने पर सूचना पाएँ।"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:95
+msgid "Use it on phones and other small screens."
+msgstr "इसे फ़ोन और अन्य छोटी स्क्रीन पर उपयोग करें।"

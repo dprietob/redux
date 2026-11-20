@@ -7,7 +7,7 @@
     <property name="title-lines">1</property>
     <property name="activatable-widget">check_button</property>
     <child type="prefix">
-      <object class="GtkImage">
+      <object class="GtkImage" id="drag_handle">
         <property name="icon-name">list-drag-handle-symbolic</property>
         <property name="valign">center</property>
         <property name="tooltip-text" translatable="yes">Drag to Reorder</property>
@@ -20,6 +20,44 @@
       <object class="GtkCheckButton" id="check_button">
         <property name="valign">center</property>
         <property name="tooltip-text" translatable="yes">Include in Conversion</property>
+      </object>
+    </child>
+    <!-- Touch-friendly controls, shown only on narrow screens, where rows
+         cannot be dragged nor previewed by hovering them. -->
+    <child type="suffix">
+      <object class="GtkButton" id="move_up_button">
+        <property name="icon-name">go-up-symbolic</property>
+        <property name="valign">center</property>
+        <property name="visible">false</property>
+        <property name="tooltip-text" translatable="yes">Move Up</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkButton" id="move_down_button">
+        <property name="icon-name">go-down-symbolic</property>
+        <property name="valign">center</property>
+        <property name="visible">false</property>
+        <property name="tooltip-text" translatable="yes">Move Down</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkMenuButton" id="preview_button">
+        <property name="icon-name">view-reveal-symbolic</property>
+        <property name="valign">center</property>
+        <property name="visible">false</property>
+        <property name="tooltip-text" translatable="yes">Show Preview</property>
+        <property name="popover">
+          <object class="GtkPopover" id="preview_popover"/>
+        </property>
+        <style>
+          <class name="flat"/>
+        </style>
       </object>
     </child>
     <child type="suffix">

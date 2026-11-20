@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 23:13+0100\n"
+"POT-Creation-Date: 2026-11-21 00:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/modules/Images/ui/ImageListPanel.vala:88
+#: src/modules/Images/ui/ImageListPanel.vala:100
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr ""
@@ -124,11 +124,23 @@ msgstr ""
 msgid "Include in Conversion"
 msgstr ""
 
-#: src/modules/Images/ui/image-row.ui:30
+#: src/modules/Images/ui/image-row.ui:32
+msgid "Move Up"
+msgstr ""
+
+#: src/modules/Images/ui/image-row.ui:43
+msgid "Move Down"
+msgstr ""
+
+#: src/modules/Images/ui/image-row.ui:54
+msgid "Show Preview"
+msgstr ""
+
+#: src/modules/Images/ui/image-row.ui:68
 msgid "Choose Metadata to Keep"
 msgstr ""
 
-#: src/modules/Images/ui/image-row.ui:40
+#: src/modules/Images/ui/image-row.ui:78
 msgid "Remove from List"
 msgstr ""
 
@@ -478,12 +490,12 @@ msgstr ""
 msgid "Size increase"
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:73
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:83
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:118
 msgid "Space Saved"
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:76
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:86
 msgid "Size Increase"
 msgstr ""
 
@@ -520,11 +532,11 @@ msgid "Size Change"
 msgstr ""
 
 #: src/modules/Metadata/services/MetadataReaderService.vala:35
-#: src/modules/Metadata/ui/MetadataDialog.vala:66
+#: src/modules/Metadata/ui/MetadataDialog.vala:77
 msgid "Comment"
 msgstr ""
 
-#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:40
 #, c-format
 msgid "%u of %u kept"
 msgstr ""
@@ -601,6 +613,7 @@ msgid "Features:"
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:28
+#: data/io.github.dprietob.redux.metainfo.xml.in:89
 msgid "Convert images to WebP, JPEG and PNG."
 msgstr ""
 
@@ -611,15 +624,18 @@ msgid ""
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:30
+#: data/io.github.dprietob.redux.metainfo.xml.in:90
 msgid ""
 "Resize images in pixels or by percentage, keeping the aspect ratio or not."
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:31
+#: data/io.github.dprietob.redux.metainfo.xml.in:91
 msgid "Rename the converted images with a pattern."
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:32
+#: data/io.github.dprietob.redux.metainfo.xml.in:92
 msgid "Keep or remove the metadata of every image."
 msgstr ""
 
@@ -664,5 +680,18 @@ msgid "Image list in the light style"
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:87
-msgid "Initial release."
+msgid "The first version of Redux:"
+msgstr ""
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:93
+msgid ""
+"Add images by dragging them from the file manager and put them in any order."
+msgstr ""
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:94
+msgid "Get a notification when a long conversion finishes."
+msgstr ""
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:95
+msgid "Use it on phones and other small screens."
 msgstr ""

@@ -11,10 +11,13 @@ namespace Redux.Metadata {
         // mistaken for the user toggling the category.
         private bool reflecting_tags = false;
 
-        public signal void category_toggled(bool kept);
+        public MetadataCategory category { get; construct; }
 
-        public MetadataCategoryRow (string category_title, MetadataTag[] tags)
+        public signal void category_toggled(MetadataCategory category, bool kept);
+
+        public MetadataCategoryRow (MetadataCategory category, string category_title, MetadataTag[] tags)
         {
+            Object(category: category);
             this.tags = tags;
             title = category_title;
 
@@ -44,7 +47,7 @@ namespace Redux.Metadata {
         private void on_switch_toggled()
         {
             if (!reflecting_tags) {
-                category_toggled(enable_expansion);
+                category_toggled(category, enable_expansion);
             }
         }
     }

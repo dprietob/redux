@@ -13,6 +13,9 @@ namespace Redux.Images {
 
         public GLib.ListStore images { get; private set; }
 
+        // Emitted when any image is checked or unchecked.
+        public signal void selection_changed();
+
         public ImageListController ()
         {
             image_file_service = new ImageFileService();
@@ -34,6 +37,7 @@ namespace Redux.Images {
             uint added = 0;
             foreach (var image in load_image_files_action.execute(files)) {
                 if (!contains(image.file)) {
+                    image.notify["selected"].connect(on_image_selection_changed);
                     images.append(image);
                     added++;
                 }
@@ -59,6 +63,7 @@ namespace Redux.Images {
         {
             uint position;
             if (images.find(image, out position)) {
+                image.notify["selected"].disconnect(on_image_selection_changed);
                 images.remove(position);
             }
         }
@@ -86,7 +91,29 @@ namespace Redux.Images {
 
         public void clear()
         {
+            for (uint index = 0; index < images.get_n_items(); index++) {
+                ((SourceImage) images.get_item(index)).notify["selected"].disconnect(on_image_selection_changed);
+            }
             images.remove_all();
+        }
+
+        // Moves an image one place up (offset -1) or down (offset 1).
+        public void move_by(SourceImage image, int offset)
+        {
+            uint position;
+            if (!images.find(image, out position)) {
+                return;
+            }
+            var neighbor_position = (int) position + offset;
+            if (neighbor_position < 0 || neighbor_position >= images.get_n_items()) {
+                return;
+            }
+            move(image, (SourceImage) images.get_item(neighbor_position), offset > 0);
+        }
+
+        private void on_image_selection_changed()
+        {
+            selection_changed();
         }
 
         public void select_all(bool selected)

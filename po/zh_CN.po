@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 23:13+0100\n"
+"POT-Creation-Date: 2026-11-21 00:18+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Chinese (Simplified)\n"
@@ -48,7 +48,7 @@ msgid "%u file was skipped because it is not a supported image or is already in 
 msgid_plural "%u files were skipped because they are not supported images or are already in the list."
 msgstr[0] "已跳过 %u 个文件，因为它们不是受支持的图像或已在列表中。"
 
-#: src/modules/Images/ui/ImageListPanel.vala:88
+#: src/modules/Images/ui/ImageListPanel.vala:100
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "已选择 %u / %u 个 · %s"
@@ -113,11 +113,23 @@ msgstr "拖动以重新排序"
 msgid "Include in Conversion"
 msgstr "包含在转换中"
 
-#: src/modules/Images/ui/image-row.ui:30
+#: src/modules/Images/ui/image-row.ui:32
+msgid "Move Up"
+msgstr "上移"
+
+#: src/modules/Images/ui/image-row.ui:43
+msgid "Move Down"
+msgstr "下移"
+
+#: src/modules/Images/ui/image-row.ui:54
+msgid "Show Preview"
+msgstr "显示预览"
+
+#: src/modules/Images/ui/image-row.ui:68
 msgid "Choose Metadata to Keep"
 msgstr "选择要保留的元数据"
 
-#: src/modules/Images/ui/image-row.ui:40
+#: src/modules/Images/ui/image-row.ui:78
 msgid "Remove from List"
 msgstr "从列表中移除"
 
@@ -459,12 +471,12 @@ msgstr "大小减小"
 msgid "Size increase"
 msgstr "大小增加"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:73
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:83
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:118
 msgid "Space Saved"
 msgstr "节省的空间"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:76
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:86
 msgid "Size Increase"
 msgstr "大小增加"
 
@@ -501,11 +513,11 @@ msgid "Size Change"
 msgstr "大小变化"
 
 #: src/modules/Metadata/services/MetadataReaderService.vala:35
-#: src/modules/Metadata/ui/MetadataDialog.vala:66
+#: src/modules/Metadata/ui/MetadataDialog.vala:77
 msgid "Comment"
 msgstr "注释"
 
-#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:40
 #, c-format
 msgid "%u of %u kept"
 msgstr "已保留 %u / %u 个"
@@ -573,6 +585,7 @@ msgid "Features:"
 msgstr "功能："
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:28
+#: data/io.github.dprietob.redux.metainfo.xml.in:89
 msgid "Convert images to WebP, JPEG and PNG."
 msgstr "将图像转换为 WebP、JPEG 和 PNG。"
 
@@ -581,14 +594,17 @@ msgid "Adjust the quality of WebP and JPEG images and the compression level of P
 msgstr "调整 WebP 和 JPEG 图像的质量以及 PNG 图像的压缩级别。"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:30
+#: data/io.github.dprietob.redux.metainfo.xml.in:90
 msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
 msgstr "按像素或百分比调整图像尺寸，可选择是否保持宽高比。"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:31
+#: data/io.github.dprietob.redux.metainfo.xml.in:91
 msgid "Rename the converted images with a pattern."
 msgstr "按模式重命名转换后的图像。"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:32
+#: data/io.github.dprietob.redux.metainfo.xml.in:92
 msgid "Keep or remove the metadata of every image."
 msgstr "保留或移除每张图像的元数据。"
 
@@ -633,5 +649,17 @@ msgid "Image list in the light style"
 msgstr "浅色样式下的图像列表"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:87
-msgid "Initial release."
-msgstr "首次发布。"
+msgid "The first version of Redux:"
+msgstr "Redux 的第一个版本："
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:93
+msgid "Add images by dragging them from the file manager and put them in any order."
+msgstr "从文件管理器拖放即可添加图像，并可按任意顺序排列。"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:94
+msgid "Get a notification when a long conversion finishes."
+msgstr "耗时较长的转换完成时会收到通知。"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:95
+msgid "Use it on phones and other small screens."
+msgstr "可在手机和其他小屏幕设备上使用。"

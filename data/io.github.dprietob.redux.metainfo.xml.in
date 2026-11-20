@@ -8,7 +8,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
-  <developer id="com.dprietob">
+  <developer id="io.github.dprietob">
     <name translatable="no">Daniel Prieto</name>
   </developer>
 
@@ -82,9 +82,18 @@
   </branding>
 
   <releases>
-    <release version="1.0.0" date="2026-11-20" type="stable">
+    <release version="1.0.0" date="2026-11-21" type="stable">
       <description>
-        <p translatable="yes">Initial release.</p>
+        <p translatable="yes">The first version of Redux:</p>
+        <ul>
+          <li translatable="yes">Convert images to WebP, JPEG and PNG.</li>
+          <li translatable="yes">Resize images in pixels or by percentage, keeping the aspect ratio or not.</li>
+          <li translatable="yes">Rename the converted images with a pattern.</li>
+          <li translatable="yes">Keep or remove the metadata of every image.</li>
+          <li translatable="yes">Add images by dragging them from the file manager and put them in any order.</li>
+          <li translatable="yes">Get a notification when a long conversion finishes.</li>
+          <li translatable="yes">Use it on phones and other small screens.</li>
+        </ul>
       </description>
     </release>
   </releases>

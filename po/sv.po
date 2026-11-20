@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 23:13+0100\n"
+"POT-Creation-Date: 2026-11-21 00:18+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Swedish\n"
@@ -49,7 +49,7 @@ msgid_plural "%u files were skipped because they are not supported images or are
 msgstr[0] "%u fil hoppades över eftersom den inte är en bild som stöds eller redan finns i listan."
 msgstr[1] "%u filer hoppades över eftersom de inte är bilder som stöds eller redan finns i listan."
 
-#: src/modules/Images/ui/ImageListPanel.vala:88
+#: src/modules/Images/ui/ImageListPanel.vala:100
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u av %u markerade · %s"
@@ -114,11 +114,23 @@ msgstr "Dra för att ändra ordning"
 msgid "Include in Conversion"
 msgstr "Ta med i konverteringen"
 
-#: src/modules/Images/ui/image-row.ui:30
+#: src/modules/Images/ui/image-row.ui:32
+msgid "Move Up"
+msgstr "Flytta upp"
+
+#: src/modules/Images/ui/image-row.ui:43
+msgid "Move Down"
+msgstr "Flytta ned"
+
+#: src/modules/Images/ui/image-row.ui:54
+msgid "Show Preview"
+msgstr "Visa förhandsvisning"
+
+#: src/modules/Images/ui/image-row.ui:68
 msgid "Choose Metadata to Keep"
 msgstr "Välj metadata att behålla"
 
-#: src/modules/Images/ui/image-row.ui:40
+#: src/modules/Images/ui/image-row.ui:78
 msgid "Remove from List"
 msgstr "Ta bort från listan"
 
@@ -460,12 +472,12 @@ msgstr "Storleksminskning"
 msgid "Size increase"
 msgstr "Storleksökning"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:73
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:83
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:118
 msgid "Space Saved"
 msgstr "Sparat utrymme"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:76
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:86
 msgid "Size Increase"
 msgstr "Storleksökning"
 
@@ -502,11 +514,11 @@ msgid "Size Change"
 msgstr "Storleksändring"
 
 #: src/modules/Metadata/services/MetadataReaderService.vala:35
-#: src/modules/Metadata/ui/MetadataDialog.vala:66
+#: src/modules/Metadata/ui/MetadataDialog.vala:77
 msgid "Comment"
 msgstr "Kommentar"
 
-#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:40
 #, c-format
 msgid "%u of %u kept"
 msgstr "%u av %u behålls"
@@ -574,6 +586,7 @@ msgid "Features:"
 msgstr "Funktioner:"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:28
+#: data/io.github.dprietob.redux.metainfo.xml.in:89
 msgid "Convert images to WebP, JPEG and PNG."
 msgstr "Konvertera bilder till WebP, JPEG och PNG."
 
@@ -582,14 +595,17 @@ msgid "Adjust the quality of WebP and JPEG images and the compression level of P
 msgstr "Justera kvaliteten på WebP- och JPEG-bilder och komprimeringsnivån på PNG-bilder."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:30
+#: data/io.github.dprietob.redux.metainfo.xml.in:90
 msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
 msgstr "Ändra storlek på bilder i bildpunkter eller procent, med eller utan bibehållna proportioner."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:31
+#: data/io.github.dprietob.redux.metainfo.xml.in:91
 msgid "Rename the converted images with a pattern."
 msgstr "Byt namn på de konverterade bilderna enligt ett mönster."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:32
+#: data/io.github.dprietob.redux.metainfo.xml.in:92
 msgid "Keep or remove the metadata of every image."
 msgstr "Behåll eller ta bort metadata i varje bild."
 
@@ -634,5 +650,17 @@ msgid "Image list in the light style"
 msgstr "Bildlista i ljus stil"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:87
-msgid "Initial release."
-msgstr "Första utgåvan."
+msgid "The first version of Redux:"
+msgstr "Den första versionen av Redux:"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:93
+msgid "Add images by dragging them from the file manager and put them in any order."
+msgstr "Lägg till bilder genom att dra dem från filhanteraren och ordna dem som du vill."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:94
+msgid "Get a notification when a long conversion finishes."
+msgstr "Få en avisering när en lång konvertering är klar."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:95
+msgid "Use it on phones and other small screens."
+msgstr "Använd det på telefoner och andra små skärmar."

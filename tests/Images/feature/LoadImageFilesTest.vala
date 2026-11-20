@@ -81,5 +81,45 @@ namespace Redux.Tests {
             loop.run();
             delete_recursively(input);
         });
+
+        Test.add_func("/images/list/moves-one-place-within-bounds", () => {
+            var input = create_temporary_directory();
+            var controller = new ImageListController();
+            controller.add_files({
+                create_image(input, "a.png", 4, 4, false).file,
+                create_image(input, "b.png", 4, 4, false).file,
+                create_image(input, "c.png", 4, 4, false).file,
+            });
+            var first = (SourceImage) controller.images.get_item(0);
+            var last = (SourceImage) controller.images.get_item(2);
+
+            controller.move_by(first, -1);
+            controller.move_by(last, 1);
+            assert_cmpstr(((SourceImage) controller.images.get_item(0)).name, CompareOperator.EQ, "a.png");
+            assert_cmpstr(((SourceImage) controller.images.get_item(2)).name, CompareOperator.EQ, "c.png");
+
+            controller.move_by(first, 1);
+            assert_cmpstr(((SourceImage) controller.images.get_item(1)).name, CompareOperator.EQ, "a.png");
+            controller.move_by(last, -1);
+            assert_cmpstr(((SourceImage) controller.images.get_item(1)).name, CompareOperator.EQ, "c.png");
+            delete_recursively(input);
+        });
+
+        Test.add_func("/images/list/reports-selection-changes-once", () => {
+            var input = create_temporary_directory();
+            var controller = new ImageListController();
+            controller.add_files({ create_image(input, "a.png", 4, 4, false).file });
+            var image = (SourceImage) controller.images.get_item(0);
+            uint notifications = 0;
+            controller.selection_changed.connect(() => notifications++);
+
+            image.selected = false;
+            assert_cmpuint(notifications, CompareOperator.EQ, 1);
+
+            controller.remove(image);
+            image.selected = true;
+            assert_cmpuint(notifications, CompareOperator.EQ, 1);
+            delete_recursively(input);
+        });
     }
 }

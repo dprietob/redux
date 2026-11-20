@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 23:13+0100\n"
+"POT-Creation-Date: 2026-11-21 00:18+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: French\n"
@@ -49,7 +49,7 @@ msgid_plural "%u files were skipped because they are not supported images or are
 msgstr[0] "%u fichier a été ignoré car il ne s’agit pas d’une image prise en charge ou il figure déjà dans la liste."
 msgstr[1] "%u fichiers ont été ignorés car il ne s’agit pas d’images prises en charge ou ils figurent déjà dans la liste."
 
-#: src/modules/Images/ui/ImageListPanel.vala:88
+#: src/modules/Images/ui/ImageListPanel.vala:100
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u sur %u sélectionnées · %s"
@@ -114,11 +114,23 @@ msgstr "Glisser pour réorganiser"
 msgid "Include in Conversion"
 msgstr "Inclure dans la conversion"
 
-#: src/modules/Images/ui/image-row.ui:30
+#: src/modules/Images/ui/image-row.ui:32
+msgid "Move Up"
+msgstr "Monter"
+
+#: src/modules/Images/ui/image-row.ui:43
+msgid "Move Down"
+msgstr "Descendre"
+
+#: src/modules/Images/ui/image-row.ui:54
+msgid "Show Preview"
+msgstr "Afficher l’aperçu"
+
+#: src/modules/Images/ui/image-row.ui:68
 msgid "Choose Metadata to Keep"
 msgstr "Choisir les métadonnées à conserver"
 
-#: src/modules/Images/ui/image-row.ui:40
+#: src/modules/Images/ui/image-row.ui:78
 msgid "Remove from List"
 msgstr "Retirer de la liste"
 
@@ -460,12 +472,12 @@ msgstr "Réduction de taille"
 msgid "Size increase"
 msgstr "Augmentation de taille"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:73
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:83
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:118
 msgid "Space Saved"
 msgstr "Espace économisé"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:76
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:86
 msgid "Size Increase"
 msgstr "Augmentation de taille"
 
@@ -502,11 +514,11 @@ msgid "Size Change"
 msgstr "Variation de taille"
 
 #: src/modules/Metadata/services/MetadataReaderService.vala:35
-#: src/modules/Metadata/ui/MetadataDialog.vala:66
+#: src/modules/Metadata/ui/MetadataDialog.vala:77
 msgid "Comment"
 msgstr "Commentaire"
 
-#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:40
 #, c-format
 msgid "%u of %u kept"
 msgstr "%u sur %u conservées"
@@ -574,6 +586,7 @@ msgid "Features:"
 msgstr "Fonctionnalités :"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:28
+#: data/io.github.dprietob.redux.metainfo.xml.in:89
 msgid "Convert images to WebP, JPEG and PNG."
 msgstr "Convertir des images en WebP, JPEG et PNG."
 
@@ -582,14 +595,17 @@ msgid "Adjust the quality of WebP and JPEG images and the compression level of P
 msgstr "Ajuster la qualité des images WebP et JPEG et le niveau de compression des images PNG."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:30
+#: data/io.github.dprietob.redux.metainfo.xml.in:90
 msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
 msgstr "Redimensionner les images en pixels ou en pourcentage, en conservant ou non les proportions."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:31
+#: data/io.github.dprietob.redux.metainfo.xml.in:91
 msgid "Rename the converted images with a pattern."
 msgstr "Renommer les images converties selon un modèle."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:32
+#: data/io.github.dprietob.redux.metainfo.xml.in:92
 msgid "Keep or remove the metadata of every image."
 msgstr "Conserver ou supprimer les métadonnées de chaque image."
 
@@ -634,5 +650,17 @@ msgid "Image list in the light style"
 msgstr "Liste d’images avec le style clair"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:87
-msgid "Initial release."
-msgstr "Version initiale."
+msgid "The first version of Redux:"
+msgstr "La première version de Redux :"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:93
+msgid "Add images by dragging them from the file manager and put them in any order."
+msgstr "Ajoutez des images en les faisant glisser depuis le gestionnaire de fichiers et classez-les dans l’ordre voulu."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:94
+msgid "Get a notification when a long conversion finishes."
+msgstr "Recevez une notification à la fin d’une longue conversion."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:95
+msgid "Use it on phones and other small screens."
+msgstr "Utilisez-le sur les téléphones et autres petits écrans."

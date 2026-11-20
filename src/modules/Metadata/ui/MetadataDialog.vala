@@ -20,8 +20,13 @@ namespace Redux.Metadata {
         [GtkChild]
         private unowned Adw.PreferencesGroup categories_group;
 
+        private MetadataController controller;
+        private MetadataSelection selection;
+
         public MetadataDialog (MetadataController controller, string image_name, MetadataSelection selection)
         {
+            this.controller = controller;
+            this.selection = selection;
             window_title.subtitle = image_name;
 
             foreach (var category in CATEGORIES) {
@@ -29,13 +34,19 @@ namespace Redux.Metadata {
                 if (tags.length == 0) {
                     continue;
                 }
-                var row_category = category;
-                var row = new MetadataCategoryRow(category_title(row_category), tags);
-                row.category_toggled.connect((kept) => controller.set_category_kept(selection, row_category, kept));
+                var row = new MetadataCategoryRow(category, category_title(category), tags);
+                row.category_toggled.connect(on_category_toggled);
                 categories_group.add(row);
             }
 
             stack.visible_child_name = selection.tags.get_n_items() > 0 ? "categories" : "empty";
+        }
+
+        // A method rather than a lambda capturing the dialog, so the rows do not
+        // keep the dialog alive once it is closed.
+        private void on_category_toggled(MetadataCategory category, bool kept)
+        {
+            controller.set_category_kept(selection, category, kept);
         }
 
         private MetadataTag[] tags_of(MetadataSelection selection, MetadataCategory category)

@@ -35,14 +35,24 @@ namespace Redux.Conversion {
 
         public signal void open_folder_requested(File directory);
 
+        private ConversionReport report;
+
         public ConversionReportDialog (ConversionReport report)
         {
+            this.report = report;
             show_headline(report);
             show_summary(report);
             results_list.bind_model(report.results, (item) => new ConversionResultRow((ConversionResult) item));
 
             open_folder_button.visible = report.output_directory != null && report.converted_count > 0;
-            open_folder_button.clicked.connect(() => open_folder_requested(report.output_directory));
+            open_folder_button.clicked.connect(on_open_folder_clicked);
+        }
+
+        // A method rather than a lambda capturing the report, so the button
+        // does not keep the dialog alive once it is closed.
+        private void on_open_folder_clicked()
+        {
+            open_folder_requested(report.output_directory);
         }
 
         private void show_headline(ConversionReport report)
