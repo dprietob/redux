@@ -14,7 +14,7 @@
 
   <description>
     <p translatable="yes">
-      Redux is a simple, fast batch image converter.
+      Redux is a simple and fast batch image converter.
     </p>
     <p translatable="yes">
       Pick a set of images, choose the output format, quality and
@@ -39,9 +39,44 @@
   <url type="bugtracker">https://github.com/dprietob/redux/issues</url>
   <url type="vcs-browser">https://github.com/dprietob/redux</url>
 
+  <screenshots>
+    <screenshot type="default">
+      <caption translatable="yes">Choose the output format, quality, size, file names and metadata</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/01_main.png</image>
+    </screenshot>
+    <screenshot>
+      <caption translatable="yes">Pick the images to convert</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/02_images_list.png</image>
+    </screenshot>
+    <screenshot>
+      <caption translatable="yes">Rename the converted images with a pattern</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/03_renaming_options.png</image>
+    </screenshot>
+    <screenshot>
+      <caption translatable="yes">Choose the metadata each image keeps</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/04_metadata.png</image>
+    </screenshot>
+    <screenshot>
+      <caption translatable="yes">See how much space you saved</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/05_conversion_results_1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption translatable="yes">Review the result of every image</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/06_conversion_results_2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption translatable="yes">Light style</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/07_main_light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption translatable="yes">Image list in the light style</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/08_images_list_light.png</image>
+    </screenshot>
+  </screenshots>
+
   <branding>
-    <color type="primary" scheme_preference="light">#8ff0a4</color>
-    <color type="primary" scheme_preference="dark">#1c71d8</color>
+    <color type="primary" scheme_preference="light">#ff9900</color>
+    <color type="primary" scheme_preference="dark">#d4ff00</color>
   </branding>
 
   <releases>

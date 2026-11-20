@@ -7,6 +7,8 @@
 
 A simple, fast batch image converter for the GNOME desktop.
 
+![Redux](screenshots/01_main.png?raw=true)
+
 Redux converts all the images you pick to WebP, JPEG or PNG in one go. Choose the quality, shrink the images if you like, and
 see at a glance how much space you saved.
 
