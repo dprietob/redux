@@ -69,6 +69,25 @@ namespace Redux.Tests {
             delete_recursively(output);
         });
 
+        Test.add_func("/conversion/convert/never-overwrites-an-existing-file", () => {
+            var input = create_temporary_directory();
+            var output = create_temporary_directory();
+            var source = create_image(input, "photo.png", 8, 8, false);
+            var existing = create_image(output, "photo.webp", 4, 4, false);
+
+            var result = new ConvertImageAction().execute(source, existing.file, settings_for(output,
+            OutputFormat.WEBP));
+            assert_false(result.succeeded);
+            try {
+                var size = existing.file.query_info(FileAttribute.STANDARD_SIZE, FileQueryInfoFlags.NONE).get_size();
+                assert_true(size == existing.size);
+            } catch (Error error) {
+                GLib.error("Could not read the existing file: %s", error.message);
+            }
+            delete_recursively(input);
+            delete_recursively(output);
+        });
+
         Test.add_func("/conversion/convert/unreadable-image-fails-gracefully", () => {
             var input = create_temporary_directory();
             var output = create_temporary_directory();

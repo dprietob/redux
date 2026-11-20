@@ -59,7 +59,11 @@ namespace Redux.Conversion {
         private void write_output(SourceImage source, File target, Bytes encoded, ConversionSettings settings,
             int output_width, int output_height) throws Error
         {
-            target.replace_contents(encoded.get_data(), null, false, FileCreateFlags.REPLACE_DESTINATION, null, null);
+            // Creating the file, instead of replacing it, refuses to overwrite a
+            // file that appeared after the output names were chosen.
+            var output_stream = target.create(FileCreateFlags.NONE);
+            output_stream.write_all(encoded.get_data(), null);
+            output_stream.close();
             try {
                 metadata_writer_service.write(source.file, target, settings.metadata_mode, source.metadata_selection,
                     output_width, output_height);

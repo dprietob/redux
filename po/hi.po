@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 22:20+0100\n"
+"POT-Creation-Date: 2026-11-20 22:52+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Hindi\n"
@@ -16,37 +16,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Main.vala:70
+#: src/Main.vala:71
 msgid "Redux converts batches of images to WebP, JPEG or PNG, adjusting their quality and size. It can also rename them with a pattern and remove their metadata, and it shows a report of the space saved. Your original images are never modified."
 msgstr "Redux छवियों को बैच में WebP, JPEG या PNG में बदलता है और उनकी गुणवत्ता व आकार समायोजित करता है। यह किसी पैटर्न से उनका नाम बदल सकता है, उनका मेटाडेटा हटा सकता है और बचाई गई जगह की रिपोर्ट दिखाता है। आपकी मूल छवियाँ कभी नहीं बदली जातीं।"
 
-#: src/Window.vala:72 src/modules/Images/ui/image-list-panel.ui:43
+#: src/Window.vala:73 src/modules/Images/ui/image-list-panel.ui:47
+#: data/ui/shortcuts-dialog.ui:11
 msgid "Add Images"
 msgstr "छवियाँ जोड़ें"
 
-#: src/Window.vala:95 src/modules/Images/ui/image-list-panel.ui:34
+#: src/Window.vala:96 src/modules/Images/ui/image-list-panel.ui:38
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:148
+#: data/ui/shortcuts-dialog.ui:8
 msgid "Images"
 msgstr "छवियाँ"
 
-#: src/Window.vala:106
+#: src/Window.vala:107
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:63
+#: data/ui/shortcuts-dialog.ui:22
 msgid "Choose Output Folder"
 msgstr "आउटपुट फ़ोल्डर चुनें"
 
-#: src/Window.vala:123
+#: src/Window.vala:124
 #, c-format
 msgid "The metadata of “%s” could not be read: %s"
 msgstr "“%s” का मेटाडेटा पढ़ा नहीं जा सका: %s"
 
-#: src/Window.vala:175
+#: src/Window.vala:182
 #, c-format
 msgid "%u file was skipped because it is not a supported image or is already in the list."
 msgid_plural "%u files were skipped because they are not supported images or are already in the list."
 msgstr[0] "%u फ़ाइल छोड़ दी गई क्योंकि वह समर्थित छवि नहीं है या पहले से सूची में है।"
 msgstr[1] "%u फ़ाइलें छोड़ दी गईं क्योंकि वे समर्थित छवियाँ नहीं हैं या पहले से सूची में हैं।"
 
-#: src/modules/Images/ui/ImageListPanel.vala:63
+#: src/modules/Images/ui/ImageListPanel.vala:82
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u में से %u चयनित · %s"
@@ -67,43 +70,51 @@ msgstr "हल्की"
 msgid "Dark"
 msgstr "गहरी"
 
-#: src/modules/Images/ui/image-list-panel.ui:28
+#: src/modules/Images/ui/image-list-panel.ui:28 data/ui/shortcuts-dialog.ui:39
+msgid "Keyboard Shortcuts"
+msgstr "कीबोर्ड शॉर्टकट"
+
+#: src/modules/Images/ui/image-list-panel.ui:32
 msgid "About Redux"
 msgstr "Redux के बारे में"
 
-#: src/modules/Images/ui/image-list-panel.ui:50
+#: src/modules/Images/ui/image-list-panel.ui:54
 msgid "Main Menu"
 msgstr "मुख्य मेन्यू"
 
-#: src/modules/Images/ui/image-list-panel.ui:65
+#: src/modules/Images/ui/image-list-panel.ui:69
 msgid "No Images"
 msgstr "कोई छवि नहीं"
 
-#: src/modules/Images/ui/image-list-panel.ui:66
-msgid "Add the images you want to convert."
-msgstr "वे छवियाँ जोड़ें जिन्हें आप बदलना चाहते हैं।"
+#: src/modules/Images/ui/image-list-panel.ui:70
+msgid "Add the images you want to convert, or drop them here."
+msgstr "वे छवियाँ जोड़ें जिन्हें आप बदलना चाहते हैं, या उन्हें यहाँ छोड़ें।"
 
-#: src/modules/Images/ui/image-list-panel.ui:69
+#: src/modules/Images/ui/image-list-panel.ui:73
 msgid "Add Images…"
 msgstr "छवियाँ जोड़ें…"
 
-#: src/modules/Images/ui/image-list-panel.ui:119
+#: src/modules/Images/ui/image-list-panel.ui:123
 msgid "Select All"
 msgstr "सभी चुनें"
 
-#: src/modules/Images/ui/image-list-panel.ui:136
+#: src/modules/Images/ui/image-list-panel.ui:140
 msgid "Clear List"
 msgstr "सूची साफ़ करें"
 
-#: src/modules/Images/ui/image-row.ui:12
+#: src/modules/Images/ui/image-row.ui:13
+msgid "Drag to Reorder"
+msgstr "क्रम बदलने के लिए खींचें"
+
+#: src/modules/Images/ui/image-row.ui:22
 msgid "Include in Conversion"
 msgstr "रूपांतरण में शामिल करें"
 
-#: src/modules/Images/ui/image-row.ui:20
+#: src/modules/Images/ui/image-row.ui:30
 msgid "Choose Metadata to Keep"
 msgstr "रखने के लिए मेटाडेटा चुनें"
 
-#: src/modules/Images/ui/image-row.ui:30
+#: src/modules/Images/ui/image-row.ui:40
 msgid "Remove from List"
 msgstr "सूची से हटाएँ"
 
@@ -127,46 +138,34 @@ msgstr "आउटपुट फ़ोल्डर मौजूद नहीं �
 msgid "The output folder is not writable."
 msgstr "आउटपुट फ़ोल्डर में लिखा नहीं जा सकता।"
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:44
-msgid "Converting would overwrite an original image. Choose another output folder or format."
-msgstr "रूपांतरण से एक मूल छवि अधिलेखित हो जाएगी। कोई दूसरा आउटपुट फ़ोल्डर या फ़ॉर्मेट चुनें।"
-
-#: src/modules/Conversion/validators/ConversionValidator.vala:46
-msgid "Several images would be saved with the same name. Add {number} to the rename pattern."
-msgstr "कई छवियाँ एक ही नाम से सहेजी जाएँगी। नाम बदलने के पैटर्न में {number} जोड़ें।"
-
-#: src/modules/Conversion/validators/ConversionValidator.vala:47
-msgid "Several images would be saved with the same name. Convert them separately."
-msgstr "कई छवियाँ एक ही नाम से सहेजी जाएँगी। उन्हें अलग-अलग बदलें।"
-
-#: src/modules/Conversion/validators/ConversionValidator.vala:48
+#: src/modules/Conversion/validators/ConversionValidator.vala:43
 msgid "The date of an image could not be read to build its new name."
 msgstr "नया नाम बनाने के लिए किसी छवि की तारीख पढ़ी नहीं जा सकी।"
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:49
+#: src/modules/Conversion/validators/ConversionValidator.vala:44
 #, c-format
 msgid "The quality must be between %d and %d."
 msgstr "गुणवत्ता %d और %d के बीच होनी चाहिए।"
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:51
+#: src/modules/Conversion/validators/ConversionValidator.vala:46
 #, c-format
 msgid "The compression level must be between %d and %d."
 msgstr "संपीड़न स्तर %d और %d के बीच होना चाहिए।"
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:54
+#: src/modules/Conversion/validators/ConversionValidator.vala:49
 msgid "Enter a width, a height or both."
 msgstr "चौड़ाई, ऊँचाई या दोनों दर्ज करें।"
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:55
+#: src/modules/Conversion/validators/ConversionValidator.vala:50
 msgid "Enter both a width and a height."
 msgstr "चौड़ाई और ऊँचाई दोनों दर्ज करें।"
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:56
+#: src/modules/Conversion/validators/ConversionValidator.vala:51
 #, c-format
 msgid "The width and height must be at most %d pixels."
 msgstr "चौड़ाई और ऊँचाई अधिकतम %d पिक्सेल हो सकती है।"
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:58
+#: src/modules/Conversion/validators/ConversionValidator.vala:53
 #, c-format
 msgid "The percentages must be between %d and %d."
 msgstr "प्रतिशत %d और %d के बीच होने चाहिए।"
@@ -260,6 +259,7 @@ msgid "Time"
 msgstr "समय"
 
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:30
+#: data/ui/shortcuts-dialog.ui:19
 msgid "Conversion"
 msgstr "रूपांतरण"
 
@@ -268,6 +268,7 @@ msgid "Convert"
 msgstr "बदलें"
 
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:39
+#: data/ui/shortcuts-dialog.ui:28
 msgid "Convert the Selected Images"
 msgstr "चयनित छवियाँ बदलें"
 
@@ -535,6 +536,18 @@ msgstr "किसी श्रेणी को पूरी तरह हटा�
 msgid "Keep this tag"
 msgstr "यह टैग रखें"
 
+#: data/ui/shortcuts-dialog.ui:36
+msgid "General"
+msgstr "सामान्य"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgid "Close Window"
+msgstr "विंडो बंद करें"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgid "Quit"
+msgstr "बाहर निकलें"
+
 #: data/io.github.dprietob.redux.desktop.in:2
 #: data/io.github.dprietob.redux.metainfo.xml.in:5
 msgid "Redux"
@@ -558,77 +571,77 @@ msgid "Daniel Prieto"
 msgstr "Daniel Prieto"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:16
-msgid "Redux is a simple and fast batch image converter."
-msgstr "Redux एक सरल और तेज़ बैच छवि परिवर्तक है।"
+msgid "Redux is a simple and fast batch image converter that makes your photos lighter: convert them to WebP, JPEG or PNG, shrink them, rename them and clean up their metadata, all in one go."
+msgstr "Redux एक सरल और तेज़ बैच छवि कनवर्टर है जो आपकी तस्वीरों को हल्का बनाता है: उन्हें WebP, JPEG या PNG में बदलें, छोटा करें, उनका नाम बदलें और उनका मेटाडेटा साफ़ करें, सब कुछ एक ही बार में।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:19
+#: data/io.github.dprietob.redux.metainfo.xml.in:21
 msgid "Pick a set of images, choose the output format, quality and size, and convert them all at once. When it finishes, Redux shows how much space you saved."
 msgstr "छवियों का एक समूह चुनें, आउटपुट फ़ॉर्मेट, गुणवत्ता और आकार चुनें, और सभी को एक साथ बदलें। पूरा होने पर Redux दिखाता है कि आपने कितनी जगह बचाई।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:24
+#: data/io.github.dprietob.redux.metainfo.xml.in:26
 msgid "Features:"
 msgstr "सुविधाएँ:"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:26
+#: data/io.github.dprietob.redux.metainfo.xml.in:28
 msgid "Convert images to WebP, JPEG and PNG."
 msgstr "छवियों को WebP, JPEG और PNG में बदलें।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:27
+#: data/io.github.dprietob.redux.metainfo.xml.in:29
 msgid "Adjust the quality of WebP and JPEG images and the compression level of PNG images."
 msgstr "WebP और JPEG छवियों की गुणवत्ता और PNG छवियों का संपीड़न स्तर समायोजित करें।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:28
+#: data/io.github.dprietob.redux.metainfo.xml.in:30
 msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
 msgstr "पहलू अनुपात बनाए रखते हुए या उसके बिना, पिक्सेल में या प्रतिशत से छवियों का आकार बदलें।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:29
+#: data/io.github.dprietob.redux.metainfo.xml.in:31
 msgid "Rename the converted images with a pattern."
 msgstr "बदली गई छवियों का नाम पैटर्न से बदलें।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:30
+#: data/io.github.dprietob.redux.metainfo.xml.in:32
 msgid "Keep or remove the metadata of every image."
 msgstr "हर छवि का मेटाडेटा रखें या हटाएँ।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:31
+#: data/io.github.dprietob.redux.metainfo.xml.in:33
 msgid "See a report with the size reduction of every image."
 msgstr "हर छवि के आकार में हुई कमी की रिपोर्ट देखें।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:32
+#: data/io.github.dprietob.redux.metainfo.xml.in:34
 msgid "Light and dark styles."
 msgstr "हल्की और गहरी शैलियाँ।"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:44
+#: data/io.github.dprietob.redux.metainfo.xml.in:46
 msgid "Choose the output format, quality, size, file names and metadata"
 msgstr "आउटपुट फ़ॉर्मेट, गुणवत्ता, आकार, फ़ाइल नाम और मेटाडेटा चुनें"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:48
+#: data/io.github.dprietob.redux.metainfo.xml.in:50
 msgid "Pick the images to convert"
 msgstr "बदलने के लिए छवियाँ चुनें"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:52
+#: data/io.github.dprietob.redux.metainfo.xml.in:54
 msgid "Rename the converted images with a pattern"
 msgstr "बदली गई छवियों का नाम पैटर्न से बदलें"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:56
+#: data/io.github.dprietob.redux.metainfo.xml.in:58
 msgid "Choose the metadata each image keeps"
 msgstr "चुनें कि हर छवि कौन सा मेटाडेटा रखे"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:60
+#: data/io.github.dprietob.redux.metainfo.xml.in:62
 msgid "See how much space you saved"
 msgstr "देखें कि आपने कितनी जगह बचाई"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:64
+#: data/io.github.dprietob.redux.metainfo.xml.in:66
 msgid "Review the result of every image"
 msgstr "हर छवि का परिणाम देखें"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:68
+#: data/io.github.dprietob.redux.metainfo.xml.in:70
 msgid "Light style"
 msgstr "हल्की शैली"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:72
+#: data/io.github.dprietob.redux.metainfo.xml.in:74
 msgid "Image list in the light style"
 msgstr "हल्की शैली में छवि सूची"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:85
+#: data/io.github.dprietob.redux.metainfo.xml.in:87
 msgid "Initial release."
 msgstr "प्रारंभिक रिलीज़।"

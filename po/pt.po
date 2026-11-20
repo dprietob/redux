@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 22:20+0100\n"
+"POT-Creation-Date: 2026-11-20 22:52+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Portuguese\n"
@@ -16,37 +16,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Main.vala:70
+#: src/Main.vala:71
 msgid "Redux converts batches of images to WebP, JPEG or PNG, adjusting their quality and size. It can also rename them with a pattern and remove their metadata, and it shows a report of the space saved. Your original images are never modified."
 msgstr "O Redux converte lotes de imagens para WebP, JPEG ou PNG, ajustando a qualidade e o tamanho. Também pode mudar-lhes o nome com um padrão e remover os metadados, e mostra um relatório do espaço poupado. As imagens originais nunca são modificadas."
 
-#: src/Window.vala:72 src/modules/Images/ui/image-list-panel.ui:43
+#: src/Window.vala:73 src/modules/Images/ui/image-list-panel.ui:47
+#: data/ui/shortcuts-dialog.ui:11
 msgid "Add Images"
 msgstr "Adicionar imagens"
 
-#: src/Window.vala:95 src/modules/Images/ui/image-list-panel.ui:34
+#: src/Window.vala:96 src/modules/Images/ui/image-list-panel.ui:38
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:148
+#: data/ui/shortcuts-dialog.ui:8
 msgid "Images"
 msgstr "Imagens"
 
-#: src/Window.vala:106
+#: src/Window.vala:107
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:63
+#: data/ui/shortcuts-dialog.ui:22
 msgid "Choose Output Folder"
 msgstr "Escolher pasta de destino"
 
-#: src/Window.vala:123
+#: src/Window.vala:124
 #, c-format
 msgid "The metadata of “%s” could not be read: %s"
 msgstr "Não foi possível ler os metadados de «%s»: %s"
 
-#: src/Window.vala:175
+#: src/Window.vala:182
 #, c-format
 msgid "%u file was skipped because it is not a supported image or is already in the list."
 msgid_plural "%u files were skipped because they are not supported images or are already in the list."
 msgstr[0] "%u ficheiro foi ignorado porque não é uma imagem suportada ou já está na lista."
 msgstr[1] "%u ficheiros foram ignorados porque não são imagens suportadas ou já estão na lista."
 
-#: src/modules/Images/ui/ImageListPanel.vala:63
+#: src/modules/Images/ui/ImageListPanel.vala:82
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u de %u selecionadas · %s"
@@ -67,43 +70,51 @@ msgstr "Claro"
 msgid "Dark"
 msgstr "Escuro"
 
-#: src/modules/Images/ui/image-list-panel.ui:28
+#: src/modules/Images/ui/image-list-panel.ui:28 data/ui/shortcuts-dialog.ui:39
+msgid "Keyboard Shortcuts"
+msgstr "Atalhos de teclado"
+
+#: src/modules/Images/ui/image-list-panel.ui:32
 msgid "About Redux"
 msgstr "Acerca do Redux"
 
-#: src/modules/Images/ui/image-list-panel.ui:50
+#: src/modules/Images/ui/image-list-panel.ui:54
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: src/modules/Images/ui/image-list-panel.ui:65
+#: src/modules/Images/ui/image-list-panel.ui:69
 msgid "No Images"
 msgstr "Sem imagens"
 
-#: src/modules/Images/ui/image-list-panel.ui:66
-msgid "Add the images you want to convert."
-msgstr "Adicione as imagens que pretende converter."
+#: src/modules/Images/ui/image-list-panel.ui:70
+msgid "Add the images you want to convert, or drop them here."
+msgstr "Adicione as imagens que pretende converter ou largue-as aqui."
 
-#: src/modules/Images/ui/image-list-panel.ui:69
+#: src/modules/Images/ui/image-list-panel.ui:73
 msgid "Add Images…"
 msgstr "Adicionar imagens…"
 
-#: src/modules/Images/ui/image-list-panel.ui:119
+#: src/modules/Images/ui/image-list-panel.ui:123
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/modules/Images/ui/image-list-panel.ui:136
+#: src/modules/Images/ui/image-list-panel.ui:140
 msgid "Clear List"
 msgstr "Limpar lista"
 
-#: src/modules/Images/ui/image-row.ui:12
+#: src/modules/Images/ui/image-row.ui:13
+msgid "Drag to Reorder"
+msgstr "Arrastar para reordenar"
+
+#: src/modules/Images/ui/image-row.ui:22
 msgid "Include in Conversion"
 msgstr "Incluir na conversão"
 
-#: src/modules/Images/ui/image-row.ui:20
+#: src/modules/Images/ui/image-row.ui:30
 msgid "Choose Metadata to Keep"
 msgstr "Escolher metadados a manter"
 
-#: src/modules/Images/ui/image-row.ui:30
+#: src/modules/Images/ui/image-row.ui:40
 msgid "Remove from List"
 msgstr "Remover da lista"
 
@@ -127,46 +138,34 @@ msgstr "A pasta de destino não existe."
 msgid "The output folder is not writable."
 msgstr "Não é possível escrever na pasta de destino."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:44
-msgid "Converting would overwrite an original image. Choose another output folder or format."
-msgstr "A conversão iria substituir uma imagem original. Escolha outra pasta de destino ou outro formato."
-
-#: src/modules/Conversion/validators/ConversionValidator.vala:46
-msgid "Several images would be saved with the same name. Add {number} to the rename pattern."
-msgstr "Várias imagens seriam guardadas com o mesmo nome. Adicione {number} ao padrão de nomes."
-
-#: src/modules/Conversion/validators/ConversionValidator.vala:47
-msgid "Several images would be saved with the same name. Convert them separately."
-msgstr "Várias imagens seriam guardadas com o mesmo nome. Converta-as separadamente."
-
-#: src/modules/Conversion/validators/ConversionValidator.vala:48
+#: src/modules/Conversion/validators/ConversionValidator.vala:43
 msgid "The date of an image could not be read to build its new name."
 msgstr "Não foi possível ler a data de uma imagem para criar o seu novo nome."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:49
+#: src/modules/Conversion/validators/ConversionValidator.vala:44
 #, c-format
 msgid "The quality must be between %d and %d."
 msgstr "A qualidade tem de estar entre %d e %d."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:51
+#: src/modules/Conversion/validators/ConversionValidator.vala:46
 #, c-format
 msgid "The compression level must be between %d and %d."
 msgstr "O nível de compressão tem de estar entre %d e %d."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:54
+#: src/modules/Conversion/validators/ConversionValidator.vala:49
 msgid "Enter a width, a height or both."
 msgstr "Introduza uma largura, uma altura ou ambas."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:55
+#: src/modules/Conversion/validators/ConversionValidator.vala:50
 msgid "Enter both a width and a height."
 msgstr "Introduza uma largura e uma altura."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:56
+#: src/modules/Conversion/validators/ConversionValidator.vala:51
 #, c-format
 msgid "The width and height must be at most %d pixels."
 msgstr "A largura e a altura não podem exceder %d píxeis."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:58
+#: src/modules/Conversion/validators/ConversionValidator.vala:53
 #, c-format
 msgid "The percentages must be between %d and %d."
 msgstr "As percentagens têm de estar entre %d e %d."
@@ -260,6 +259,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:30
+#: data/ui/shortcuts-dialog.ui:19
 msgid "Conversion"
 msgstr "Conversão"
 
@@ -268,6 +268,7 @@ msgid "Convert"
 msgstr "Converter"
 
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:39
+#: data/ui/shortcuts-dialog.ui:28
 msgid "Convert the Selected Images"
 msgstr "Converter as imagens selecionadas"
 
@@ -535,6 +536,18 @@ msgstr "Desative uma categoria para a remover por completo, ou expanda-a para es
 msgid "Keep this tag"
 msgstr "Manter esta etiqueta"
 
+#: data/ui/shortcuts-dialog.ui:36
+msgid "General"
+msgstr "Geral"
+
+#: data/ui/shortcuts-dialog.ui:45
+msgid "Close Window"
+msgstr "Fechar janela"
+
+#: data/ui/shortcuts-dialog.ui:51
+msgid "Quit"
+msgstr "Sair"
+
 #: data/io.github.dprietob.redux.desktop.in:2
 #: data/io.github.dprietob.redux.metainfo.xml.in:5
 msgid "Redux"
@@ -558,77 +571,77 @@ msgid "Daniel Prieto"
 msgstr "Daniel Prieto"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:16
-msgid "Redux is a simple and fast batch image converter."
-msgstr "O Redux é um conversor de imagens em lote simples e rápido."
+msgid "Redux is a simple and fast batch image converter that makes your photos lighter: convert them to WebP, JPEG or PNG, shrink them, rename them and clean up their metadata, all in one go."
+msgstr "O Redux é um conversor de imagens em lote simples e rápido que torna as suas fotografias mais leves: converta-as para WebP, JPEG ou PNG, reduza-as, mude-lhes o nome e limpe os seus metadados, tudo de uma só vez."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:19
+#: data/io.github.dprietob.redux.metainfo.xml.in:21
 msgid "Pick a set of images, choose the output format, quality and size, and convert them all at once. When it finishes, Redux shows how much space you saved."
 msgstr "Escolha um conjunto de imagens, selecione o formato de saída, a qualidade e o tamanho, e converta-as todas de uma vez. No final, o Redux mostra quanto espaço poupou."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:24
+#: data/io.github.dprietob.redux.metainfo.xml.in:26
 msgid "Features:"
 msgstr "Funcionalidades:"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:26
+#: data/io.github.dprietob.redux.metainfo.xml.in:28
 msgid "Convert images to WebP, JPEG and PNG."
 msgstr "Converta imagens para WebP, JPEG e PNG."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:27
+#: data/io.github.dprietob.redux.metainfo.xml.in:29
 msgid "Adjust the quality of WebP and JPEG images and the compression level of PNG images."
 msgstr "Ajuste a qualidade das imagens WebP e JPEG e o nível de compressão das imagens PNG."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:28
+#: data/io.github.dprietob.redux.metainfo.xml.in:30
 msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
 msgstr "Redimensione imagens em píxeis ou em percentagem, mantendo ou não a proporção."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:29
+#: data/io.github.dprietob.redux.metainfo.xml.in:31
 msgid "Rename the converted images with a pattern."
 msgstr "Mude o nome das imagens convertidas com um padrão."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:30
+#: data/io.github.dprietob.redux.metainfo.xml.in:32
 msgid "Keep or remove the metadata of every image."
 msgstr "Mantenha ou remova os metadados de cada imagem."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:31
+#: data/io.github.dprietob.redux.metainfo.xml.in:33
 msgid "See a report with the size reduction of every image."
 msgstr "Consulte um relatório com a redução de tamanho de cada imagem."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:32
+#: data/io.github.dprietob.redux.metainfo.xml.in:34
 msgid "Light and dark styles."
 msgstr "Estilos claro e escuro."
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:44
+#: data/io.github.dprietob.redux.metainfo.xml.in:46
 msgid "Choose the output format, quality, size, file names and metadata"
 msgstr "Escolha o formato de saída, a qualidade, o tamanho, os nomes de ficheiro e os metadados"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:48
+#: data/io.github.dprietob.redux.metainfo.xml.in:50
 msgid "Pick the images to convert"
 msgstr "Escolha as imagens a converter"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:52
+#: data/io.github.dprietob.redux.metainfo.xml.in:54
 msgid "Rename the converted images with a pattern"
 msgstr "Mude o nome das imagens convertidas com um padrão"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:56
+#: data/io.github.dprietob.redux.metainfo.xml.in:58
 msgid "Choose the metadata each image keeps"
 msgstr "Escolha os metadados que cada imagem mantém"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:60
+#: data/io.github.dprietob.redux.metainfo.xml.in:62
 msgid "See how much space you saved"
 msgstr "Veja quanto espaço poupou"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:64
+#: data/io.github.dprietob.redux.metainfo.xml.in:66
 msgid "Review the result of every image"
 msgstr "Reveja o resultado de cada imagem"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:68
+#: data/io.github.dprietob.redux.metainfo.xml.in:70
 msgid "Light style"
 msgstr "Estilo claro"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:72
+#: data/io.github.dprietob.redux.metainfo.xml.in:74
 msgid "Image list in the light style"
 msgstr "Lista de imagens no estilo claro"
 
-#: data/io.github.dprietob.redux.metainfo.xml.in:85
+#: data/io.github.dprietob.redux.metainfo.xml.in:87
 msgid "Initial release."
 msgstr "Versão inicial."

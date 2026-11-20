@@ -38,6 +38,7 @@ namespace Redux {
 
             var image_panel = new ImageListPanel(image_controller);
             image_panel.metadata_requested.connect(on_metadata_requested);
+            image_panel.files_dropped.connect(add_files);
             conversion_controller.conversion_settings.bind_property("metadata-mode", image_panel, "metadata-editable",
                 BindingFlags.SYNC_CREATE, (binding, source, ref target) => {
                 target.set_boolean(source.get_enum() == MetadataMode.PER_IMAGE);
@@ -85,7 +86,7 @@ namespace Redux {
                 for (uint index = 0; index < selection.get_n_items(); index++) {
                     files += (File) selection.get_item(index);
                 }
-                report_skipped_files(files.length - image_controller.add_files(files));
+                add_files(files);
             });
         }
 
@@ -167,6 +168,12 @@ namespace Redux {
                     report(error.message);
                 }
             });
+        }
+
+        // Adds the chosen or dropped files and reports the ones left out.
+        private void add_files(File[] files)
+        {
+            report_skipped_files(files.length - image_controller.add_files(files));
         }
 
         private void report_skipped_files(uint skipped)

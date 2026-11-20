@@ -14,7 +14,8 @@ see at a glance how much space you saved.
 
 Redux lets you:
 
-- Add the images to convert and choose which ones to include
+- Add the images to convert, or drag them from the file manager, choose which
+  ones to include and drag them to reorder them
 - Convert to WebP, JPEG or PNG
 - Set the quality of WebP and JPEG images, or the compression level of PNG
   images
@@ -29,8 +30,11 @@ Redux lets you:
 - Review a report with the number of converted images, the size before and
   after, the space saved and the size change of every image
 
-Redux never modifies your original images: it refuses to convert when an output
-file would overwrite one of them.
+Redux never overwrites a file: when a name is already taken in the output
+folder, the converted image gets a numeric suffix, such as `photo-1.webp`. Your
+original images are never modified.
+
+Press <kbd>Ctrl</kbd>+<kbd>?</kbd> to see all the keyboard shortcuts.
 
 ## Made for GNOME
 
@@ -74,6 +78,10 @@ Run the tests:
 ```shell
 meson test -C _build
 ```
+
+The tests run in GitHub Actions in a Fedora container rather than in the
+Flatpak build, because glycin cannot sandbox its image loaders while
+`flatpak-builder` builds the app.
 
 To build the Flatpak from the command line:
 

@@ -18,5 +18,6 @@ src/modules/Metadata/ui/MetadataCategoryRow.vala
 src/modules/Metadata/ui/MetadataDialog.vala
 src/modules/Metadata/ui/metadata-dialog.ui
 src/modules/Metadata/ui/metadata-tag-row.ui
+data/ui/shortcuts-dialog.ui
 data/io.github.dprietob.redux.desktop.in
 data/io.github.dprietob.redux.metainfo.xml.in

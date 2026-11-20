@@ -14,7 +14,9 @@
 
   <description>
     <p translatable="yes">
-      Redux is a simple and fast batch image converter.
+      Redux is a simple and fast batch image converter that makes your photos
+      lighter: convert them to WebP, JPEG or PNG, shrink them, rename them and
+      clean up their metadata, all in one go.
     </p>
     <p translatable="yes">
       Pick a set of images, choose the output format, quality and

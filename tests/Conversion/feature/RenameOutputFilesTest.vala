@@ -80,7 +80,7 @@ namespace Redux.Tests {
             delete_recursively(output);
         });
 
-        Test.add_func("/conversion/rename/validator-rejects-repeated-names", () => {
+        Test.add_func("/conversion/rename/repeated-names-get-suffixes", () => {
             var input = create_temporary_directory();
             var output = create_temporary_directory();
             SourceImage[] images = {
@@ -91,10 +91,10 @@ namespace Redux.Tests {
             settings.rename_enabled = true;
             settings.rename_pattern = "same";
 
-            var validator = new ConversionValidator(images, settings);
-            assert_cmpstr(validator.validate(),
-            CompareOperator.EQ,
-            validator.messages().get("output_directory.distinct"));
+            var names = target_names(images, settings);
+            assert_cmpstr(names[0], CompareOperator.EQ, "same.webp");
+            assert_cmpstr(names[1], CompareOperator.EQ, "same-1.webp");
+            assert_null(new ConversionValidator(images, settings).validate());
 
             settings.rename_pattern = "{name}-{unknown}";
             var pattern_validator = new FileNamePatternValidator(settings);

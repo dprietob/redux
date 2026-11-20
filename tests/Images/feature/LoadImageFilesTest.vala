@@ -32,5 +32,23 @@ namespace Redux.Tests {
             assert_cmpuint(controller.images.get_n_items(), CompareOperator.EQ, 1);
             delete_recursively(input);
         });
+
+        Test.add_func("/images/list/moves-images", () => {
+            var input = create_temporary_directory();
+            var first = create_image(input, "a.png", 4, 4, false);
+            var second = create_image(input, "b.png", 4, 4, false);
+            var third = create_image(input, "c.png", 4, 4, false);
+            var controller = new ImageListController();
+            controller.add_files({ first.file, second.file, third.file });
+
+            var a = (SourceImage) controller.images.get_item(0);
+            var c = (SourceImage) controller.images.get_item(2);
+            controller.move(a, c, true);
+            assert_cmpstr(((SourceImage) controller.images.get_item(2)).name, CompareOperator.EQ, "a.png");
+            controller.move(a, (SourceImage) controller.images.get_item(0), false);
+            assert_cmpstr(((SourceImage) controller.images.get_item(0)).name, CompareOperator.EQ, "a.png");
+            assert_cmpuint(controller.images.get_n_items(), CompareOperator.EQ, 3);
+            delete_recursively(input);
+        });
     }
 }

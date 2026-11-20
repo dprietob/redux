@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <requires lib="libadwaita" version="1.5"/>
+  <requires lib="libadwaita" version="1.8"/>
   <menu id="primary_menu">
     <section>
       <submenu>
@@ -24,6 +24,10 @@
       </submenu>
     </section>
     <section>
+      <item>
+        <attribute name="label" translatable="yes">Keyboard Shortcuts</attribute>
+        <attribute name="action">app.shortcuts</attribute>
+      </item>
       <item>
         <attribute name="label" translatable="yes">About Redux</attribute>
         <attribute name="action">app.about</attribute>
@@ -63,7 +67,7 @@
                   <object class="AdwStatusPage">
                     <property name="icon-name">image-x-generic-symbolic</property>
                     <property name="title" translatable="yes">No Images</property>
-                    <property name="description" translatable="yes">Add the images you want to convert.</property>
+                    <property name="description" translatable="yes">Add the images you want to convert, or drop them here.</property>
                     <property name="child">
                       <object class="GtkButton">
                         <property name="label" translatable="yes">Add Images…</property>

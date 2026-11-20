@@ -32,10 +32,17 @@ namespace Redux.Conversion {
         // when the pattern does not use it.
         public string file_name(ConversionSettings settings, string original_name, int number, DateTime? date)
         {
-            var base_name = settings.rename_prefix
-                + expand(settings.rename_pattern, original_name, number, settings.rename_digits, date)
-                + settings.rename_suffix;
-            return "%s.%s".printf(base_name, settings.output_format.extension());
+            return "%s.%s".printf(base_name(settings, original_name, number, date),
+                       settings.output_format.extension());
+        }
+
+        // Returns the new name without its extension: the prefix, the expanded
+        // pattern and the suffix.
+        public string base_name(ConversionSettings settings, string original_name, int number, DateTime? date)
+        {
+            return settings.rename_prefix
+                   + expand(settings.rename_pattern, original_name, number, settings.rename_digits, date)
+                   + settings.rename_suffix;
         }
 
         public bool uses_date(string pattern)

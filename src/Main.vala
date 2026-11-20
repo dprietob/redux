@@ -47,6 +47,7 @@ namespace Redux {
             quit_action.activate.connect(() => quit());
             add_action(quit_action);
             set_accels_for_action("app.quit", { "<Control>q" });
+            set_accels_for_action("window.close", { "<Control>w" });
 
             // Stateful actions backed by GSettings, so the choices are persisted.
             add_action(settings.create_action("color-scheme"));

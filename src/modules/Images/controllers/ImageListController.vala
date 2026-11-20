@@ -45,6 +45,27 @@ namespace Redux.Images {
             }
         }
 
+        // Moves an image next to another one: after it when after is true,
+        // before it otherwise. The order decides the sequential numbers.
+        public void move(SourceImage dragged, SourceImage target, bool after)
+        {
+            uint from;
+            if (dragged == target) {
+                return;
+            }
+            if (!images.find(dragged, out from)) {
+                return;
+            }
+            images.remove(from);
+
+            uint target_position;
+            if (images.find(target, out target_position)) {
+                images.insert(after ? target_position + 1 : target_position, dragged);
+            } else {
+                images.append(dragged);
+            }
+        }
+
         public void clear()
         {
             images.remove_all();

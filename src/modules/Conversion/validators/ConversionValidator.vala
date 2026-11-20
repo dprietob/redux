@@ -21,7 +21,7 @@ namespace Redux.Conversion {
         {
             var rules = new HashTable<string, string> (str_hash, str_equal);
             rules.set("images", "required|readable");
-            rules.set("output_directory", "required|directory|writable|not_overwriting|distinct");
+            rules.set("output_directory", "required|directory|writable");
             rules.set("quality", "between:%d,%d".printf(ConversionSettings.MINIMUM_QUALITY,
                 ConversionSettings.MAXIMUM_QUALITY));
             rules.set("compression_level", "between:%d,%d".printf(ConversionSettings.MINIMUM_COMPRESSION_LEVEL,
@@ -40,11 +40,6 @@ namespace Redux.Conversion {
             messages.set("output_directory.required", _("Choose an output folder."));
             messages.set("output_directory.directory", _("The output folder does not exist."));
             messages.set("output_directory.writable", _("The output folder is not writable."));
-            messages.set("output_directory.not_overwriting",
-                _("Converting would overwrite an original image. Choose another output folder or format."));
-            messages.set("output_directory.distinct", settings.rename_enabled
-                ? _("Several images would be saved with the same name. Add {number} to the rename pattern.")
-                : _("Several images would be saved with the same name. Convert them separately."));
             messages.set("images.readable", _("The date of an image could not be read to build its new name."));
             messages.set("quality.between", _("The quality must be between %d and %d.").printf(
                     ConversionSettings.MINIMUM_QUALITY, ConversionSettings.MAXIMUM_QUALITY));
@@ -108,22 +103,12 @@ namespace Redux.Conversion {
                 return messages.get("output_directory.writable");
             }
 
-            File[] targets;
+            // Building the new names reads the date of the images when the
+            // rename pattern uses it, which fails for unreadable files.
             try {
-                targets = output_path_service.target_files(images, settings);
+                output_path_service.target_files(images, settings);
             } catch (Error error) {
                 return messages.get("images.readable");
-            }
-
-            var seen_targets = new GenericSet<string> (str_hash, str_equal);
-            for (int index = 0; index < images.length; index++) {
-                if (targets[index].equal(images[index].file)) {
-                    return messages.get("output_directory.not_overwriting");
-                }
-                if (seen_targets.contains(targets[index].get_uri())) {
-                    return messages.get("output_directory.distinct");
-                }
-                seen_targets.add(targets[index].get_uri());
             }
             return null;
         }

@@ -109,9 +109,12 @@ namespace Redux.Tests {
     // Converts one image into the file the conversion would choose for it.
     public Conversion.ConversionResult convert_image(Images.SourceImage source, Conversion.ConversionSettings settings)
     {
-        var target = new Conversion.OutputPathService().target_file(source.file, settings.output_directory,
-                settings.output_format);
-        return new Conversion.ConvertImageAction().execute(source, target, settings);
+        try {
+            var target = new Conversion.OutputPathService().target_files({ source }, settings)[0];
+            return new Conversion.ConvertImageAction().execute(source, target, settings);
+        } catch (Error error) {
+            GLib.error("Could not plan the output file: %s", error.message);
+        }
     }
 
     public Conversion.ConversionSettings settings_for(File output_directory, Conversion.OutputFormat format)

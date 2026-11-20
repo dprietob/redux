@@ -12,6 +12,11 @@
     <file alias="metadata-category-row.ui" preprocess="xml-stripblanks">src/modules/Metadata/ui/metadata-category-row.ui</file>
     <file alias="metadata-tag-row.ui" preprocess="xml-stripblanks">src/modules/Metadata/ui/metadata-tag-row.ui</file>
   </gresource>
+  <!-- libadwaita shows this dialog for the app.shortcuts action (Ctrl+?)
+       when it sits at the root of the application resources. -->
+  <gresource prefix="/io/github/dprietob/redux">
+    <file alias="shortcuts-dialog.ui" preprocess="xml-stripblanks">data/ui/shortcuts-dialog.ui</file>
+  </gresource>
   <gresource prefix="/io/github/dprietob/redux/icons/scalable/apps">
     <file alias="io.github.dprietob.redux.svg" preprocess="xml-stripblanks">data/icons/hicolor/scalable/apps/io.github.dprietob.redux.svg</file>
   </gresource>
