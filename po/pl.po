@@ -1,0 +1,635 @@
+# Polish translation for Redux.
+# Copyleft (🄯) 2026 Daniel Prieto
+# This file is distributed under the same license as the Redux package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: redux\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-20 22:20+0100\n"
+"PO-Revision-Date: 2026-11-20 22:20+0100\n"
+"Last-Translator: Daniel Prieto\n"
+"Language-Team: Polish\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/Main.vala:70
+msgid "Redux converts batches of images to WebP, JPEG or PNG, adjusting their quality and size. It can also rename them with a pattern and remove their metadata, and it shows a report of the space saved. Your original images are never modified."
+msgstr "Redux konwertuje grupy obrazów do formatu WebP, JPEG lub PNG, dostosowując ich jakość i rozmiar. Może też zmieniać ich nazwy według wzoru i usuwać metadane oraz pokazuje raport zaoszczędzonego miejsca. Oryginalne obrazy nigdy nie są zmieniane."
+
+#: src/Window.vala:72 src/modules/Images/ui/image-list-panel.ui:43
+msgid "Add Images"
+msgstr "Dodaj obrazy"
+
+#: src/Window.vala:95 src/modules/Images/ui/image-list-panel.ui:34
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:148
+msgid "Images"
+msgstr "Obrazy"
+
+#: src/Window.vala:106
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:63
+msgid "Choose Output Folder"
+msgstr "Wybierz katalog docelowy"
+
+#: src/Window.vala:123
+#, c-format
+msgid "The metadata of “%s” could not be read: %s"
+msgstr "Nie można odczytać metadanych pliku „%s”: %s"
+
+#: src/Window.vala:175
+#, c-format
+msgid "%u file was skipped because it is not a supported image or is already in the list."
+msgid_plural "%u files were skipped because they are not supported images or are already in the list."
+msgstr[0] "Pominięto %u plik, ponieważ nie jest obsługiwanym obrazem lub jest już na liście."
+msgstr[1] "Pominięto %u pliki, ponieważ nie są obsługiwanymi obrazami lub są już na liście."
+msgstr[2] "Pominięto %u plików, ponieważ nie są obsługiwanymi obrazami lub są już na liście."
+
+#: src/modules/Images/ui/ImageListPanel.vala:63
+#, c-format
+msgid "%u of %u selected · %s"
+msgstr "Zaznaczono: %u z %u · %s"
+
+#: src/modules/Images/ui/image-list-panel.ui:8
+msgid "Theme"
+msgstr "Motyw"
+
+#: src/modules/Images/ui/image-list-panel.ui:10
+msgid "Follow System"
+msgstr "Zgodnie z systemem"
+
+#: src/modules/Images/ui/image-list-panel.ui:15
+msgid "Light"
+msgstr "Jasny"
+
+#: src/modules/Images/ui/image-list-panel.ui:20
+msgid "Dark"
+msgstr "Ciemny"
+
+#: src/modules/Images/ui/image-list-panel.ui:28
+msgid "About Redux"
+msgstr "O programie Redux"
+
+#: src/modules/Images/ui/image-list-panel.ui:50
+msgid "Main Menu"
+msgstr "Menu główne"
+
+#: src/modules/Images/ui/image-list-panel.ui:65
+msgid "No Images"
+msgstr "Brak obrazów"
+
+#: src/modules/Images/ui/image-list-panel.ui:66
+msgid "Add the images you want to convert."
+msgstr "Dodaj obrazy do konwersji."
+
+#: src/modules/Images/ui/image-list-panel.ui:69
+msgid "Add Images…"
+msgstr "Dodaj obrazy…"
+
+#: src/modules/Images/ui/image-list-panel.ui:119
+msgid "Select All"
+msgstr "Zaznacz wszystkie"
+
+#: src/modules/Images/ui/image-list-panel.ui:136
+msgid "Clear List"
+msgstr "Wyczyść listę"
+
+#: src/modules/Images/ui/image-row.ui:12
+msgid "Include in Conversion"
+msgstr "Uwzględnij w konwersji"
+
+#: src/modules/Images/ui/image-row.ui:20
+msgid "Choose Metadata to Keep"
+msgstr "Wybierz metadane do zachowania"
+
+#: src/modules/Images/ui/image-row.ui:30
+msgid "Remove from List"
+msgstr "Usuń z listy"
+
+#: src/modules/Conversion/services/ImageEncoderService.vala:58
+msgid "The image could not be encoded as WebP."
+msgstr "Nie można zakodować obrazu jako WebP."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:39
+msgid "Select at least one image to convert."
+msgstr "Zaznacz co najmniej jeden obraz do konwersji."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:40
+msgid "Choose an output folder."
+msgstr "Wybierz katalog docelowy."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:41
+msgid "The output folder does not exist."
+msgstr "Katalog docelowy nie istnieje."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:42
+msgid "The output folder is not writable."
+msgstr "Nie można zapisywać w katalogu docelowym."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:44
+msgid "Converting would overwrite an original image. Choose another output folder or format."
+msgstr "Konwersja zastąpiłaby oryginalny obraz. Wybierz inny katalog docelowy lub format."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:46
+msgid "Several images would be saved with the same name. Add {number} to the rename pattern."
+msgstr "Kilka obrazów zostałoby zapisanych pod tą samą nazwą. Dodaj {number} do wzoru nazw."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:47
+msgid "Several images would be saved with the same name. Convert them separately."
+msgstr "Kilka obrazów zostałoby zapisanych pod tą samą nazwą. Przekonwertuj je osobno."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:48
+msgid "The date of an image could not be read to build its new name."
+msgstr "Nie można odczytać daty obrazu, aby utworzyć jego nową nazwę."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:49
+#, c-format
+msgid "The quality must be between %d and %d."
+msgstr "Jakość musi wynosić od %d do %d."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:51
+#, c-format
+msgid "The compression level must be between %d and %d."
+msgstr "Poziom kompresji musi wynosić od %d do %d."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:54
+msgid "Enter a width, a height or both."
+msgstr "Podaj szerokość, wysokość lub oba wymiary."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:55
+msgid "Enter both a width and a height."
+msgstr "Podaj szerokość i wysokość."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:56
+#, c-format
+msgid "The width and height must be at most %d pixels."
+msgstr "Szerokość i wysokość mogą wynosić maksymalnie %d px."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:58
+#, c-format
+msgid "The percentages must be between %d and %d."
+msgstr "Wartości procentowe muszą wynosić od %d do %d."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:34
+msgid "Enter a pattern for the new names."
+msgstr "Podaj wzór nowych nazw."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:36
+msgid "The pattern has an unknown placeholder. Use {name}, {number}, {date} or {time}."
+msgstr "Wzór zawiera nieznany symbol zastępczy. Użyj {name}, {number}, {date} lub {time}."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:37
+msgid "The pattern cannot contain “/”."
+msgstr "Wzór nie może zawierać znaku „/”."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:38
+msgid "The prefix cannot contain “/”."
+msgstr "Przedrostek nie może zawierać znaku „/”."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:39
+msgid "The suffix cannot contain “/”."
+msgstr "Przyrostek nie może zawierać znaku „/”."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:40
+#, c-format
+msgid "The first number must be between 0 and %d."
+msgstr "Pierwszy numer musi wynosić od 0 do %d."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:42
+#, c-format
+msgid "The number of digits must be between %d and %d."
+msgstr "Liczba cyfr musi wynosić od %d do %d."
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:150
+msgid "No folder selected"
+msgstr "Nie wybrano katalogu"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:166
+msgid "EXIF data such as the camera and date is kept; XMP, IPTC and comments are removed"
+msgstr "Dane EXIF, takie jak aparat i data, zostają zachowane; XMP, IPTC i komentarze są usuwane"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:171
+msgid "Use the metadata button of each image. Images you do not edit keep all their metadata"
+msgstr "Użyj przycisku metadanych przy każdym obrazie. Obrazy, których nie zmienisz, zachowają wszystkie metadane"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:175
+msgid "EXIF, XMP, IPTC and comments are removed from every image"
+msgstr "Z każdego obrazu są usuwane dane EXIF, XMP, IPTC i komentarze"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:190
+msgid "Pixels, maximum size; 0 adapts to the other side"
+msgstr "Piksele, maksymalny rozmiar; 0 dopasowuje do drugiego boku"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:191
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:132
+msgid "Pixels"
+msgstr "Piksele"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
+msgid "Scale"
+msgstr "Skala"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:146
+msgid "Width"
+msgstr "Szerokość"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:197
+msgid "Percentage of the original size"
+msgstr "Procent oryginalnego rozmiaru"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:198
+msgid "Percentage of the original width"
+msgstr "Procent oryginalnej szerokości"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:8
+msgid "Original Name"
+msgstr "Oryginalna nazwa"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:13
+msgid "Sequential Number"
+msgstr "Numer kolejny"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:18
+msgid "Date"
+msgstr "Data"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:23
+msgid "Time"
+msgstr "Godzina"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:30
+msgid "Conversion"
+msgstr "Konwersja"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:38
+msgid "Convert"
+msgstr "Konwertuj"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:39
+msgid "Convert the Selected Images"
+msgstr "Konwertuj zaznaczone obrazy"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:52
+msgid "Output"
+msgstr "Wyjście"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:55
+msgid "Output Folder"
+msgstr "Katalog docelowy"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:74
+msgid "Format"
+msgstr "Format"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:88
+msgid "Quality"
+msgstr "Jakość"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:89
+msgid "Higher values keep more detail and produce larger files"
+msgstr "Wyższe wartości zachowują więcej szczegółów i dają większe pliki"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:103
+msgid "Compression Level"
+msgstr "Poziom kompresji"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:104
+msgid "Higher values produce smaller files but take longer"
+msgstr "Wyższe wartości dają mniejsze pliki, ale trwa to dłużej"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:120
+msgid "Size"
+msgstr "Rozmiar"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:123
+msgid "Resize Images"
+msgstr "Zmień rozmiar obrazów"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:124
+msgid "Change the size of the converted images"
+msgstr "Zmienia rozmiar przekonwertowanych obrazów"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:128
+msgid "Unit"
+msgstr "Jednostka"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:133
+msgid "Percentage"
+msgstr "Procent"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:141
+msgid "Keep Aspect Ratio"
+msgstr "Zachowaj proporcje"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:160
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:187
+msgid "Height"
+msgstr "Wysokość"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:188
+msgid "Percentage of the original height"
+msgstr "Procent oryginalnej wysokości"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:206
+msgid "File Names"
+msgstr "Nazwy plików"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:209
+msgid "Rename Files"
+msgstr "Zmień nazwy plików"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:210
+msgid "Give the converted images new names built from a pattern"
+msgstr "Nadaje przekonwertowanym obrazom nowe nazwy według wzoru"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:214
+msgid "Pattern"
+msgstr "Wzór"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:219
+msgid "Insert Placeholder"
+msgstr "Wstaw symbol zastępczy"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:230
+msgid "Placeholders"
+msgstr "Symbole zastępcze"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:231
+msgid "{name} original name · {number} sequential number · {date} and {time} when the photo was taken, or else last modified"
+msgstr "{name} oryginalna nazwa · {number} numer kolejny · {date} i {time} wykonania zdjęcia lub, jeśli ich brak, ostatniej modyfikacji"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:238
+msgid "Prefix"
+msgstr "Przedrostek"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:243
+msgid "Suffix"
+msgstr "Przyrostek"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:248
+msgid "First Number"
+msgstr "Pierwszy numer"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:262
+msgid "Number Digits"
+msgstr "Liczba cyfr"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:263
+msgid "Zeros are added in front, for example 001"
+msgstr "Z przodu są dodawane zera, na przykład 001"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:277
+msgid "Example"
+msgstr "Przykład"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:289
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:292
+#: src/modules/Metadata/ui/metadata-dialog.ui:6
+#: src/modules/Metadata/ui/metadata-dialog.ui:15
+msgid "Metadata"
+msgstr "Metadane"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:297
+msgid "Remove All"
+msgstr "Usuń wszystkie"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:298
+msgid "Keep EXIF Only"
+msgstr "Zachowaj tylko EXIF"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:299
+msgid "Choose per Image"
+msgstr "Wybierz dla każdego obrazu"
+
+#: src/modules/Conversion/ui/ConversionProgressDialog.vala:23
+msgid "Cancelling after the current image…"
+msgstr "Anulowanie po bieżącym obrazie…"
+
+#: src/modules/Conversion/ui/ConversionProgressDialog.vala:30
+#, c-format
+msgid "%u of %u"
+msgstr "%u z %u"
+
+#: src/modules/Conversion/ui/conversion-progress-dialog.ui:6
+msgid "Converting Images"
+msgstr "Konwertowanie obrazów"
+
+#: src/modules/Conversion/ui/conversion-progress-dialog.ui:19
+msgid "Converting Images…"
+msgstr "Konwertowanie obrazów…"
+
+#: src/modules/Conversion/ui/conversion-progress-dialog.ui:43
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:29
+#, c-format
+msgid "Saved as %s"
+msgstr "Zapisano jako %s"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:30
+#, c-format
+msgid "%s → %s · %d × %d → %d × %d"
+msgstr "%s → %s · %d × %d → %d × %d"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:37
+msgid "Size reduction"
+msgstr "Zmniejszenie rozmiaru"
+
+#: src/modules/Conversion/ui/ConversionResultRow.vala:37
+msgid "Size increase"
+msgstr "Zwiększenie rozmiaru"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:52
+msgid "Conversion Cancelled"
+msgstr "Anulowano konwersję"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:55
+msgid "No Images Converted"
+msgstr "Nie przekonwertowano żadnego obrazu"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:58
+msgid "Conversion Finished with Errors"
+msgstr "Konwersja zakończona z błędami"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:61
+msgid "Conversion Finished"
+msgstr "Konwersja zakończona"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:65
+#, c-format
+msgid "The converted images take up %s less space."
+msgstr "Przekonwertowane obrazy zajmują o %s mniej miejsca."
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:66
+#, c-format
+msgid "The converted images take up %s more space."
+msgstr "Przekonwertowane obrazy zajmują o %s więcej miejsca."
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:79
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:118
+msgid "Space Saved"
+msgstr "Zaoszczędzone miejsce"
+
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:82
+msgid "Size Increase"
+msgstr "Zwiększenie rozmiaru"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:6
+msgid "Conversion Report"
+msgstr "Raport konwersji"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:16
+msgid "Open Output Folder"
+msgstr "Otwórz katalog docelowy"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:59
+msgid "Summary"
+msgstr "Podsumowanie"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:62
+msgid "Converted Images"
+msgstr "Przekonwertowane obrazy"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:76
+msgid "Failed Images"
+msgstr "Obrazy z błędami"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:90
+msgid "Original Size"
+msgstr "Oryginalny rozmiar"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:104
+msgid "Converted Size"
+msgstr "Rozmiar po konwersji"
+
+#: src/modules/Conversion/ui/conversion-report-dialog.ui:132
+msgid "Size Change"
+msgstr "Zmiana rozmiaru"
+
+#: src/modules/Metadata/services/MetadataReaderService.vala:35
+#: src/modules/Metadata/ui/MetadataDialog.vala:66
+msgid "Comment"
+msgstr "Komentarz"
+
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#, c-format
+msgid "%u of %u kept"
+msgstr "Zachowano: %u z %u"
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:28
+msgid "No Metadata"
+msgstr "Brak metadanych"
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:29
+msgid "This image has no metadata to remove."
+msgstr "Ten obraz nie ma metadanych do usunięcia."
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:41
+msgid "Turn off a category to remove it entirely, or expand it to choose the tags to keep. The orientation is applied to the image and the old thumbnail is always removed."
+msgstr "Wyłącz kategorię, aby usunąć ją w całości, lub rozwiń ją, aby wybrać znaczniki do zachowania. Orientacja jest stosowana do obrazu, a stara miniatura jest zawsze usuwana."
+
+#: src/modules/Metadata/ui/metadata-tag-row.ui:13
+msgid "Keep this tag"
+msgstr "Zachowaj ten znacznik"
+
+#: data/io.github.dprietob.redux.desktop.in:2
+#: data/io.github.dprietob.redux.metainfo.xml.in:5
+msgid "Redux"
+msgstr "Redux"
+
+#: data/io.github.dprietob.redux.desktop.in:3
+msgid "Image Converter"
+msgstr "Konwerter obrazów"
+
+#: data/io.github.dprietob.redux.desktop.in:4
+#: data/io.github.dprietob.redux.metainfo.xml.in:6
+msgid "Convert, compress and resize images"
+msgstr "Konwertowanie, kompresja i zmiana rozmiaru obrazów"
+
+#: data/io.github.dprietob.redux.desktop.in:10
+msgid "image;picture;photo;convert;compress;resize;webp;jpeg;png;"
+msgstr "obraz;zdjęcie;fotografia;konwertuj;kompresuj;zmień rozmiar;image;photo;webp;jpeg;png;"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:12
+msgid "Daniel Prieto"
+msgstr "Daniel Prieto"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:16
+msgid "Redux is a simple and fast batch image converter."
+msgstr "Redux to prosty i szybki konwerter wielu obrazów naraz."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:19
+msgid "Pick a set of images, choose the output format, quality and size, and convert them all at once. When it finishes, Redux shows how much space you saved."
+msgstr "Wybierz zestaw obrazów, format wyjściowy, jakość i rozmiar, a następnie przekonwertuj je wszystkie naraz. Po zakończeniu Redux pokazuje, ile miejsca zaoszczędzono."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:24
+msgid "Features:"
+msgstr "Funkcje:"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:26
+msgid "Convert images to WebP, JPEG and PNG."
+msgstr "Konwersja obrazów do formatów WebP, JPEG i PNG."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:27
+msgid "Adjust the quality of WebP and JPEG images and the compression level of PNG images."
+msgstr "Dostosowanie jakości obrazów WebP i JPEG oraz poziomu kompresji obrazów PNG."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:28
+msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
+msgstr "Zmiana rozmiaru obrazów w pikselach lub procentowo, z zachowaniem proporcji lub bez."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:29
+msgid "Rename the converted images with a pattern."
+msgstr "Zmiana nazw przekonwertowanych obrazów według wzoru."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:30
+msgid "Keep or remove the metadata of every image."
+msgstr "Zachowywanie lub usuwanie metadanych każdego obrazu."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:31
+msgid "See a report with the size reduction of every image."
+msgstr "Raport ze zmniejszeniem rozmiaru każdego obrazu."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:32
+msgid "Light and dark styles."
+msgstr "Jasny i ciemny styl."
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:44
+msgid "Choose the output format, quality, size, file names and metadata"
+msgstr "Wybór formatu wyjściowego, jakości, rozmiaru, nazw plików i metadanych"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:48
+msgid "Pick the images to convert"
+msgstr "Wybór obrazów do konwersji"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:52
+msgid "Rename the converted images with a pattern"
+msgstr "Zmiana nazw przekonwertowanych obrazów według wzoru"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:56
+msgid "Choose the metadata each image keeps"
+msgstr "Wybór metadanych zachowywanych w każdym obrazie"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:60
+msgid "See how much space you saved"
+msgstr "Podgląd zaoszczędzonego miejsca"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:64
+msgid "Review the result of every image"
+msgstr "Przegląd wyniku dla każdego obrazu"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:68
+msgid "Light style"
+msgstr "Jasny styl"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:72
+msgid "Image list in the light style"
+msgstr "Lista obrazów w jasnym stylu"
+
+#: data/io.github.dprietob.redux.metainfo.xml.in:85
+msgid "Initial release."
+msgstr "Pierwsze wydanie."
