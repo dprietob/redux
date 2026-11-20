@@ -25,7 +25,7 @@ namespace Redux.Tests {
         try {
             image.save(file.get_path(), "png");
             var info = file.query_info(FileAttribute.STANDARD_SIZE, FileQueryInfoFlags.NONE);
-            return new Images.SourceImage(file, name, "image/png", info.get_size());
+            return new Images.SourceImage(file, name, "image/png", info.get_size(), file.get_path());
         } catch (Error error) {
             GLib.error("Could not write the test image %s: %s", name, error.message);
         }
@@ -63,7 +63,7 @@ namespace Redux.Tests {
             metadata.save_file(file.get_path());
 
             var info = file.query_info(FileAttribute.STANDARD_SIZE, FileQueryInfoFlags.NONE);
-            return new Images.SourceImage(file, name, "image/jpeg", info.get_size());
+            return new Images.SourceImage(file, name, "image/jpeg", info.get_size(), file.get_path());
         } catch (Error error) {
             GLib.error("Could not write the test image %s: %s", name, error.message);
         }

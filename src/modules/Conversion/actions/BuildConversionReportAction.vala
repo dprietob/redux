@@ -12,11 +12,13 @@ namespace Redux.Conversion {
             size_reduction_service = new SizeReductionService();
         }
 
-        public ConversionReport execute(ConversionResult[] results, File? output_directory, bool cancelled)
+        public ConversionReport execute(ConversionResult[] results, File? output_directory, bool cancelled,
+            double duration_seconds)
         {
             var report = new ConversionReport() {
                 output_directory = output_directory,
-                cancelled = cancelled
+                cancelled = cancelled,
+                duration_seconds = duration_seconds
             };
 
             foreach (var result in results) {

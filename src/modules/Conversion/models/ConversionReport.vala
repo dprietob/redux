@@ -15,6 +15,7 @@ namespace Redux.Conversion {
         // Bytes saved by the converted images; negative when they grew.
         public int64 saved_size { get; set; default = 0; }
         public double reduction_percentage { get; set; default = 0; }
+        public double duration_seconds { get; set; default = 0; }
 
         public ConversionReport ()
         {

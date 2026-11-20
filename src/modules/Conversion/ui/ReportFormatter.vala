@@ -16,5 +16,28 @@ namespace Redux.Conversion {
         {
             return "%.1f %%".printf(value);
         }
+
+        // The one-line outcome of a conversion, shared by the report and the
+        // notification.
+        public static string headline(ConversionReport report)
+        {
+            if (report.cancelled) {
+                return _("Conversion Cancelled");
+            }
+            if (report.converted_count == 0) {
+                return _("No Images Converted");
+            }
+            if (report.failed_count > 0) {
+                return _("Conversion Finished with Errors");
+            }
+            return _("Conversion Finished");
+        }
+
+        public static string space_change(ConversionReport report)
+        {
+            return report.saved_size >= 0
+                ? _("The converted images take up %s less space.").printf(format_size(report.saved_size))
+                : _("The converted images take up %s more space.").printf(format_size(-report.saved_size));
+        }
     }
 }

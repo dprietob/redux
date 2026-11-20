@@ -7,6 +7,9 @@ namespace Redux.Images {
 
         private ImageFileService image_file_service;
         private LoadImageFilesAction load_image_files_action;
+        private LoadImagePreviewAction load_image_preview_action;
+
+        public const int PREVIEW_SIZE = 256;
 
         public GLib.ListStore images { get; private set; }
 
@@ -14,6 +17,7 @@ namespace Redux.Images {
         {
             image_file_service = new ImageFileService();
             load_image_files_action = new LoadImageFilesAction(image_file_service);
+            load_image_preview_action = new LoadImagePreviewAction();
 
             images = new GLib.ListStore(typeof (SourceImage));
         }
@@ -35,6 +39,20 @@ namespace Redux.Images {
                 }
             }
             return added;
+        }
+
+        // Returns a small preview of the image, or null when it cannot be read.
+        public async Gdk.Pixbuf? load_preview(SourceImage image)
+        {
+            try {
+                return yield load_image_preview_action.execute(image.file, PREVIEW_SIZE, null);
+            } catch (Error error) {
+                // The preview is a convenience: without it the tooltip still
+                // shows where the image is, and the conversion reports the
+                // problem if the image is really unreadable.
+                debug("No preview for %s: %s", image.file.get_uri(), error.message);
+                return null;
+            }
         }
 
         public void remove(SourceImage image)

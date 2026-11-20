@@ -97,7 +97,7 @@ namespace Redux.Tests {
             } catch (Error error) {
                 GLib.error("Could not write the broken image: %s", error.message);
             }
-            var source = new SourceImage(broken, "broken.png", "image/png", 12);
+            var source = new SourceImage(broken, "broken.png", "image/png", 12, broken.get_path());
 
             var result = convert_image(source, settings_for(output, OutputFormat.WEBP));
             assert_false(result.succeeded);

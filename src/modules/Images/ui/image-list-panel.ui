@@ -56,6 +56,14 @@
                 <property name="primary">true</property>
               </object>
             </child>
+            <child type="end">
+              <object class="GtkButton" id="options_button">
+                <property name="icon-name">preferences-system-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Conversion Options</property>
+                <property name="action-name">win.show-conversion-options</property>
+                <property name="visible">false</property>
+              </object>
+            </child>
           </object>
         </child>
         <property name="content">

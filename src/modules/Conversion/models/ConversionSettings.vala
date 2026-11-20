@@ -14,8 +14,12 @@ namespace Redux.Conversion {
         public const int MAXIMUM_START_NUMBER = 999999;
         public const int MINIMUM_DIGITS = 1;
         public const int MAXIMUM_DIGITS = 9;
+        // Conversions shorter than this finish while the user is still watching.
+        public const int NOTIFICATION_MINIMUM_SECONDS = 10;
 
         public File? output_directory { get; set; default = null; }
+        // Where the user knows the output folder to be, for display only.
+        public string output_directory_display_path { get; set; default = ""; }
         public OutputFormat output_format { get; set; default = OutputFormat.WEBP; }
         public int quality { get; set; default = 80; }
         public int compression_level { get; set; default = 6; }
@@ -33,6 +37,7 @@ namespace Redux.Conversion {
         public string rename_suffix { get; set; default = ""; }
         public int rename_start_number { get; set; default = 1; }
         public int rename_digits { get; set; default = 3; }
+        public bool notify_when_finished { get; set; default = true; }
 
         // Returns an independent snapshot, so a running conversion is not
         // affected by later changes made in the interface.
@@ -56,7 +61,8 @@ namespace Redux.Conversion {
                        rename_prefix = rename_prefix,
                        rename_suffix = rename_suffix,
                        rename_start_number = rename_start_number,
-                       rename_digits = rename_digits
+                       rename_digits = rename_digits,
+                       notify_when_finished = notify_when_finished
             };
         }
     }

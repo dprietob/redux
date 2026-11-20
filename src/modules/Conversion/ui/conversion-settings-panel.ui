@@ -304,6 +304,17 @@
                 </child>
               </object>
             </child>
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Notifications</property>
+                <child>
+                  <object class="AdwSwitchRow" id="notify_row">
+                    <property name="title" translatable="yes">Notify When Finished</property>
+                    <property name="subtitle-lines">2</property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </property>
       </object>

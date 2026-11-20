@@ -49,21 +49,15 @@ namespace Redux.Conversion {
         {
             if (report.cancelled) {
                 status_icon.icon_name = "process-stop-symbolic";
-                headline_label.label = _("Conversion Cancelled");
             } else if (report.converted_count == 0) {
                 status_icon.icon_name = "dialog-error-symbolic";
-                headline_label.label = _("No Images Converted");
             } else if (report.failed_count > 0) {
                 status_icon.icon_name = "dialog-warning-symbolic";
-                headline_label.label = _("Conversion Finished with Errors");
             } else {
                 status_icon.icon_name = "object-select-symbolic";
-                headline_label.label = _("Conversion Finished");
             }
-
-            description_label.label = report.saved_size >= 0
-                ? _("The converted images take up %s less space.").printf(format_size(report.saved_size))
-                : _("The converted images take up %s more space.").printf(format_size(-report.saved_size));
+            headline_label.label = ReportFormatter.headline(report);
+            description_label.label = ReportFormatter.space_change(report);
             description_label.visible = report.converted_count > 0;
         }
 

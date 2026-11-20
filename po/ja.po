@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 22:52+0100\n"
+"POT-Creation-Date: 2026-11-20 23:13+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Japanese\n"
@@ -20,35 +20,35 @@ msgstr ""
 msgid "Redux converts batches of images to WebP, JPEG or PNG, adjusting their quality and size. It can also rename them with a pattern and remove their metadata, and it shows a report of the space saved. Your original images are never modified."
 msgstr "Redux は画像を一括で WebP、JPEG、PNG に変換し、画質とサイズを調整します。パターンによる名前の変更やメタデータの削除も行え、節約できた容量をレポートで表示します。元の画像が変更されることはありません。"
 
-#: src/Window.vala:73 src/modules/Images/ui/image-list-panel.ui:47
+#: src/Window.vala:77 src/modules/Images/ui/image-list-panel.ui:47
 #: data/ui/shortcuts-dialog.ui:11
 msgid "Add Images"
 msgstr "画像を追加"
 
-#: src/Window.vala:96 src/modules/Images/ui/image-list-panel.ui:38
+#: src/Window.vala:100 src/modules/Images/ui/image-list-panel.ui:38
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:148
 #: data/ui/shortcuts-dialog.ui:8
 msgid "Images"
 msgstr "画像"
 
-#: src/Window.vala:107
+#: src/Window.vala:111
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:63
 #: data/ui/shortcuts-dialog.ui:22
 msgid "Choose Output Folder"
 msgstr "出力フォルダーを選択"
 
-#: src/Window.vala:124
+#: src/Window.vala:128
 #, c-format
 msgid "The metadata of “%s” could not be read: %s"
 msgstr "「%s」のメタデータを読み込めませんでした: %s"
 
-#: src/Window.vala:182
+#: src/Window.vala:200
 #, c-format
 msgid "%u file was skipped because it is not a supported image or is already in the list."
 msgid_plural "%u files were skipped because they are not supported images or are already in the list."
 msgstr[0] "サポートされていない画像か、すでに一覧にあるため、%u 個のファイルをスキップしました。"
 
-#: src/modules/Images/ui/ImageListPanel.vala:82
+#: src/modules/Images/ui/ImageListPanel.vala:88
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u / %u 個を選択 · %s"
@@ -81,23 +81,27 @@ msgstr "Redux について"
 msgid "Main Menu"
 msgstr "メインメニュー"
 
-#: src/modules/Images/ui/image-list-panel.ui:69
+#: src/modules/Images/ui/image-list-panel.ui:62
+msgid "Conversion Options"
+msgstr "変換オプション"
+
+#: src/modules/Images/ui/image-list-panel.ui:77
 msgid "No Images"
 msgstr "画像がありません"
 
-#: src/modules/Images/ui/image-list-panel.ui:70
+#: src/modules/Images/ui/image-list-panel.ui:78
 msgid "Add the images you want to convert, or drop them here."
 msgstr "変換する画像を追加するか、ここにドロップしてください。"
 
-#: src/modules/Images/ui/image-list-panel.ui:73
+#: src/modules/Images/ui/image-list-panel.ui:81
 msgid "Add Images…"
 msgstr "画像を追加…"
 
-#: src/modules/Images/ui/image-list-panel.ui:123
+#: src/modules/Images/ui/image-list-panel.ui:131
 msgid "Select All"
 msgstr "すべて選択"
 
-#: src/modules/Images/ui/image-list-panel.ui:140
+#: src/modules/Images/ui/image-list-panel.ui:148
 msgid "Clear List"
 msgstr "一覧を消去"
 
@@ -199,45 +203,50 @@ msgstr "最初の番号は 0 から %d の間で指定してください。"
 msgid "The number of digits must be between %d and %d."
 msgstr "桁数は %d から %d の間で指定してください。"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:150
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:103
+#, c-format
+msgid "Send a notification when a conversion takes longer than %d seconds"
+msgstr "変換に %d 秒以上かかったときに通知を送信します"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:156
 msgid "No folder selected"
 msgstr "フォルダーが選択されていません"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:166
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:172
 msgid "EXIF data such as the camera and date is kept; XMP, IPTC and comments are removed"
 msgstr "カメラや日付などの EXIF データは保持され、XMP、IPTC、コメントは削除されます"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:171
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:177
 msgid "Use the metadata button of each image. Images you do not edit keep all their metadata"
 msgstr "各画像のメタデータボタンを使用します。編集しない画像はすべてのメタデータを保持します"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:175
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:181
 msgid "EXIF, XMP, IPTC and comments are removed from every image"
 msgstr "すべての画像から EXIF、XMP、IPTC、コメントを削除します"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:190
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:196
 msgid "Pixels, maximum size; 0 adapts to the other side"
 msgstr "ピクセル単位の最大サイズ。0 にするともう一方の辺に合わせます"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:191
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:197
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:132
 msgid "Pixels"
 msgstr "ピクセル"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:201
 msgid "Scale"
 msgstr "拡大縮小"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:201
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:146
 msgid "Width"
 msgstr "幅"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:197
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:203
 msgid "Percentage of the original size"
 msgstr "元のサイズに対するパーセンテージ"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:198
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:204
 msgid "Percentage of the original width"
 msgstr "元の幅に対するパーセンテージ"
 
@@ -403,6 +412,14 @@ msgstr "EXIF のみ保持"
 msgid "Choose per Image"
 msgstr "画像ごとに選択"
 
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:309
+msgid "Notifications"
+msgstr "通知"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:312
+msgid "Notify When Finished"
+msgstr "完了時に通知"
+
 #: src/modules/Conversion/ui/ConversionProgressDialog.vala:23
 msgid "Cancelling after the current image…"
 msgstr "現在の画像の処理後にキャンセルします…"
@@ -442,38 +459,12 @@ msgstr "サイズの削減"
 msgid "Size increase"
 msgstr "サイズの増加"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:52
-msgid "Conversion Cancelled"
-msgstr "変換をキャンセルしました"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:55
-msgid "No Images Converted"
-msgstr "変換された画像はありません"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:58
-msgid "Conversion Finished with Errors"
-msgstr "変換は完了しましたがエラーがありました"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:61
-msgid "Conversion Finished"
-msgstr "変換が完了しました"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:65
-#, c-format
-msgid "The converted images take up %s less space."
-msgstr "変換後の画像は容量が %s 減りました。"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:66
-#, c-format
-msgid "The converted images take up %s more space."
-msgstr "変換後の画像は容量が %s 増えました。"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:79
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:73
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:118
 msgid "Space Saved"
 msgstr "節約できた容量"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:82
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:76
 msgid "Size Increase"
 msgstr "サイズの増加"
 

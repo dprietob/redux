@@ -6,8 +6,9 @@
     <property name="title">Redux</property>
     <property name="default-width">1000</property>
     <property name="default-height">680</property>
-    <property name="width-request">720</property>
-    <property name="height-request">480</property>
+    <!-- Smallest size GNOME supports on phones. -->
+    <property name="width-request">360</property>
+    <property name="height-request">294</property>
     <property name="content">
       <object class="AdwToastOverlay" id="toast_overlay">
         <property name="child">
@@ -19,5 +20,13 @@
         </property>
       </object>
     </property>
+    <!-- On narrow screens the image list and the conversion options become
+         two pages: the list first, the options one tap away. -->
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 720sp</condition>
+        <setter object="split_view" property="collapsed">True</setter>
+      </object>
+    </child>
   </template>
 </interface>

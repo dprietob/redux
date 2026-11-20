@@ -9,7 +9,10 @@ namespace Redux.Images {
             + FileAttribute.STANDARD_DISPLAY_NAME + ","
             + FileAttribute.STANDARD_TYPE + ","
             + FileAttribute.STANDARD_SIZE + ","
-            + FileAttribute.STANDARD_CONTENT_TYPE;
+            + FileAttribute.STANDARD_CONTENT_TYPE + ","
+            + FileLocationService.HOST_PATH_ATTRIBUTE;
+
+        private FileLocationService file_location_service = new FileLocationService();
 
         private const string[] CONVERTIBLE_CONTENT_TYPES = {
             "image/jpeg",
@@ -56,7 +59,8 @@ namespace Redux.Images {
             if (content_type == null || !is_supported(content_type)) {
                 return null;
             }
-            return new SourceImage(file, info.get_display_name(), content_type, info.get_size());
+            return new SourceImage(file, info.get_display_name(), content_type, info.get_size(),
+                       file_location_service.display_path_from_info(file, info));
         }
 
         private bool is_readable(string content_type)

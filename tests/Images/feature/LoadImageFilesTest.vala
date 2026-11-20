@@ -50,5 +50,36 @@ namespace Redux.Tests {
             assert_cmpuint(controller.images.get_n_items(), CompareOperator.EQ, 3);
             delete_recursively(input);
         });
+
+        Test.add_func("/images/preview/scales-and-keeps-orientation", () => {
+            var input = create_temporary_directory();
+            var photo = create_image_with_metadata(input, "camera.jpg");
+            var large = create_image(input, "large.png", 800, 400, false);
+            var loop = new MainLoop();
+            var action = new LoadImagePreviewAction();
+
+            action.execute.begin(large.file, 256, null, (object, result) => {
+                try {
+                    var preview = action.execute.end(result);
+                    assert_cmpint(preview.width, CompareOperator.EQ, 256);
+                    assert_cmpint(preview.height, CompareOperator.EQ, 128);
+                } catch (Error error) {
+                    GLib.error("Preview failed: %s", error.message);
+                }
+                action.execute.begin(photo.file, 256, null, (object, rotated_result) => {
+                    try {
+                        // The 64 × 48 photo is rotated by its camera orientation.
+                        var preview = action.execute.end(rotated_result);
+                        assert_cmpint(preview.width, CompareOperator.EQ, 48);
+                        assert_cmpint(preview.height, CompareOperator.EQ, 64);
+                    } catch (Error error) {
+                        GLib.error("Preview failed: %s", error.message);
+                    }
+                    loop.quit();
+                });
+            });
+            loop.run();
+            delete_recursively(input);
+        });
     }
 }

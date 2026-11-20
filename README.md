@@ -27,6 +27,10 @@ Redux lets you:
 - Remove the metadata of the images: all of it, everything except the EXIF
   data, or, image by image, whole categories (EXIF, XMP, IPTC, comment) or
   single tags such as the GPS position
+- Hover over an image to see a preview of it
+- Get a notification when a long conversion finishes (it can be turned off)
+- Use it on phones too: on narrow screens the image list and the options
+  become two pages
 - Review a report with the number of converted images, the size before and
   after, the space saved and the size change of every image
 

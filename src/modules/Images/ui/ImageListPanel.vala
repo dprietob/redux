@@ -18,6 +18,8 @@ namespace Redux.Images {
         private unowned Gtk.CheckButton select_all_button;
         [GtkChild]
         private unowned Gtk.Label summary_label;
+        [GtkChild]
+        private unowned Gtk.Button options_button;
 
         private ImageListController controller;
         // Set while the check reflects the selection, so that change is not
@@ -26,6 +28,9 @@ namespace Redux.Images {
 
         // Whether each image shows a button to choose the metadata it keeps.
         public bool metadata_editable { get; set; default = false; }
+        // Whether the panel is shown alone, on a narrow screen, and needs a
+        // button to reach the conversion options.
+        public bool narrow { get; set; default = false; }
 
         public signal void metadata_requested(SourceImage image);
         public signal void files_dropped(File[] files);
@@ -37,6 +42,7 @@ namespace Redux.Images {
             controller.images.items_changed.connect(() => refresh());
             select_all_button.toggled.connect(on_select_all_toggled);
             accept_dropped_files();
+            bind_property("narrow", options_button, "visible", BindingFlags.SYNC_CREATE);
 
             refresh();
         }
@@ -102,6 +108,7 @@ namespace Redux.Images {
             image.notify["selected"].connect(() => refresh_selection());
             row.remove_requested.connect((target) => controller.remove(target));
             row.metadata_requested.connect((target) => metadata_requested(target));
+            row.preview_requested.connect((target) => load_preview(row, target));
             enable_reordering(row, image);
             bind_property("metadata-editable", row, "metadata-editable", BindingFlags.SYNC_CREATE);
             return row;
@@ -133,6 +140,16 @@ namespace Redux.Images {
                 return true;
             });
             row.add_controller(target);
+        }
+
+        private void load_preview(ImageRow row, SourceImage image)
+        {
+            controller.load_preview.begin(image, (object, result) => {
+                var preview = controller.load_preview.end(result);
+                if (preview != null) {
+                    row.show_preview(preview);
+                }
+            });
         }
     }
 }

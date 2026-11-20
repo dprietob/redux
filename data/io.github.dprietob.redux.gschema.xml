@@ -129,5 +129,10 @@
       <summary>Number digits</summary>
       <description>Minimum number of digits of the {number} placeholder, padded with zeros.</description>
     </key>
+    <key name="notify-when-finished" type="b">
+      <default>true</default>
+      <summary>Notify when finished</summary>
+      <description>Whether a notification is sent when a long conversion finishes.</description>
+    </key>
   </schema>
 </schemalist>

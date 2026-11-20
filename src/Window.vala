@@ -12,6 +12,8 @@ namespace Redux {
     {
         private delegate void ActivateCallback();
 
+        private const string COMPLETION_NOTIFICATION_ID = "conversion-finished";
+
         [GtkChild]
         private unowned Adw.ToastOverlay toast_overlay;
         [GtkChild]
@@ -45,6 +47,7 @@ namespace Redux {
                 return true;
             });
 
+            split_view.bind_property("collapsed", image_panel, "narrow", BindingFlags.SYNC_CREATE);
             split_view.sidebar = image_panel;
             split_view.content = new ConversionSettingsPanel(conversion_controller);
 
@@ -57,6 +60,7 @@ namespace Redux {
             add_simple_action("clear-images", () => image_controller.clear());
             add_simple_action("choose-output-folder", on_choose_output_folder);
             convert_action = add_simple_action("convert", on_convert);
+            add_simple_action("show-conversion-options", () => split_view.show_content = true);
         }
 
         private SimpleAction add_simple_action(string name, owned ActivateCallback callback)
@@ -147,8 +151,22 @@ namespace Redux {
                 (object, result) => {
                 progress_dialog.force_close();
                 convert_action.set_enabled(true);
-                show_report(conversion_controller.convert.end(result));
+                var conversion_report = conversion_controller.convert.end(result);
+                if (conversion_controller.should_notify_completion(conversion_report)) {
+                    send_completion_notification(conversion_report);
+                }
+                show_report(conversion_report);
             });
+        }
+
+        private void send_completion_notification(ConversionReport conversion_report)
+        {
+            var notification = new Notification(ReportFormatter.headline(conversion_report));
+            if (conversion_report.converted_count > 0) {
+                notification.set_body(ReportFormatter.space_change(conversion_report));
+            }
+            notification.set_icon(new ThemedIcon(Config.APP_ID));
+            application.send_notification(COMPLETION_NOTIFICATION_ID, notification);
         }
 
         private void show_report(ConversionReport conversion_report)

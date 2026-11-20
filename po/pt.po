@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 22:52+0100\n"
+"POT-Creation-Date: 2026-11-20 23:13+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Portuguese\n"
@@ -20,36 +20,36 @@ msgstr ""
 msgid "Redux converts batches of images to WebP, JPEG or PNG, adjusting their quality and size. It can also rename them with a pattern and remove their metadata, and it shows a report of the space saved. Your original images are never modified."
 msgstr "O Redux converte lotes de imagens para WebP, JPEG ou PNG, ajustando a qualidade e o tamanho. Também pode mudar-lhes o nome com um padrão e remover os metadados, e mostra um relatório do espaço poupado. As imagens originais nunca são modificadas."
 
-#: src/Window.vala:73 src/modules/Images/ui/image-list-panel.ui:47
+#: src/Window.vala:77 src/modules/Images/ui/image-list-panel.ui:47
 #: data/ui/shortcuts-dialog.ui:11
 msgid "Add Images"
 msgstr "Adicionar imagens"
 
-#: src/Window.vala:96 src/modules/Images/ui/image-list-panel.ui:38
+#: src/Window.vala:100 src/modules/Images/ui/image-list-panel.ui:38
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:148
 #: data/ui/shortcuts-dialog.ui:8
 msgid "Images"
 msgstr "Imagens"
 
-#: src/Window.vala:107
+#: src/Window.vala:111
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:63
 #: data/ui/shortcuts-dialog.ui:22
 msgid "Choose Output Folder"
 msgstr "Escolher pasta de destino"
 
-#: src/Window.vala:124
+#: src/Window.vala:128
 #, c-format
 msgid "The metadata of “%s” could not be read: %s"
 msgstr "Não foi possível ler os metadados de «%s»: %s"
 
-#: src/Window.vala:182
+#: src/Window.vala:200
 #, c-format
 msgid "%u file was skipped because it is not a supported image or is already in the list."
 msgid_plural "%u files were skipped because they are not supported images or are already in the list."
 msgstr[0] "%u ficheiro foi ignorado porque não é uma imagem suportada ou já está na lista."
 msgstr[1] "%u ficheiros foram ignorados porque não são imagens suportadas ou já estão na lista."
 
-#: src/modules/Images/ui/ImageListPanel.vala:82
+#: src/modules/Images/ui/ImageListPanel.vala:88
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u de %u selecionadas · %s"
@@ -82,23 +82,27 @@ msgstr "Acerca do Redux"
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: src/modules/Images/ui/image-list-panel.ui:69
+#: src/modules/Images/ui/image-list-panel.ui:62
+msgid "Conversion Options"
+msgstr "Opções de conversão"
+
+#: src/modules/Images/ui/image-list-panel.ui:77
 msgid "No Images"
 msgstr "Sem imagens"
 
-#: src/modules/Images/ui/image-list-panel.ui:70
+#: src/modules/Images/ui/image-list-panel.ui:78
 msgid "Add the images you want to convert, or drop them here."
 msgstr "Adicione as imagens que pretende converter ou largue-as aqui."
 
-#: src/modules/Images/ui/image-list-panel.ui:73
+#: src/modules/Images/ui/image-list-panel.ui:81
 msgid "Add Images…"
 msgstr "Adicionar imagens…"
 
-#: src/modules/Images/ui/image-list-panel.ui:123
+#: src/modules/Images/ui/image-list-panel.ui:131
 msgid "Select All"
 msgstr "Selecionar tudo"
 
-#: src/modules/Images/ui/image-list-panel.ui:140
+#: src/modules/Images/ui/image-list-panel.ui:148
 msgid "Clear List"
 msgstr "Limpar lista"
 
@@ -200,45 +204,50 @@ msgstr "O primeiro número tem de estar entre 0 e %d."
 msgid "The number of digits must be between %d and %d."
 msgstr "O número de dígitos tem de estar entre %d e %d."
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:150
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:103
+#, c-format
+msgid "Send a notification when a conversion takes longer than %d seconds"
+msgstr "Enviar uma notificação quando uma conversão demorar mais de %d segundos"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:156
 msgid "No folder selected"
 msgstr "Nenhuma pasta selecionada"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:166
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:172
 msgid "EXIF data such as the camera and date is kept; XMP, IPTC and comments are removed"
 msgstr "São mantidos os dados EXIF, como a câmara e a data; são removidos XMP, IPTC e comentários"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:171
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:177
 msgid "Use the metadata button of each image. Images you do not edit keep all their metadata"
 msgstr "Utilize o botão de metadados de cada imagem. As imagens que não editar mantêm todos os metadados"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:175
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:181
 msgid "EXIF, XMP, IPTC and comments are removed from every image"
 msgstr "São removidos EXIF, XMP, IPTC e comentários de todas as imagens"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:190
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:196
 msgid "Pixels, maximum size; 0 adapts to the other side"
 msgstr "Píxeis, tamanho máximo; 0 adapta-se ao outro lado"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:191
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:197
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:132
 msgid "Pixels"
 msgstr "Píxeis"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:201
 msgid "Scale"
 msgstr "Escala"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:201
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:146
 msgid "Width"
 msgstr "Largura"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:197
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:203
 msgid "Percentage of the original size"
 msgstr "Percentagem do tamanho original"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:198
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:204
 msgid "Percentage of the original width"
 msgstr "Percentagem da largura original"
 
@@ -404,6 +413,14 @@ msgstr "Manter só EXIF"
 msgid "Choose per Image"
 msgstr "Escolher por imagem"
 
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:309
+msgid "Notifications"
+msgstr "Notificações"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:312
+msgid "Notify When Finished"
+msgstr "Notificar ao terminar"
+
 #: src/modules/Conversion/ui/ConversionProgressDialog.vala:23
 msgid "Cancelling after the current image…"
 msgstr "A cancelar após a imagem atual…"
@@ -443,38 +460,12 @@ msgstr "Redução de tamanho"
 msgid "Size increase"
 msgstr "Aumento de tamanho"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:52
-msgid "Conversion Cancelled"
-msgstr "Conversão cancelada"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:55
-msgid "No Images Converted"
-msgstr "Nenhuma imagem convertida"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:58
-msgid "Conversion Finished with Errors"
-msgstr "Conversão concluída com erros"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:61
-msgid "Conversion Finished"
-msgstr "Conversão concluída"
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:65
-#, c-format
-msgid "The converted images take up %s less space."
-msgstr "As imagens convertidas ocupam menos %s."
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:66
-#, c-format
-msgid "The converted images take up %s more space."
-msgstr "As imagens convertidas ocupam mais %s."
-
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:79
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:73
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:118
 msgid "Space Saved"
 msgstr "Espaço poupado"
 
-#: src/modules/Conversion/ui/ConversionReportDialog.vala:82
+#: src/modules/Conversion/ui/ConversionReportDialog.vala:76
 msgid "Size Increase"
 msgstr "Aumento de tamanho"
 

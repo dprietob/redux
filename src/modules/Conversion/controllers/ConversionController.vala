@@ -14,6 +14,8 @@ namespace Redux.Conversion {
         private ConvertImageAction convert_image_action;
         private PlanOutputFilesAction plan_output_files_action;
         private PreviewFileNameAction preview_file_name_action;
+        private ChooseOutputDirectoryAction choose_output_directory_action;
+        private CheckCompletionNotificationAction check_completion_notification_action;
         private BuildConversionReportAction build_report_action;
         private GLib.Settings preferences;
         private Cancellable? current_stop_request = null;
@@ -25,6 +27,8 @@ namespace Redux.Conversion {
             convert_image_action = new ConvertImageAction();
             plan_output_files_action = new PlanOutputFilesAction();
             preview_file_name_action = new PreviewFileNameAction();
+            choose_output_directory_action = new ChooseOutputDirectoryAction();
+            check_completion_notification_action = new CheckCompletionNotificationAction();
             build_report_action = new BuildConversionReportAction();
             conversion_settings = new ConversionSettings();
 
@@ -34,7 +38,7 @@ namespace Redux.Conversion {
 
         public void set_output_directory(File directory)
         {
-            conversion_settings.output_directory = directory;
+            choose_output_directory_action.execute(conversion_settings, directory);
         }
 
         // Validates the conversion and decides the converted file of every
@@ -90,6 +94,7 @@ namespace Redux.Conversion {
             SourceFunc resume = convert.callback;
 
             new Thread<void> ("redux-conversion", () => {
+                var timer = new Timer();
                 ConversionResult[] results = {};
                 for (uint index = 0; index < images.length && !stop_request.is_cancelled(); index++) {
                     var image = images[index];
@@ -100,13 +105,20 @@ namespace Redux.Conversion {
                     });
                     results += convert_image_action.execute(image, targets[index], settings);
                 }
-                report = build_report_action.execute(results, settings.output_directory, stop_request.is_cancelled());
+                report = build_report_action.execute(results, settings.output_directory, stop_request.is_cancelled(),
+                timer.elapsed());
                 Idle.add((owned) resume);
             });
 
             yield;
             current_stop_request = null;
             return report;
+        }
+
+        // Whether the user should get a notification about this finished conversion.
+        public bool should_notify_completion(ConversionReport report)
+        {
+            return check_completion_notification_action.execute(report, conversion_settings.notify_when_finished);
         }
 
         // Asks the running conversion to stop before the next image.
@@ -125,7 +137,7 @@ namespace Redux.Conversion {
                 "output-format", "quality", "compression-level", "resize-enabled", "resize-mode",
                 "width", "height", "width-percentage", "height-percentage", "keep-aspect-ratio", "metadata-mode",
                 "rename-enabled", "rename-pattern", "rename-prefix", "rename-suffix", "rename-start-number",
-                "rename-digits",
+                "rename-digits", "notify-when-finished",
             };
             foreach (var key in keys) {
                 preferences.bind(key, conversion_settings, key, SettingsBindFlags.DEFAULT);

@@ -15,6 +15,7 @@ redux_tests = executable(
     'Conversion/feature/ConvertImageMetadataTest.vala',
     'Metadata/unit/MetadataReaderServiceTest.vala',
     'Images/feature/LoadImageFilesTest.vala',
+    'Images/unit/FileLocationServiceTest.vala',
   ),
   redux_vapis,
   dependencies: [

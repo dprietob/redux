@@ -45,6 +45,8 @@ namespace Redux.Conversion {
         private unowned Adw.SpinRow digits_row;
         [GtkChild]
         private unowned Adw.ActionRow preview_row;
+        [GtkChild]
+        private unowned Adw.SwitchRow notify_row;
 
         private const string[] RENAME_PROPERTIES = {
             "rename-pattern", "rename-prefix", "rename-suffix", "rename-start-number", "rename-digits", "output-format",
@@ -60,7 +62,7 @@ namespace Redux.Conversion {
             bind_widgets();
             install_placeholder_action();
 
-            settings.notify["output-directory"].connect(() => refresh_output_directory());
+            settings.notify["output-directory-display-path"].connect(() => refresh_output_directory());
             settings.notify["output-format"].connect(() => refresh_format_rows());
             settings.notify["resize-mode"].connect(() => refresh_resize_rows());
             settings.notify["keep-aspect-ratio"].connect(() => refresh_resize_rows());
@@ -97,6 +99,9 @@ namespace Redux.Conversion {
             settings.bind_property("rename-suffix", suffix_row, "text", flags);
             settings.bind_property("rename-start-number", start_number_row, "value", flags);
             settings.bind_property("rename-digits", digits_row, "value", flags);
+            settings.bind_property("notify-when-finished", notify_row, "active", flags);
+            notify_row.subtitle = _("Send a notification when a conversion takes longer than %d seconds").printf(
+                ConversionSettings.NOTIFICATION_MINIMUM_SECONDS);
         }
 
         // Lets the placeholder menu insert its placeholder at the cursor of the
@@ -146,8 +151,9 @@ namespace Redux.Conversion {
 
         private void refresh_output_directory()
         {
-            var directory = settings.output_directory;
-            output_directory_row.subtitle = directory != null ? directory.get_path() : _("No folder selected");
+            output_directory_row.subtitle = settings.output_directory != null
+                ? settings.output_directory_display_path
+                : _("No folder selected");
         }
 
         // Lossy formats use a quality factor; PNG uses a compression level.

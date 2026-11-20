@@ -21,7 +21,7 @@ namespace Redux.Tests {
     private SourceImage named_image(string path)
     {
         var file = File.new_for_path(path);
-        return new SourceImage(file, file.get_basename(), "image/png", 0);
+        return new SourceImage(file, file.get_basename(), "image/png", 0, path);
     }
 
     public void register_output_path_service_tests()
