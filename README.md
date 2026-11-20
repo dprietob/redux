@@ -20,6 +20,9 @@ Redux lets you:
   images
 - Resize the images in pixels or by percentage, keeping the aspect ratio or not
 - Choose the folder where the converted images are written
+- Optionally rename the converted images with a pattern made of the original
+  name, a sequential number, the date and time the photo was taken, a prefix
+  and a suffix, with a live example of the result
 - Remove the metadata of the images: all of it, everything except the EXIF
   data, or, image by image, whole categories (EXIF, XMP, IPTC, comment) or
   single tags such as the GPS position

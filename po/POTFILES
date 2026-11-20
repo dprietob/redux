@@ -6,6 +6,7 @@ src/modules/Images/ui/image-list-panel.ui
 src/modules/Images/ui/image-row.ui
 src/modules/Conversion/services/ImageEncoderService.vala
 src/modules/Conversion/validators/ConversionValidator.vala
+src/modules/Conversion/validators/FileNamePatternValidator.vala
 src/modules/Conversion/ui/ConversionSettingsPanel.vala
 src/modules/Conversion/ui/conversion-settings-panel.ui
 src/modules/Conversion/ui/ConversionProgressDialog.vala

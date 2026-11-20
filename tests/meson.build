@@ -8,6 +8,8 @@ redux_tests = executable(
     'Conversion/unit/SizeReductionServiceTest.vala',
     'Conversion/unit/BuildConversionReportActionTest.vala',
     'Conversion/unit/ConversionValidatorTest.vala',
+    'Conversion/unit/FileNamePatternServiceTest.vala',
+    'Conversion/feature/RenameOutputFilesTest.vala',
     'Conversion/feature/ConvertImageTest.vala',
     'Conversion/feature/ConversionControllerTest.vala',
     'Conversion/feature/ConvertImageMetadataTest.vala',

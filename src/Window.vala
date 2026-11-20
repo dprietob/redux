@@ -45,7 +45,7 @@ namespace Redux {
             });
 
             split_view.sidebar = image_panel;
-            split_view.content = new ConversionSettingsPanel(conversion_controller.conversion_settings);
+            split_view.content = new ConversionSettingsPanel(conversion_controller);
 
             register_actions();
         }
@@ -145,7 +145,8 @@ namespace Redux {
         private void on_convert()
         {
             var images = image_controller.selected_images();
-            var error = conversion_controller.validate(images);
+            File[] targets;
+            var error = conversion_controller.prepare(images, out targets);
             if (error != null) {
                 report(error);
                 return;
@@ -156,7 +157,7 @@ namespace Redux {
             progress_dialog.present(this);
             convert_action.set_enabled(false);
 
-            conversion_controller.convert.begin(images,
+            conversion_controller.convert.begin(images, targets,
                 (completed, total, current_name) => progress_dialog.update(completed, total, current_name),
                 (object, result) => {
                 progress_dialog.force_close();

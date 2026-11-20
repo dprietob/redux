@@ -97,5 +97,37 @@
       <summary>Metadata</summary>
       <description>Whether the converted images lose all their metadata, keep only the EXIF data or keep what is chosen for each image.</description>
     </key>
+    <key name="rename-enabled" type="b">
+      <default>false</default>
+      <summary>Rename files</summary>
+      <description>Whether the converted images get new names built from the rename pattern.</description>
+    </key>
+    <key name="rename-pattern" type="s">
+      <default>"{name}"</default>
+      <summary>Rename pattern</summary>
+      <description>Pattern of the new names, with the placeholders {name}, {number}, {date} and {time}.</description>
+    </key>
+    <key name="rename-prefix" type="s">
+      <default>""</default>
+      <summary>Name prefix</summary>
+      <description>Text added before every new name.</description>
+    </key>
+    <key name="rename-suffix" type="s">
+      <default>""</default>
+      <summary>Name suffix</summary>
+      <description>Text added after every new name, before the extension.</description>
+    </key>
+    <key name="rename-start-number" type="i">
+      <range min="0" max="999999"/>
+      <default>1</default>
+      <summary>First number</summary>
+      <description>Number given to the first image by the {number} placeholder.</description>
+    </key>
+    <key name="rename-digits" type="i">
+      <range min="1" max="9"/>
+      <default>3</default>
+      <summary>Number digits</summary>
+      <description>Minimum number of digits of the {number} placeholder, padded with zeros.</description>
+    </key>
   </schema>
 </schemalist>

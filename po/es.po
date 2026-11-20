@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 20:40+0100\n"
+"POT-Creation-Date: 2026-11-20 21:02+0100\n"
 "PO-Revision-Date: 2026-11-20 19:16+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Spanish\n"
@@ -35,7 +35,7 @@ msgid "Images"
 msgstr "Imágenes"
 
 #: src/Window.vala:122
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:39
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:63
 msgid "Choose Output Folder"
 msgstr "Elegir carpeta de salida"
 
@@ -44,7 +44,7 @@ msgstr "Elegir carpeta de salida"
 msgid "The metadata of “%s” could not be read: %s"
 msgstr "No se han podido leer los metadatos de «%s»: %s"
 
-#: src/Window.vala:190
+#: src/Window.vala:191
 #, c-format
 msgid "%u file was skipped because it is not a supported image or is already in the list."
 msgid_plural "%u files were skipped because they are not supported images or are already in the list."
@@ -149,168 +149,274 @@ msgid "Converting would overwrite an original image. Choose another output folde
 msgstr "La conversión sobrescribiría una imagen original. Elige otra carpeta de salida u otro formato."
 
 #: src/modules/Conversion/validators/ConversionValidator.vala:46
+msgid "Several images would be saved with the same name. Add {number} to the rename pattern."
+msgstr "Varias imágenes se guardarían con el mismo nombre. Añade {number} al patrón de renombrado."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:47
 msgid "Several images would be saved with the same name. Convert them separately."
 msgstr "Varias imágenes se guardarían con el mismo nombre. Conviértelas por separado."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:47
+#: src/modules/Conversion/validators/ConversionValidator.vala:48
+msgid "The date of an image could not be read to build its new name."
+msgstr "No se ha podido leer la fecha de una imagen para construir su nuevo nombre."
+
+#: src/modules/Conversion/validators/ConversionValidator.vala:49
 #, c-format
 msgid "The quality must be between %d and %d."
 msgstr "La calidad debe estar entre %d y %d."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:49
+#: src/modules/Conversion/validators/ConversionValidator.vala:51
 #, c-format
 msgid "The compression level must be between %d and %d."
 msgstr "El nivel de compresión debe estar entre %d y %d."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:52
+#: src/modules/Conversion/validators/ConversionValidator.vala:54
 msgid "Enter a width, a height or both."
 msgstr "Introduce un ancho, un alto o ambos."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:53
+#: src/modules/Conversion/validators/ConversionValidator.vala:55
 msgid "Enter both a width and a height."
 msgstr "Introduce un ancho y un alto."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:54
+#: src/modules/Conversion/validators/ConversionValidator.vala:56
 #, c-format
 msgid "The width and height must be at most %d pixels."
 msgstr "El ancho y el alto deben ser como máximo de %d píxeles."
 
-#: src/modules/Conversion/validators/ConversionValidator.vala:56
+#: src/modules/Conversion/validators/ConversionValidator.vala:58
 #, c-format
 msgid "The percentages must be between %d and %d."
 msgstr "Los porcentajes deben estar entre %d y %d."
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:89
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:34
+msgid "Enter a pattern for the new names."
+msgstr "Introduce un patrón para los nuevos nombres."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:36
+msgid "The pattern has an unknown placeholder. Use {name}, {number}, {date} or {time}."
+msgstr "El patrón tiene un marcador desconocido. Usa {name}, {number}, {date} o {time}."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:37
+msgid "The pattern cannot contain “/”."
+msgstr "El patrón no puede contener «/»."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:38
+msgid "The prefix cannot contain “/”."
+msgstr "El prefijo no puede contener «/»."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:39
+msgid "The suffix cannot contain “/”."
+msgstr "El sufijo no puede contener «/»."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:40
+#, c-format
+msgid "The first number must be between 0 and %d."
+msgstr "El primer número debe estar entre 0 y %d."
+
+#: src/modules/Conversion/validators/FileNamePatternValidator.vala:42
+#, c-format
+msgid "The number of digits must be between %d and %d."
+msgstr "El número de dígitos debe estar entre %d y %d."
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:150
 msgid "No folder selected"
 msgstr "Ninguna carpeta seleccionada"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:105
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:166
 msgid "EXIF data such as the camera and date is kept; XMP, IPTC and comments are removed"
 msgstr "Se conservan los datos EXIF, como la cámara y la fecha; se eliminan XMP, IPTC y los comentarios"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:171
 msgid "Use the metadata button of each image. Images you do not edit keep all their metadata"
 msgstr "Usa el botón de metadatos de cada imagen. Las imágenes que no edites conservan todos sus metadatos"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:114
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:175
 msgid "EXIF, XMP, IPTC and comments are removed from every image"
 msgstr "Se eliminan EXIF, XMP, IPTC y los comentarios de todas las imágenes"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:129
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:190
 msgid "Pixels, maximum size; 0 adapts to the other side"
 msgstr "Píxeles, tamaño máximo; 0 se adapta al otro lado"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:130
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:108
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:191
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:132
 msgid "Pixels"
 msgstr "Píxeles"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:134
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
 msgid "Scale"
 msgstr "Escala"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:134
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:122
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:195
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:146
 msgid "Width"
 msgstr "Ancho"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:136
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:197
 msgid "Percentage of the original size"
 msgstr "Porcentaje del tamaño original"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:137
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:198
 msgid "Percentage of the original width"
 msgstr "Porcentaje del ancho original"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:6
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:8
+msgid "Original Name"
+msgstr "Nombre original"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:13
+msgid "Sequential Number"
+msgstr "Número secuencial"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:18
+msgid "Date"
+msgstr "Fecha"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:23
+msgid "Time"
+msgstr "Hora"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:30
 msgid "Conversion"
 msgstr "Conversión"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:14
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:38
 msgid "Convert"
 msgstr "Convertir"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:15
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:39
 msgid "Convert the Selected Images"
 msgstr "Convertir las imágenes seleccionadas"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:28
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:52
 msgid "Output"
 msgstr "Salida"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:31
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:55
 msgid "Output Folder"
 msgstr "Carpeta de salida"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:50
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:74
 msgid "Format"
 msgstr "Formato"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:64
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:88
 msgid "Quality"
 msgstr "Calidad"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:65
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:89
 msgid "Higher values keep more detail and produce larger files"
 msgstr "Los valores altos conservan más detalle y generan ficheros más grandes"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:79
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:103
 msgid "Compression Level"
 msgstr "Nivel de compresión"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:80
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:104
 msgid "Higher values produce smaller files but take longer"
 msgstr "Los valores altos generan ficheros más pequeños pero tardan más"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:96
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:120
 msgid "Size"
 msgstr "Tamaño"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:99
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:123
 msgid "Resize Images"
 msgstr "Redimensionar imágenes"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:100
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:124
 msgid "Change the size of the converted images"
 msgstr "Cambia el tamaño de las imágenes convertidas"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:104
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:128
 msgid "Unit"
 msgstr "Unidad"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:109
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:133
 msgid "Percentage"
 msgstr "Porcentaje"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:117
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:141
 msgid "Keep Aspect Ratio"
 msgstr "Mantener la relación de aspecto"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:136
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:163
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:160
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:187
 msgid "Height"
 msgstr "Alto"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:164
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:188
 msgid "Percentage of the original height"
 msgstr "Porcentaje del alto original"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:182
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:185
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:206
+msgid "File Names"
+msgstr "Nombres de fichero"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:209
+msgid "Rename Files"
+msgstr "Renombrar ficheros"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:210
+msgid "Give the converted images new names built from a pattern"
+msgstr "Da a las imágenes convertidas nombres nuevos a partir de un patrón"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:214
+msgid "Pattern"
+msgstr "Patrón"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:219
+msgid "Insert Placeholder"
+msgstr "Insertar marcador"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:230
+msgid "Placeholders"
+msgstr "Marcadores"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:231
+msgid "{name} original name · {number} sequential number · {date} and {time} when the photo was taken, or else last modified"
+msgstr "{name} nombre original · {number} número secuencial · {date} y {time} cuándo se tomó la foto o, si no consta, cuándo se modificó"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:238
+msgid "Prefix"
+msgstr "Prefijo"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:243
+msgid "Suffix"
+msgstr "Sufijo"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:248
+msgid "First Number"
+msgstr "Primer número"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:262
+msgid "Number Digits"
+msgstr "Dígitos del número"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:263
+msgid "Zeros are added in front, for example 001"
+msgstr "Se añaden ceros delante, por ejemplo 001"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:277
+msgid "Example"
+msgstr "Ejemplo"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:289
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:292
 #: src/modules/Metadata/ui/metadata-dialog.ui:6
 #: src/modules/Metadata/ui/metadata-dialog.ui:15
 msgid "Metadata"
 msgstr "Metadatos"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:190
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:297
 msgid "Remove All"
 msgstr "Eliminar todo"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:191
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:298
 msgid "Keep EXIF Only"
 msgstr "Conservar solo EXIF"
 
-#: src/modules/Conversion/ui/conversion-settings-panel.ui:192
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:299
 msgid "Choose per Image"
 msgstr "Elegir por imagen"
 

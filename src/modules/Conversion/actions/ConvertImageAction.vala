@@ -10,7 +10,6 @@ namespace Redux.Conversion {
 
         private ImageResizeService image_resize_service;
         private ImageEncoderService image_encoder_service;
-        private OutputPathService output_path_service;
         private SizeReductionService size_reduction_service;
         private MetadataWriterService metadata_writer_service;
 
@@ -18,17 +17,14 @@ namespace Redux.Conversion {
         {
             image_resize_service = new ImageResizeService();
             image_encoder_service = new ImageEncoderService();
-            output_path_service = new OutputPathService();
             size_reduction_service = new SizeReductionService();
             metadata_writer_service = new MetadataWriterService();
         }
 
         // Never throws: a failure is described by the returned result, so one
         // broken image does not stop the rest of the batch.
-        public ConversionResult execute(SourceImage source, ConversionSettings settings)
+        public ConversionResult execute(SourceImage source, File target, ConversionSettings settings)
         {
-            var target = output_path_service.target_file(source.file, settings.output_directory,
-                    settings.output_format);
             var result = new ConversionResult() {
                 source_name = source.name,
                 output_name = target.get_basename(),

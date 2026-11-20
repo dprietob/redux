@@ -8,7 +8,7 @@ namespace Redux.Tests {
     private ConversionResult convert_and_check(SourceImage source, ConversionSettings settings,
         string expected_format, int expected_width, int expected_height)
     {
-        var result = new ConvertImageAction().execute(source, settings);
+        var result = convert_image(source, settings);
         if (!result.succeeded) {
             GLib.error("Conversion failed: %s", result.error_message);
         }
@@ -80,7 +80,7 @@ namespace Redux.Tests {
             }
             var source = new SourceImage(broken, "broken.png", "image/png", 12);
 
-            var result = new ConvertImageAction().execute(source, settings_for(output, OutputFormat.WEBP));
+            var result = convert_image(source, settings_for(output, OutputFormat.WEBP));
             assert_false(result.succeeded);
             assert_cmpstr(result.error_message, CompareOperator.NE, "");
             delete_recursively(input);

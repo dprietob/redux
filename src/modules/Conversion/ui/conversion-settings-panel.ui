@@ -2,6 +2,30 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="libadwaita" version="1.5"/>
+  <menu id="placeholder_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Original Name</attribute>
+        <attribute name="action">rename.insert-placeholder</attribute>
+        <attribute name="target">{name}</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Sequential Number</attribute>
+        <attribute name="action">rename.insert-placeholder</attribute>
+        <attribute name="target">{number}</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Date</attribute>
+        <attribute name="action">rename.insert-placeholder</attribute>
+        <attribute name="target">{date}</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Time</attribute>
+        <attribute name="action">rename.insert-placeholder</attribute>
+        <attribute name="target">{time}</attribute>
+      </item>
+    </section>
+  </menu>
   <template class="ReduxConversionConversionSettingsPanel" parent="AdwNavigationPage">
     <property name="title" translatable="yes">Conversion</property>
     <property name="tag">conversion</property>
@@ -171,6 +195,89 @@
                             <property name="page-increment">10</property>
                           </object>
                         </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">File Names</property>
+                <child>
+                  <object class="AdwExpanderRow" id="rename_row">
+                    <property name="title" translatable="yes">Rename Files</property>
+                    <property name="subtitle" translatable="yes">Give the converted images new names built from a pattern</property>
+                    <property name="show-enable-switch">true</property>
+                    <child>
+                      <object class="AdwEntryRow" id="pattern_row">
+                        <property name="title" translatable="yes">Pattern</property>
+                        <child type="suffix">
+                          <object class="GtkMenuButton">
+                            <property name="icon-name">list-add-symbolic</property>
+                            <property name="valign">center</property>
+                            <property name="tooltip-text" translatable="yes">Insert Placeholder</property>
+                            <property name="menu-model">placeholder_menu</property>
+                            <style>
+                              <class name="flat"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">Placeholders</property>
+                        <property name="subtitle" translatable="yes">{name} original name · {number} sequential number · {date} and {time} when the photo was taken, or else last modified</property>
+                        <property name="subtitle-lines">3</property>
+                        <property name="activatable">false</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="prefix_row">
+                        <property name="title" translatable="yes">Prefix</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="suffix_row">
+                        <property name="title" translatable="yes">Suffix</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSpinRow" id="start_number_row">
+                        <property name="title" translatable="yes">First Number</property>
+                        <property name="numeric">true</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">999999</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">10</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSpinRow" id="digits_row">
+                        <property name="title" translatable="yes">Number Digits</property>
+                        <property name="subtitle" translatable="yes">Zeros are added in front, for example 001</property>
+                        <property name="numeric">true</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">1</property>
+                            <property name="upper">9</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">1</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow" id="preview_row">
+                        <property name="title" translatable="yes">Example</property>
+                        <property name="use-markup">false</property>
+                        <property name="subtitle-lines">3</property>
+                        <property name="activatable">false</property>
                       </object>
                     </child>
                   </object>

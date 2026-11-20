@@ -94,6 +94,26 @@ namespace Redux.Tests {
         }
     }
 
+    // Creates a conversion controller with default preferences. The tests
+    // share one in-memory settings backend, so a test changing an option
+    // would otherwise affect the next one.
+    public Conversion.ConversionController create_conversion_controller()
+    {
+        var preferences = new GLib.Settings(Config.APP_ID);
+        foreach (var key in preferences.settings_schema.list_keys()) {
+            preferences.reset(key);
+        }
+        return new Conversion.ConversionController();
+    }
+
+    // Converts one image into the file the conversion would choose for it.
+    public Conversion.ConversionResult convert_image(Images.SourceImage source, Conversion.ConversionSettings settings)
+    {
+        var target = new Conversion.OutputPathService().target_file(source.file, settings.output_directory,
+                settings.output_format);
+        return new Conversion.ConvertImageAction().execute(source, target, settings);
+    }
+
     public Conversion.ConversionSettings settings_for(File output_directory, Conversion.OutputFormat format)
     {
         return new Conversion.ConversionSettings() {

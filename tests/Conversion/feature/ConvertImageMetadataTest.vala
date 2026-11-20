@@ -10,7 +10,7 @@ namespace Redux.Tests {
     {
         var settings = settings_for(output, format);
         settings.metadata_mode = mode;
-        var result = new ConvertImageAction().execute(source, settings);
+        var result = convert_image(source, settings);
         if (!result.succeeded) {
             GLib.error("Conversion failed: %s", result.error_message);
         }

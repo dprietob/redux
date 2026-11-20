@@ -31,24 +31,49 @@ namespace Redux.Conversion {
         private unowned Adw.SpinRow height_percentage_row;
         [GtkChild]
         private unowned Adw.ComboRow metadata_mode_row;
+        [GtkChild]
+        private unowned Adw.ExpanderRow rename_row;
+        [GtkChild]
+        private unowned Adw.EntryRow pattern_row;
+        [GtkChild]
+        private unowned Adw.EntryRow prefix_row;
+        [GtkChild]
+        private unowned Adw.EntryRow suffix_row;
+        [GtkChild]
+        private unowned Adw.SpinRow start_number_row;
+        [GtkChild]
+        private unowned Adw.SpinRow digits_row;
+        [GtkChild]
+        private unowned Adw.ActionRow preview_row;
 
+        private const string[] RENAME_PROPERTIES = {
+            "rename-pattern", "rename-prefix", "rename-suffix", "rename-start-number", "rename-digits", "output-format",
+        };
+
+        private ConversionController controller;
         private ConversionSettings settings;
 
-        public ConversionSettingsPanel (ConversionSettings settings)
+        public ConversionSettingsPanel (ConversionController controller)
         {
-            this.settings = settings;
+            this.controller = controller;
+            settings = controller.conversion_settings;
             bind_widgets();
+            install_placeholder_action();
 
             settings.notify["output-directory"].connect(() => refresh_output_directory());
             settings.notify["output-format"].connect(() => refresh_format_rows());
             settings.notify["resize-mode"].connect(() => refresh_resize_rows());
             settings.notify["keep-aspect-ratio"].connect(() => refresh_resize_rows());
             settings.notify["metadata-mode"].connect(() => refresh_metadata_row());
+            foreach (var property_name in RENAME_PROPERTIES) {
+                settings.notify[property_name].connect(() => refresh_preview());
+            }
 
             refresh_output_directory();
             refresh_format_rows();
             refresh_resize_rows();
             refresh_metadata_row();
+            refresh_preview();
         }
 
         private void bind_widgets()
@@ -66,6 +91,42 @@ namespace Redux.Conversion {
             settings.bind_property("width-percentage", width_percentage_row, "value", flags);
             settings.bind_property("height-percentage", height_percentage_row, "value", flags);
             bind_enum_to_selection("metadata-mode", metadata_mode_row);
+            settings.bind_property("rename-enabled", rename_row, "enable-expansion", flags);
+            settings.bind_property("rename-pattern", pattern_row, "text", flags);
+            settings.bind_property("rename-prefix", prefix_row, "text", flags);
+            settings.bind_property("rename-suffix", suffix_row, "text", flags);
+            settings.bind_property("rename-start-number", start_number_row, "value", flags);
+            settings.bind_property("rename-digits", digits_row, "value", flags);
+        }
+
+        // Lets the placeholder menu insert its placeholder at the cursor of the
+        // pattern entry.
+        private void install_placeholder_action()
+        {
+            var insert_action = new SimpleAction("insert-placeholder", VariantType.STRING);
+            insert_action.activate.connect((parameter) => {
+                var position = pattern_row.get_position();
+                pattern_row.insert_text(parameter.get_string(), -1, ref position);
+                pattern_row.set_position(position);
+                pattern_row.grab_focus();
+            });
+
+            var actions = new SimpleActionGroup();
+            actions.add_action(insert_action);
+            insert_action_group("rename", actions);
+        }
+
+        // Shows the name a sample photo would get, or why the options are not valid.
+        private void refresh_preview()
+        {
+            string preview;
+            var error = controller.preview_file_name(out preview);
+            preview_row.subtitle = error ?? preview;
+            if (error != null) {
+                preview_row.add_css_class("error");
+            } else {
+                preview_row.remove_css_class("error");
+            }
         }
 
         // Binds an enum setting to a combo row whose items follow the enum order.

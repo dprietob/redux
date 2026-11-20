@@ -12,6 +12,8 @@ namespace Redux.Conversion {
     {
 
         private ConvertImageAction convert_image_action;
+        private PlanOutputFilesAction plan_output_files_action;
+        private PreviewFileNameAction preview_file_name_action;
         private BuildConversionReportAction build_report_action;
         private GLib.Settings preferences;
         private Cancellable? current_stop_request = null;
@@ -21,6 +23,8 @@ namespace Redux.Conversion {
         public ConversionController ()
         {
             convert_image_action = new ConvertImageAction();
+            plan_output_files_action = new PlanOutputFilesAction();
+            preview_file_name_action = new PreviewFileNameAction();
             build_report_action = new BuildConversionReportAction();
             conversion_settings = new ConversionSettings();
 
@@ -33,10 +37,35 @@ namespace Redux.Conversion {
             conversion_settings.output_directory = directory;
         }
 
-        // Returns the first validation error, or null when the conversion can start.
-        public string? validate(SourceImage[] images)
+        // Validates the conversion and decides the converted file of every
+        // image. Returns the first error, or null when the conversion can start.
+        public string? prepare(SourceImage[] images, out File[] targets)
         {
-            return new ConversionValidator(images, conversion_settings).validate();
+            targets = {};
+            var error = new ConversionValidator(images, conversion_settings).validate();
+            if (error != null) {
+                return error;
+            }
+
+            try {
+                targets = plan_output_files_action.execute(images, conversion_settings);
+            } catch (Error plan_error) {
+                return plan_error.message;
+            }
+            return null;
+        }
+
+        // Builds an example of the new file names. Returns the validation
+        // error of the rename options instead when they are not valid.
+        public string? preview_file_name(out string preview)
+        {
+            preview = "";
+            var error = new FileNamePatternValidator(conversion_settings).validate();
+            if (error != null) {
+                return error;
+            }
+            preview = preview_file_name_action.execute(conversion_settings);
+            return null;
         }
 
         // Converts the images one by one and returns the report, also when the
@@ -46,12 +75,14 @@ namespace Redux.Conversion {
         // The stop request is not taken as a Cancellable parameter on purpose:
         // Vala binds such a parameter to the async call itself, which would
         // then finish without any report once cancelled.
-        public async ConversionReport convert(SourceImage[] requested_images, owned ProgressFunc progress)
+        public async ConversionReport convert(SourceImage[] requested_images, File[] requested_targets,
+            owned ProgressFunc progress)
         {
             // Async methods keep only a pointer to array arguments, which the
-            // caller may free while the worker thread still reads them; this
-            // copy holds its own reference to every image.
+            // caller may free while the worker thread still reads them; these
+            // copies hold their own reference to every image and file.
             SourceImage[] images = requested_images;
+            File[] targets = requested_targets;
             var settings = conversion_settings.copy();
             var stop_request = new Cancellable();
             current_stop_request = stop_request;
@@ -67,7 +98,7 @@ namespace Redux.Conversion {
                         progress(completed, images.length, image.name);
                         return Source.REMOVE;
                     });
-                    results += convert_image_action.execute(image, settings);
+                    results += convert_image_action.execute(image, targets[index], settings);
                 }
                 report = build_report_action.execute(results, settings.output_directory, stop_request.is_cancelled());
                 Idle.add((owned) resume);
@@ -93,6 +124,8 @@ namespace Redux.Conversion {
             string[] keys = {
                 "output-format", "quality", "compression-level", "resize-enabled", "resize-mode",
                 "width", "height", "width-percentage", "height-percentage", "keep-aspect-ratio", "metadata-mode",
+                "rename-enabled", "rename-pattern", "rename-prefix", "rename-suffix", "rename-start-number",
+                "rename-digits",
             };
             foreach (var key in keys) {
                 preferences.bind(key, conversion_settings, key, SettingsBindFlags.DEFAULT);

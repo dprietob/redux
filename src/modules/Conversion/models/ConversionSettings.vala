@@ -11,6 +11,9 @@ namespace Redux.Conversion {
         public const int MAXIMUM_DIMENSION = 65535;
         public const int MINIMUM_PERCENTAGE = 1;
         public const int MAXIMUM_PERCENTAGE = 1000;
+        public const int MAXIMUM_START_NUMBER = 999999;
+        public const int MINIMUM_DIGITS = 1;
+        public const int MAXIMUM_DIGITS = 9;
 
         public File? output_directory { get; set; default = null; }
         public OutputFormat output_format { get; set; default = OutputFormat.WEBP; }
@@ -24,6 +27,12 @@ namespace Redux.Conversion {
         public int height_percentage { get; set; default = 50; }
         public bool keep_aspect_ratio { get; set; default = true; }
         public Metadata.MetadataMode metadata_mode { get; set; default = Metadata.MetadataMode.REMOVE_ALL; }
+        public bool rename_enabled { get; set; default = false; }
+        public string rename_pattern { get; set; default = "{name}"; }
+        public string rename_prefix { get; set; default = ""; }
+        public string rename_suffix { get; set; default = ""; }
+        public int rename_start_number { get; set; default = 1; }
+        public int rename_digits { get; set; default = 3; }
 
         // Returns an independent snapshot, so a running conversion is not
         // affected by later changes made in the interface.
@@ -41,7 +50,13 @@ namespace Redux.Conversion {
                        width_percentage = width_percentage,
                        height_percentage = height_percentage,
                        keep_aspect_ratio = keep_aspect_ratio,
-                       metadata_mode = metadata_mode
+                       metadata_mode = metadata_mode,
+                       rename_enabled = rename_enabled,
+                       rename_pattern = rename_pattern,
+                       rename_prefix = rename_prefix,
+                       rename_suffix = rename_suffix,
+                       rename_start_number = rename_start_number,
+                       rename_digits = rename_digits
             };
         }
     }

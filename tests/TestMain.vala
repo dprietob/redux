@@ -8,6 +8,8 @@ int main(string[] arguments)
     Redux.Tests.register_size_reduction_service_tests();
     Redux.Tests.register_build_conversion_report_action_tests();
     Redux.Tests.register_conversion_validator_tests();
+    Redux.Tests.register_file_name_pattern_service_tests();
+    Redux.Tests.register_rename_output_files_tests();
     Redux.Tests.register_convert_image_tests();
     Redux.Tests.register_conversion_controller_tests();
     Redux.Tests.register_convert_image_metadata_tests();

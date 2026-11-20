@@ -12,7 +12,9 @@ namespace Redux.Tests {
             create_image(input, "first.png", 32, 32, false),
             create_image(input, "second.png", 32, 32, false),
         };
-        controller.convert.begin(images, (completed, total, current_name) => {}, (owned) finished);
+        File[] targets;
+        assert_null(controller.prepare(images, out targets));
+        controller.convert.begin(images, targets, (completed, total, current_name) => {}, (owned) finished);
     }
 
     public void register_conversion_controller_tests()
@@ -25,16 +27,17 @@ namespace Redux.Tests {
                 create_image(input, "second.png", 60, 60, true),
             };
 
-            var controller = new ConversionController();
+            var controller = create_conversion_controller();
             controller.set_output_directory(output);
             controller.conversion_settings.output_format = OutputFormat.JPEG;
             controller.conversion_settings.resize_enabled = false;
-            assert_null(controller.validate(images));
+            File[] targets;
+            assert_null(controller.prepare(images, out targets));
 
             var loop = new MainLoop();
             uint progress_calls = 0;
             ConversionReport? report = null;
-            controller.convert.begin(images, (completed, total, current_name) => {
+            controller.convert.begin(images, targets, (completed, total, current_name) => {
                 assert_cmpuint(total, CompareOperator.EQ, 2);
                 progress_calls++;
             }, (object, result) => {
@@ -56,7 +59,7 @@ namespace Redux.Tests {
         Test.add_func("/conversion/controller/survives-caller-freeing-images", () => {
             var input = create_temporary_directory();
             var output = create_temporary_directory();
-            var controller = new ConversionController();
+            var controller = create_conversion_controller();
             controller.set_output_directory(output);
 
             var loop = new MainLoop();
@@ -82,14 +85,16 @@ namespace Redux.Tests {
                 create_image(input, "third.png", 16, 16, false),
             };
 
-            var controller = new ConversionController();
+            var controller = create_conversion_controller();
             controller.set_output_directory(output);
 
             // Stopping right after the conversion starts lets at most the image
             // already in progress finish.
+            File[] targets;
+            assert_null(controller.prepare(images, out targets));
             var loop = new MainLoop();
             ConversionReport? report = null;
-            controller.convert.begin(images, (completed, total, current_name) => {}, (object, result) => {
+            controller.convert.begin(images, targets, (completed, total, current_name) => {}, (object, result) => {
                 report = controller.convert.end(result);
                 loop.quit();
             });
