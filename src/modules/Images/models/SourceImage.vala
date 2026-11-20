@@ -9,6 +9,9 @@ namespace Redux.Images {
         public string content_type { get; construct; }
         public int64 size { get; construct; }
         public bool selected { get; set; default = true; }
+        // The metadata chosen to keep for this image; null until the user
+        // edits it, which means all of it is kept when editing per image.
+        public Metadata.MetadataSelection? metadata_selection { get; set; default = null; }
 
         public SourceImage (File file, string name, string content_type, int64 size)
         {

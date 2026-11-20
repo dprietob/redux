@@ -8,6 +8,9 @@
     <file alias="conversion-progress-dialog.ui" preprocess="xml-stripblanks">src/modules/Conversion/ui/conversion-progress-dialog.ui</file>
     <file alias="conversion-result-row.ui" preprocess="xml-stripblanks">src/modules/Conversion/ui/conversion-result-row.ui</file>
     <file alias="conversion-report-dialog.ui" preprocess="xml-stripblanks">src/modules/Conversion/ui/conversion-report-dialog.ui</file>
+    <file alias="metadata-dialog.ui" preprocess="xml-stripblanks">src/modules/Metadata/ui/metadata-dialog.ui</file>
+    <file alias="metadata-category-row.ui" preprocess="xml-stripblanks">src/modules/Metadata/ui/metadata-category-row.ui</file>
+    <file alias="metadata-tag-row.ui" preprocess="xml-stripblanks">src/modules/Metadata/ui/metadata-tag-row.ui</file>
   </gresource>
   <gresource prefix="/io/github/dprietob/redux/icons/scalable/apps">
     <file alias="io.github.dprietob.redux.svg" preprocess="xml-stripblanks">data/icons/hicolor/scalable/apps/io.github.dprietob.redux.svg</file>

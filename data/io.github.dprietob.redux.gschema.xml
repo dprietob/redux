@@ -9,6 +9,11 @@
     <value nick="pixels" value="0"/>
     <value nick="percentage" value="1"/>
   </enum>
+  <enum id="io.github.dprietob.redux.MetadataMode">
+    <value nick="remove-all" value="0"/>
+    <value nick="keep-exif" value="1"/>
+    <value nick="per-image" value="2"/>
+  </enum>
   <schema id="io.github.dprietob.redux" path="/io/github/dprietob/redux/">
     <key name="color-scheme" type="s">
       <choices>
@@ -86,6 +91,11 @@
       <default>true</default>
       <summary>Keep aspect ratio</summary>
       <description>Whether resizing preserves the proportions of the original image.</description>
+    </key>
+    <key name="metadata-mode" enum="io.github.dprietob.redux.MetadataMode">
+      <default>"remove-all"</default>
+      <summary>Metadata</summary>
+      <description>Whether the converted images lose all their metadata, keep only the EXIF data or keep what is chosen for each image.</description>
     </key>
   </schema>
 </schemalist>

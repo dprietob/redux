@@ -9,11 +9,15 @@ namespace Redux.Images {
         [GtkChild]
         private unowned Gtk.CheckButton check_button;
         [GtkChild]
+        private unowned Gtk.Button metadata_button;
+        [GtkChild]
         private unowned Gtk.Button remove_button;
 
         public SourceImage image { get; private set; }
+        public bool metadata_editable { get; set; default = false; }
 
         public signal void remove_requested(SourceImage image);
+        public signal void metadata_requested(SourceImage image);
 
         public ImageRow (SourceImage image)
         {
@@ -25,6 +29,8 @@ namespace Redux.Images {
 
             image.bind_property("selected", check_button, "active",
                 BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE);
+            bind_property("metadata-editable", metadata_button, "visible", BindingFlags.SYNC_CREATE);
+            metadata_button.clicked.connect(() => metadata_requested(image));
             remove_button.clicked.connect(() => remove_requested(image));
         }
     }

@@ -23,6 +23,7 @@ namespace Redux.Conversion {
         public int width_percentage { get; set; default = 50; }
         public int height_percentage { get; set; default = 50; }
         public bool keep_aspect_ratio { get; set; default = true; }
+        public Metadata.MetadataMode metadata_mode { get; set; default = Metadata.MetadataMode.REMOVE_ALL; }
 
         // Returns an independent snapshot, so a running conversion is not
         // affected by later changes made in the interface.
@@ -39,7 +40,8 @@ namespace Redux.Conversion {
                        height = height,
                        width_percentage = width_percentage,
                        height_percentage = height_percentage,
-                       keep_aspect_ratio = keep_aspect_ratio
+                       keep_aspect_ratio = keep_aspect_ratio,
+                       metadata_mode = metadata_mode
             };
         }
     }

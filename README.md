@@ -20,6 +20,9 @@ Redux lets you:
   images
 - Resize the images in pixels or by percentage, keeping the aspect ratio or not
 - Choose the folder where the converted images are written
+- Remove the metadata of the images: all of it, everything except the EXIF
+  data, or, image by image, whole categories (EXIF, XMP, IPTC, comment) or
+  single tags such as the GPS position
 - Review a report with the number of converted images, the size before and
   after, the space saved and the size change of every image
 
@@ -40,6 +43,10 @@ installed on the system. Lossy WebP images are encoded with libwebp directly,
 because GdkPixbuf does not honour the WebP quality. JPEG has no transparency,
 so transparent areas become white.
 
+Metadata is read and written with GExiv2. The camera orientation is applied
+to the pixels, so the orientation tag is reset, outdated EXIF thumbnails are
+dropped and the stored image size is updated. WebP files cannot hold IPTC data.
+
 Your conversion options are remembered between sessions with GSettings.
 Nothing leaves your computer.
 
@@ -48,7 +55,7 @@ Nothing leaves your computer.
 Install the build dependencies. On Fedora:
 
 ```shell
-sudo dnf install vala meson gtk4-devel libadwaita-devel gdk-pixbuf2-devel libwebp-devel
+sudo dnf install vala meson gtk4-devel libadwaita-devel gdk-pixbuf2-devel libwebp-devel libgexiv2-devel
 ```
 
 Build and run natively with Meson and Ninja:

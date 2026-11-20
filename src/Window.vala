@@ -1,5 +1,6 @@
 using Redux.Images;
 using Redux.Conversion;
+using Redux.Metadata;
 
 namespace Redux {
 
@@ -19,6 +20,7 @@ namespace Redux {
         private GLib.Settings settings;
         private ImageListController image_controller;
         private ConversionController conversion_controller;
+        private MetadataController metadata_controller;
         private SimpleAction convert_action;
 
         public Window (Gtk.Application application)
@@ -32,8 +34,17 @@ namespace Redux {
 
             image_controller = new ImageListController();
             conversion_controller = new ConversionController();
+            metadata_controller = new MetadataController();
 
-            split_view.sidebar = new ImageListPanel(image_controller);
+            var image_panel = new ImageListPanel(image_controller);
+            image_panel.metadata_requested.connect(on_metadata_requested);
+            conversion_controller.conversion_settings.bind_property("metadata-mode", image_panel, "metadata-editable",
+                BindingFlags.SYNC_CREATE, (binding, source, ref target) => {
+                target.set_boolean(source.get_enum() == MetadataMode.PER_IMAGE);
+                return true;
+            });
+
+            split_view.sidebar = image_panel;
             split_view.content = new ConversionSettingsPanel(conversion_controller.conversion_settings);
 
             register_actions();
@@ -118,6 +129,17 @@ namespace Redux {
                     return;
                 }
             });
+        }
+
+        private void on_metadata_requested(SourceImage image)
+        {
+            MetadataSelection? selection;
+            var error = metadata_controller.load(image, out selection);
+            if (error != null) {
+                report(_("The metadata of “%s” could not be read: %s").printf(image.name, error));
+                return;
+            }
+            new MetadataDialog(metadata_controller, image.name, selection).present(this);
         }
 
         private void on_convert()

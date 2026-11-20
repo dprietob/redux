@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 19:19+0100\n"
+"POT-Creation-Date: 2026-11-20 20:40+0100\n"
 "PO-Revision-Date: 2026-11-20 19:16+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Spanish\n"
@@ -21,38 +21,35 @@ msgstr ""
 msgid "Convert, compress and resize images"
 msgstr "Convierte, comprime y redimensiona imágenes"
 
-#: src/Window.vala:62 src/modules/Images/ui/image-list-panel.ui:43
+#: src/Window.vala:73 src/modules/Images/ui/image-list-panel.ui:43
 msgid "Open Folder"
 msgstr "Abrir carpeta"
 
-#: src/Window.vala:77 src/modules/Images/ui/image-list-panel.ui:50
+#: src/Window.vala:88 src/modules/Images/ui/image-list-panel.ui:50
 msgid "Add Images"
 msgstr "Añadir imágenes"
 
-#: src/Window.vala:100 src/modules/Images/ui/image-list-panel.ui:34
+#: src/Window.vala:111 src/modules/Images/ui/image-list-panel.ui:34
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:148
 msgid "Images"
 msgstr "Imágenes"
 
-#: src/Window.vala:111
+#: src/Window.vala:122
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:39
 msgid "Choose Output Folder"
 msgstr "Elegir carpeta de salida"
 
-#: src/Window.vala:168
+#: src/Window.vala:139
 #, c-format
-msgid ""
-"%u file was skipped because it is not a supported image or is already in the "
-"list."
-msgid_plural ""
-"%u files were skipped because they are not supported images or are already "
-"in the list."
-msgstr[0] ""
-"Se ha omitido %u fichero porque no es una imagen compatible o ya está en la "
-"lista."
-msgstr[1] ""
-"Se han omitido %u ficheros porque no son imágenes compatibles o ya están en "
-"la lista."
+msgid "The metadata of “%s” could not be read: %s"
+msgstr "No se han podido leer los metadatos de «%s»: %s"
+
+#: src/Window.vala:190
+#, c-format
+msgid "%u file was skipped because it is not a supported image or is already in the list."
+msgid_plural "%u files were skipped because they are not supported images or are already in the list."
+msgstr[0] "Se ha omitido %u fichero porque no es una imagen compatible o ya está en la lista."
+msgstr[1] "Se han omitido %u ficheros porque no son imágenes compatibles o ya están en la lista."
 
 #: src/modules/Images/validators/ImageDirectoryValidator.vala:24
 msgid "Choose a folder with images."
@@ -62,7 +59,7 @@ msgstr "Elige una carpeta con imágenes."
 msgid "The selected input folder does not exist."
 msgstr "La carpeta de entrada seleccionada no existe."
 
-#: src/modules/Images/ui/ImageListPanel.vala:62
+#: src/modules/Images/ui/ImageListPanel.vala:67
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr "%u de %u seleccionadas · %s"
@@ -119,7 +116,11 @@ msgstr "Vaciar lista"
 msgid "Include in Conversion"
 msgstr "Incluir en la conversión"
 
-#: src/modules/Images/ui/image-row.ui:19
+#: src/modules/Images/ui/image-row.ui:20
+msgid "Choose Metadata to Keep"
+msgstr "Elegir los metadatos que se conservan"
+
+#: src/modules/Images/ui/image-row.ui:30
 msgid "Remove from List"
 msgstr "Quitar de la lista"
 
@@ -144,18 +145,12 @@ msgid "The output folder is not writable."
 msgstr "No se puede escribir en la carpeta de salida."
 
 #: src/modules/Conversion/validators/ConversionValidator.vala:44
-msgid ""
-"Converting would overwrite an original image. Choose another output folder "
-"or format."
-msgstr ""
-"La conversión sobrescribiría una imagen original. Elige otra carpeta de "
-"salida u otro formato."
+msgid "Converting would overwrite an original image. Choose another output folder or format."
+msgstr "La conversión sobrescribiría una imagen original. Elige otra carpeta de salida u otro formato."
 
 #: src/modules/Conversion/validators/ConversionValidator.vala:46
-msgid ""
-"Several images would be saved with the same name. Convert them separately."
-msgstr ""
-"Varias imágenes se guardarían con el mismo nombre. Conviértelas por separado."
+msgid "Several images would be saved with the same name. Convert them separately."
+msgstr "Varias imágenes se guardarían con el mismo nombre. Conviértelas por separado."
 
 #: src/modules/Conversion/validators/ConversionValidator.vala:47
 #, c-format
@@ -185,33 +180,45 @@ msgstr "El ancho y el alto deben ser como máximo de %d píxeles."
 msgid "The percentages must be between %d and %d."
 msgstr "Los porcentajes deben estar entre %d y %d."
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:84
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:89
 msgid "No folder selected"
 msgstr "Ninguna carpeta seleccionada"
 
 #: src/modules/Conversion/ui/ConversionSettingsPanel.vala:105
+msgid "EXIF data such as the camera and date is kept; XMP, IPTC and comments are removed"
+msgstr "Se conservan los datos EXIF, como la cámara y la fecha; se eliminan XMP, IPTC y los comentarios"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+msgid "Use the metadata button of each image. Images you do not edit keep all their metadata"
+msgstr "Usa el botón de metadatos de cada imagen. Las imágenes que no edites conservan todos sus metadatos"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:114
+msgid "EXIF, XMP, IPTC and comments are removed from every image"
+msgstr "Se eliminan EXIF, XMP, IPTC y los comentarios de todas las imágenes"
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:129
 msgid "Pixels, maximum size; 0 adapts to the other side"
 msgstr "Píxeles, tamaño máximo; 0 se adapta al otro lado"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:106
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:130
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:108
 msgid "Pixels"
 msgstr "Píxeles"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:134
 msgid "Scale"
 msgstr "Escala"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:134
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:122
 msgid "Width"
 msgstr "Ancho"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:112
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:136
 msgid "Percentage of the original size"
 msgstr "Porcentaje del tamaño original"
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:113
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:137
 msgid "Percentage of the original width"
 msgstr "Porcentaje del ancho original"
 
@@ -287,6 +294,25 @@ msgstr "Alto"
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:164
 msgid "Percentage of the original height"
 msgstr "Porcentaje del alto original"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:182
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:185
+#: src/modules/Metadata/ui/metadata-dialog.ui:6
+#: src/modules/Metadata/ui/metadata-dialog.ui:15
+msgid "Metadata"
+msgstr "Metadatos"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:190
+msgid "Remove All"
+msgstr "Eliminar todo"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:191
+msgid "Keep EXIF Only"
+msgstr "Conservar solo EXIF"
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:192
+msgid "Choose per Image"
+msgstr "Elegir por imagen"
 
 #: src/modules/Conversion/ui/ConversionProgressDialog.vala:23
 msgid "Cancelling after the current image…"
@@ -394,6 +420,32 @@ msgstr "Tamaño convertido"
 msgid "Size Change"
 msgstr "Variación de tamaño"
 
+#: src/modules/Metadata/services/MetadataReaderService.vala:35
+#: src/modules/Metadata/ui/MetadataDialog.vala:66
+msgid "Comment"
+msgstr "Comentario"
+
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#, c-format
+msgid "%u of %u kept"
+msgstr "%u de %u conservadas"
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:28
+msgid "No Metadata"
+msgstr "Sin metadatos"
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:29
+msgid "This image has no metadata to remove."
+msgstr "Esta imagen no tiene metadatos que eliminar."
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:41
+msgid "Turn off a category to remove it entirely, or expand it to choose the tags to keep. The orientation is applied to the image and the old thumbnail is always removed."
+msgstr "Desactiva una categoría para eliminarla por completo, o despliégala para elegir las etiquetas que se conservan. La orientación se aplica a la imagen y la miniatura antigua siempre se elimina."
+
+#: src/modules/Metadata/ui/metadata-tag-row.ui:13
+msgid "Keep this tag"
+msgstr "Conservar esta etiqueta"
+
 #: data/io.github.dprietob.redux.desktop.in:2
 #: data/io.github.dprietob.redux.metainfo.xml.in:5
 msgid "Redux"
@@ -416,14 +468,8 @@ msgid "Redux is a simple, fast batch image converter."
 msgstr "Redux es un conversor de imágenes por lotes sencillo y rápido."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:19
-msgid ""
-"Pick a folder or a set of images, choose the output format, quality and "
-"size, and convert them all at once. When it finishes, Redux shows how much "
-"space you saved."
-msgstr ""
-"Elige una carpeta o un conjunto de imágenes, selecciona el formato de "
-"salida, la calidad y el tamaño, y conviértelas todas a la vez. Al terminar, "
-"Redux muestra cuánto espacio has ahorrado."
+msgid "Pick a folder or a set of images, choose the output format, quality and size, and convert them all at once. When it finishes, Redux shows how much space you saved."
+msgstr "Elige una carpeta o un conjunto de imágenes, selecciona el formato de salida, la calidad y el tamaño, y conviértelas todas a la vez. Al terminar, Redux muestra cuánto espacio has ahorrado."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:24
 msgid "Features:"
@@ -434,19 +480,12 @@ msgid "Convert images to WebP, JPEG and PNG."
 msgstr "Convierte imágenes a WebP, JPEG y PNG."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:27
-msgid ""
-"Adjust the quality of WebP and JPEG images and the compression level of PNG "
-"images."
-msgstr ""
-"Ajusta la calidad de las imágenes WebP y JPEG y el nivel de compresión de "
-"las imágenes PNG."
+msgid "Adjust the quality of WebP and JPEG images and the compression level of PNG images."
+msgstr "Ajusta la calidad de las imágenes WebP y JPEG y el nivel de compresión de las imágenes PNG."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:28
-msgid ""
-"Resize images in pixels or by percentage, keeping the aspect ratio or not."
-msgstr ""
-"Redimensiona imágenes en píxeles o por porcentaje, manteniendo o no la "
-"relación de aspecto."
+msgid "Resize images in pixels or by percentage, keeping the aspect ratio or not."
+msgstr "Redimensiona imágenes en píxeles o por porcentaje, manteniendo o no la relación de aspecto."
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:29
 msgid "Choose the input and output folders."

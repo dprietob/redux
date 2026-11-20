@@ -152,6 +152,8 @@ string locale_directory()
 
 int main(string[] arguments)
 {
+    // GExiv2 must be initialized once before any thread reads metadata.
+    GExiv2.initialize();
     use_local_schemas_if_present();
 
     Intl.setlocale(LocaleCategory.ALL, "");

@@ -27,6 +27,15 @@ subdir('po')
 
 # Business code shared by the application and the test suite.
 redux_module_sources = files(
+  'src/modules/Metadata/models/MetadataMode.vala',
+  'src/modules/Metadata/models/MetadataCategory.vala',
+  'src/modules/Metadata/models/MetadataTag.vala',
+  'src/modules/Metadata/models/MetadataSelection.vala',
+  'src/modules/Metadata/services/MetadataReaderService.vala',
+  'src/modules/Metadata/services/MetadataWriterService.vala',
+  'src/modules/Metadata/actions/LoadImageMetadataAction.vala',
+  'src/modules/Metadata/actions/SetMetadataCategoryKeptAction.vala',
+  'src/modules/Metadata/controllers/MetadataController.vala',
   'src/modules/Images/models/SourceImage.vala',
   'src/modules/Images/services/ImageFileService.vala',
   'src/modules/Images/validators/ImageDirectoryValidator.vala',
@@ -58,6 +67,9 @@ redux_ui_sources = files(
   'src/modules/Conversion/ui/ConversionProgressDialog.vala',
   'src/modules/Conversion/ui/ConversionResultRow.vala',
   'src/modules/Conversion/ui/ConversionReportDialog.vala',
+  'src/modules/Metadata/ui/MetadataTagRow.vala',
+  'src/modules/Metadata/ui/MetadataCategoryRow.vala',
+  'src/modules/Metadata/ui/MetadataDialog.vala',
 )
 
 redux_vapis = files('src/Config.vapi')
@@ -73,6 +85,7 @@ redux_dependencies = [
   dependency('libadwaita-1', version: '>= 1.5'),
   dependency('gdk-pixbuf-2.0', version: '>= 2.42'),
   dependency('libwebp', version: '>= 1.0'),
+  dependency('gexiv2-0.16'),
   meson.get_compiler('c').find_library('m'),
 ]
 

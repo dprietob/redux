@@ -29,6 +29,8 @@ namespace Redux.Conversion {
         private unowned Adw.SpinRow width_percentage_row;
         [GtkChild]
         private unowned Adw.SpinRow height_percentage_row;
+        [GtkChild]
+        private unowned Adw.ComboRow metadata_mode_row;
 
         private ConversionSettings settings;
 
@@ -41,10 +43,12 @@ namespace Redux.Conversion {
             settings.notify["output-format"].connect(() => refresh_format_rows());
             settings.notify["resize-mode"].connect(() => refresh_resize_rows());
             settings.notify["keep-aspect-ratio"].connect(() => refresh_resize_rows());
+            settings.notify["metadata-mode"].connect(() => refresh_metadata_row());
 
             refresh_output_directory();
             refresh_format_rows();
             refresh_resize_rows();
+            refresh_metadata_row();
         }
 
         private void bind_widgets()
@@ -61,6 +65,7 @@ namespace Redux.Conversion {
             settings.bind_property("height", height_row, "value", flags);
             settings.bind_property("width-percentage", width_percentage_row, "value", flags);
             settings.bind_property("height-percentage", height_percentage_row, "value", flags);
+            bind_enum_to_selection("metadata-mode", metadata_mode_row);
         }
 
         // Binds an enum setting to a combo row whose items follow the enum order.
@@ -90,6 +95,25 @@ namespace Redux.Conversion {
             var uses_quality = settings.output_format.uses_quality();
             quality_row.visible = uses_quality;
             compression_row.visible = !uses_quality;
+        }
+
+        private void refresh_metadata_row()
+        {
+            switch (settings.metadata_mode) {
+            case Metadata.MetadataMode.KEEP_EXIF:
+                metadata_mode_row.subtitle =
+                    _("EXIF data such as the camera and date is kept; XMP, IPTC and comments are removed");
+                break;
+
+            case Metadata.MetadataMode.PER_IMAGE:
+                metadata_mode_row.subtitle =
+                    _("Use the metadata button of each image. Images you do not edit keep all their metadata");
+                break;
+
+            default:
+                metadata_mode_row.subtitle = _("EXIF, XMP, IPTC and comments are removed from every image");
+                break;
+            }
         }
 
         private void refresh_resize_rows()

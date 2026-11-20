@@ -177,6 +177,26 @@
                 </child>
               </object>
             </child>
+            <child>
+              <object class="AdwPreferencesGroup">
+                <property name="title" translatable="yes">Metadata</property>
+                <child>
+                  <object class="AdwComboRow" id="metadata_mode_row">
+                    <property name="title" translatable="yes">Metadata</property>
+                    <property name="subtitle-lines">3</property>
+                    <property name="model">
+                      <object class="GtkStringList">
+                        <items>
+                          <item translatable="yes">Remove All</item>
+                          <item translatable="yes">Keep EXIF Only</item>
+                          <item translatable="yes">Choose per Image</item>
+                        </items>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </property>
       </object>

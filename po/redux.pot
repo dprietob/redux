@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 19:19+0100\n"
+"POT-Creation-Date: 2026-11-20 20:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,25 +23,30 @@ msgstr ""
 msgid "Convert, compress and resize images"
 msgstr ""
 
-#: src/Window.vala:62 src/modules/Images/ui/image-list-panel.ui:43
+#: src/Window.vala:73 src/modules/Images/ui/image-list-panel.ui:43
 msgid "Open Folder"
 msgstr ""
 
-#: src/Window.vala:77 src/modules/Images/ui/image-list-panel.ui:50
+#: src/Window.vala:88 src/modules/Images/ui/image-list-panel.ui:50
 msgid "Add Images"
 msgstr ""
 
-#: src/Window.vala:100 src/modules/Images/ui/image-list-panel.ui:34
+#: src/Window.vala:111 src/modules/Images/ui/image-list-panel.ui:34
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:148
 msgid "Images"
 msgstr ""
 
-#: src/Window.vala:111
+#: src/Window.vala:122
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:39
 msgid "Choose Output Folder"
 msgstr ""
 
-#: src/Window.vala:168
+#: src/Window.vala:139
+#, c-format
+msgid "The metadata of “%s” could not be read: %s"
+msgstr ""
+
+#: src/Window.vala:190
 #, c-format
 msgid ""
 "%u file was skipped because it is not a supported image or is already in the "
@@ -60,7 +65,7 @@ msgstr ""
 msgid "The selected input folder does not exist."
 msgstr ""
 
-#: src/modules/Images/ui/ImageListPanel.vala:62
+#: src/modules/Images/ui/ImageListPanel.vala:67
 #, c-format
 msgid "%u of %u selected · %s"
 msgstr ""
@@ -117,7 +122,11 @@ msgstr ""
 msgid "Include in Conversion"
 msgstr ""
 
-#: src/modules/Images/ui/image-row.ui:19
+#: src/modules/Images/ui/image-row.ui:20
+msgid "Choose Metadata to Keep"
+msgstr ""
+
+#: src/modules/Images/ui/image-row.ui:30
 msgid "Remove from List"
 msgstr ""
 
@@ -180,33 +189,49 @@ msgstr ""
 msgid "The percentages must be between %d and %d."
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:84
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:89
 msgid "No folder selected"
 msgstr ""
 
 #: src/modules/Conversion/ui/ConversionSettingsPanel.vala:105
+msgid ""
+"EXIF data such as the camera and date is kept; XMP, IPTC and comments are "
+"removed"
+msgstr ""
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+msgid ""
+"Use the metadata button of each image. Images you do not edit keep all their "
+"metadata"
+msgstr ""
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:114
+msgid "EXIF, XMP, IPTC and comments are removed from every image"
+msgstr ""
+
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:129
 msgid "Pixels, maximum size; 0 adapts to the other side"
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:106
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:130
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:108
 msgid "Pixels"
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:134
 msgid "Scale"
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:110
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:134
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:122
 msgid "Width"
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:112
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:136
 msgid "Percentage of the original size"
 msgstr ""
 
-#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:113
+#: src/modules/Conversion/ui/ConversionSettingsPanel.vala:137
 msgid "Percentage of the original width"
 msgstr ""
 
@@ -281,6 +306,25 @@ msgstr ""
 
 #: src/modules/Conversion/ui/conversion-settings-panel.ui:164
 msgid "Percentage of the original height"
+msgstr ""
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:182
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:185
+#: src/modules/Metadata/ui/metadata-dialog.ui:6
+#: src/modules/Metadata/ui/metadata-dialog.ui:15
+msgid "Metadata"
+msgstr ""
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:190
+msgid "Remove All"
+msgstr ""
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:191
+msgid "Keep EXIF Only"
+msgstr ""
+
+#: src/modules/Conversion/ui/conversion-settings-panel.ui:192
+msgid "Choose per Image"
 msgstr ""
 
 #: src/modules/Conversion/ui/ConversionProgressDialog.vala:23
@@ -387,6 +431,35 @@ msgstr ""
 
 #: src/modules/Conversion/ui/conversion-report-dialog.ui:132
 msgid "Size Change"
+msgstr ""
+
+#: src/modules/Metadata/services/MetadataReaderService.vala:35
+#: src/modules/Metadata/ui/MetadataDialog.vala:66
+msgid "Comment"
+msgstr ""
+
+#: src/modules/Metadata/ui/MetadataCategoryRow.vala:37
+#, c-format
+msgid "%u of %u kept"
+msgstr ""
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:28
+msgid "No Metadata"
+msgstr ""
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:29
+msgid "This image has no metadata to remove."
+msgstr ""
+
+#: src/modules/Metadata/ui/metadata-dialog.ui:41
+msgid ""
+"Turn off a category to remove it entirely, or expand it to choose the tags "
+"to keep. The orientation is applied to the image and the old thumbnail is "
+"always removed."
+msgstr ""
+
+#: src/modules/Metadata/ui/metadata-tag-row.ui:13
+msgid "Keep this tag"
 msgstr ""
 
 #: data/io.github.dprietob.redux.desktop.in:2

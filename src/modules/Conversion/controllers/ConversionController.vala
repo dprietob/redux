@@ -92,7 +92,7 @@ namespace Redux.Conversion {
         {
             string[] keys = {
                 "output-format", "quality", "compression-level", "resize-enabled", "resize-mode",
-                "width", "height", "width-percentage", "height-percentage", "keep-aspect-ratio",
+                "width", "height", "width-percentage", "height-percentage", "keep-aspect-ratio", "metadata-mode",
             };
             foreach (var key in keys) {
                 preferences.bind(key, conversion_settings, key, SettingsBindFlags.DEFAULT);

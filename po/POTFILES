@@ -13,5 +13,10 @@ src/modules/Conversion/ui/conversion-progress-dialog.ui
 src/modules/Conversion/ui/ConversionResultRow.vala
 src/modules/Conversion/ui/ConversionReportDialog.vala
 src/modules/Conversion/ui/conversion-report-dialog.ui
+src/modules/Metadata/services/MetadataReaderService.vala
+src/modules/Metadata/ui/MetadataCategoryRow.vala
+src/modules/Metadata/ui/MetadataDialog.vala
+src/modules/Metadata/ui/metadata-dialog.ui
+src/modules/Metadata/ui/metadata-tag-row.ui
 data/io.github.dprietob.redux.desktop.in
 data/io.github.dprietob.redux.metainfo.xml.in

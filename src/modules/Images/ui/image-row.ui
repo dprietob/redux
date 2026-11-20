@@ -13,6 +13,17 @@
       </object>
     </child>
     <child type="suffix">
+      <object class="GtkButton" id="metadata_button">
+        <property name="icon-name">document-properties-symbolic</property>
+        <property name="valign">center</property>
+        <property name="visible">false</property>
+        <property name="tooltip-text" translatable="yes">Choose Metadata to Keep</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child type="suffix">
       <object class="GtkButton" id="remove_button">
         <property name="icon-name">list-remove-symbolic</property>
         <property name="valign">center</property>

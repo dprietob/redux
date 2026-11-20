@@ -21,6 +21,11 @@ namespace Redux.Images {
         private unowned Gtk.Label directory_label;
 
         private ImageListController controller;
+
+        // Whether each image shows a button to choose the metadata it keeps.
+        public bool metadata_editable { get; set; default = false; }
+
+        public signal void metadata_requested(SourceImage image);
         // Set while the check reflects the selection, so that change is not
         // mistaken for a user click.
         private bool reflecting_selection = false;
@@ -89,6 +94,8 @@ namespace Redux.Images {
             var row = new ImageRow(image);
             image.notify["selected"].connect(() => refresh_selection());
             row.remove_requested.connect((target) => controller.remove(target));
+            row.metadata_requested.connect((target) => metadata_requested(target));
+            bind_property("metadata-editable", row, "metadata-editable", BindingFlags.SYNC_CREATE);
             return row;
         }
     }
