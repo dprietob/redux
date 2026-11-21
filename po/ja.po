@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 00:18+0100\n"
+"POT-Creation-Date: 2026-11-21 00:59+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: Japanese\n"
@@ -621,8 +621,8 @@ msgid "Choose the output format, quality, size, file names and metadata"
 msgstr "出力形式、画質、サイズ、ファイル名、メタデータを選択"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:50
-msgid "Pick the images to convert"
-msgstr "変換する画像を選択"
+msgid "Resize the images in pixels or by percentage"
+msgstr "ピクセルまたはパーセントで画像のサイズを変更"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:54
 msgid "Rename the converted images with a pattern"

@@ -47,12 +47,12 @@
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/01_main.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">Pick the images to convert</caption>
-      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/02_images_list.png</image>
+      <caption translatable="yes">Resize the images in pixels or by percentage</caption>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/02_resizing.png</image>
     </screenshot>
     <screenshot>
       <caption translatable="yes">Rename the converted images with a pattern</caption>
-      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/03_renaming_options.png</image>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/03_renaming.png</image>
     </screenshot>
     <screenshot>
       <caption translatable="yes">Choose the metadata each image keeps</caption>
@@ -72,7 +72,7 @@
     </screenshot>
     <screenshot>
       <caption translatable="yes">Image list in the light style</caption>
-      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/08_images_list_light.png</image>
+      <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/08_list_light.png</image>
     </screenshot>
   </screenshots>
 
