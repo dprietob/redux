@@ -3,35 +3,35 @@
   <id>io.github.dprietob.redux</id>
 
   <name>Redux</name>
-  <summary translatable="yes">Convert, compress and resize images</summary>
+  <summary>Convert, compress and resize images</summary>
 
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
   <developer id="io.github.dprietob">
-    <name translatable="no">Daniel Prieto</name>
+    <name translate="no">Daniel Prieto</name>
   </developer>
 
   <description>
-    <p translatable="yes">
+    <p>
       Redux is a simple and fast batch image converter that makes your photos
       lighter: convert them to WebP, JPEG or PNG, shrink them, rename them and
       clean up their metadata, all in one go.
     </p>
-    <p translatable="yes">
+    <p>
       Pick a set of images, choose the output format, quality and
       size, and convert them all at once. When it finishes, Redux shows how much
       space you saved.
     </p>
-    <p translatable="yes">Features:</p>
+    <p>Features:</p>
     <ul>
-      <li translatable="yes">Convert images to WebP, JPEG and PNG.</li>
-      <li translatable="yes">Adjust the quality of WebP and JPEG images and the compression level of PNG images.</li>
-      <li translatable="yes">Resize images in pixels or by percentage, keeping the aspect ratio or not.</li>
-      <li translatable="yes">Rename the converted images with a pattern.</li>
-      <li translatable="yes">Keep or remove the metadata of every image.</li>
-      <li translatable="yes">See a report with the size reduction of every image.</li>
-      <li translatable="yes">Light and dark styles.</li>
+      <li>Convert images to WebP, JPEG and PNG.</li>
+      <li>Adjust the quality of WebP and JPEG images and the compression level of PNG images.</li>
+      <li>Resize images in pixels or by percentage, keeping the aspect ratio or not.</li>
+      <li>Rename the converted images with a pattern.</li>
+      <li>Keep or remove the metadata of every image.</li>
+      <li>See a report with the size reduction of every image.</li>
+      <li>Light and dark styles.</li>
     </ul>
   </description>
 
@@ -43,35 +43,35 @@
 
   <screenshots>
     <screenshot type="default">
-      <caption translatable="yes">Choose the output format, quality, size, file names and metadata</caption>
+      <caption>Choose the output format, quality, size, file names and metadata</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/01_main.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">Resize the images in pixels or by percentage</caption>
+      <caption>Resize the images in pixels or by percentage</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/02_resizing.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">Rename the converted images with a pattern</caption>
+      <caption>Rename the converted images with a pattern</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/03_renaming.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">Choose the metadata each image keeps</caption>
+      <caption>Choose the metadata each image keeps</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/04_metadata.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">See how much space you saved</caption>
+      <caption>See how much space you saved</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/05_conversion_results_1.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">Review the result of every image</caption>
+      <caption>Review the result of every image</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/06_conversion_results_2.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">Light style</caption>
+      <caption>Light style</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/07_main_light.png</image>
     </screenshot>
     <screenshot>
-      <caption translatable="yes">Image list in the light style</caption>
+      <caption>Image list in the light style</caption>
       <image>https://raw.githubusercontent.com/dprietob/redux/master/screenshots/08_list_light.png</image>
     </screenshot>
   </screenshots>
@@ -84,15 +84,15 @@
   <releases>
     <release version="1.0.0" date="2026-11-21" type="stable">
       <description>
-        <p translatable="yes">The first version of Redux:</p>
+        <p>The first version of Redux:</p>
         <ul>
-          <li translatable="yes">Convert images to WebP, JPEG and PNG.</li>
-          <li translatable="yes">Resize images in pixels or by percentage, keeping the aspect ratio or not.</li>
-          <li translatable="yes">Rename the converted images with a pattern.</li>
-          <li translatable="yes">Keep or remove the metadata of every image.</li>
-          <li translatable="yes">Add images by dragging them from the file manager and put them in any order.</li>
-          <li translatable="yes">Get a notification when a long conversion finishes.</li>
-          <li translatable="yes">Use it on phones and other small screens.</li>
+          <li>Convert images to WebP, JPEG and PNG.</li>
+          <li>Resize images in pixels or by percentage, keeping the aspect ratio or not.</li>
+          <li>Rename the converted images with a pattern.</li>
+          <li>Keep or remove the metadata of every image.</li>
+          <li>Add images by dragging them from the file manager and put them in any order.</li>
+          <li>Get a notification when a long conversion finishes.</li>
+          <li>Use it on phones and other small screens.</li>
         </ul>
       </description>
     </release>

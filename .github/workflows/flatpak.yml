@@ -39,6 +39,21 @@ jobs:
       - name: Test
         run: meson test -C _build --print-errorlogs
 
+  # Builds and tests the Ubuntu 26.04 package on every change, since that
+  # distribution ships GExiv2 0.14 and the job above uses 0.16.
+  gexiv2-0-14:
+    name: Run tests with GExiv2 0.14
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/library/ubuntu:26.04
+      options: --privileged
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Build and test the Ubuntu package
+        run: bash packaging/build-deb.sh . dist
+
   flatpak:
     name: Build Flatpak
     runs-on: ubuntu-latest

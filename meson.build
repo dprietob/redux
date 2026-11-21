@@ -31,6 +31,7 @@ redux_module_sources = files(
   'src/modules/Metadata/models/MetadataCategory.vala',
   'src/modules/Metadata/models/MetadataTag.vala',
   'src/modules/Metadata/models/MetadataSelection.vala',
+  'src/modules/Metadata/services/MetadataLibraryService.vala',
   'src/modules/Metadata/services/MetadataReaderService.vala',
   'src/modules/Metadata/services/MetadataWriterService.vala',
   'src/modules/Metadata/services/CaptureDateService.vala',
@@ -89,12 +90,22 @@ redux_vala_args = [
   '--vapidir=' + meson.current_source_dir() / 'src',
 ]
 
+# GExiv2 0.16 renamed part of its API and its pkg-config name; distributions
+# such as Ubuntu 26.04 still ship 0.14. MetadataLibraryService picks the right
+# names through the GEXIV2_0_16 symbol.
+gexiv2_dependency = dependency('gexiv2-0.16', required: false)
+if gexiv2_dependency.found()
+  redux_vala_args += ['--define=GEXIV2_0_16']
+else
+  gexiv2_dependency = dependency('gexiv2', version: '>= 0.14')
+endif
+
 redux_dependencies = [
   dependency('gtk4', version: '>= 4.12'),
   dependency('libadwaita-1', version: '>= 1.8'),
   dependency('gdk-pixbuf-2.0', version: '>= 2.42'),
   dependency('libwebp', version: '>= 1.0'),
-  dependency('gexiv2-0.16'),
+  gexiv2_dependency,
   meson.get_compiler('c').find_library('m'),
 ]
 

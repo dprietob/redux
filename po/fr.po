@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 00:59+0100\n"
+"POT-Creation-Date: 2026-11-21 01:44+0100\n"
 "PO-Revision-Date: 2026-11-20 22:20+0100\n"
 "Last-Translator: Daniel Prieto\n"
 "Language-Team: French\n"
@@ -568,10 +568,6 @@ msgstr "Convertir, compresser et redimensionner des images"
 #: data/io.github.dprietob.redux.desktop.in:10
 msgid "image;picture;photo;convert;compress;resize;webp;jpeg;png;"
 msgstr "image;photo;illustration;convertir;compresser;redimensionner;picture;webp;jpeg;png;"
-
-#: data/io.github.dprietob.redux.metainfo.xml.in:12
-msgid "Daniel Prieto"
-msgstr "Daniel Prieto"
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:16
 msgid "Redux is a simple and fast batch image converter that makes your photos lighter: convert them to WebP, JPEG or PNG, shrink them, rename them and clean up their metadata, all in one go."

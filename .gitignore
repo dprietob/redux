@@ -1,6 +1,7 @@
 # Meson build directories
 _build/
 build/
+dist/
 
 # Flatpak build artifacts
 .flatpak-builder/

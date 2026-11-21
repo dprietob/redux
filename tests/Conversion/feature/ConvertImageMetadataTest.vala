@@ -20,7 +20,7 @@ namespace Redux.Tests {
     private bool has(GExiv2.Metadata metadata, string key)
     {
         try {
-            return metadata.has_tag(key);
+            return MetadataLibraryService.has_tag(metadata, key);
         } catch (Error error) {
             GLib.error("Could not check %s: %s", key, error.message);
         }
@@ -32,7 +32,7 @@ namespace Redux.Tests {
         metadata.clear_xmp();
         metadata.clear_iptc();
         try {
-            return metadata.get_comment();
+            return MetadataLibraryService.comment(metadata);
         } catch (Error error) {
             GLib.error("Could not read the comment: %s", error.message);
         }
@@ -81,9 +81,15 @@ namespace Redux.Tests {
             try {
                 // The camera orientation is applied to the pixels (64 × 48 turned
                 // to 48 × 64), so the tag is reset and the stored size updated.
-                assert_cmpint((int) metadata.get_tag_long("Exif.Image.Orientation"), CompareOperator.EQ, 1);
-                assert_cmpint((int) metadata.get_tag_long("Exif.Photo.PixelXDimension"), CompareOperator.EQ, 48);
-                assert_cmpint((int) metadata.get_tag_long("Exif.Photo.PixelYDimension"), CompareOperator.EQ, 64);
+                assert_cmpint((int) MetadataLibraryService.tag_long(metadata, "Exif.Image.Orientation"),
+                CompareOperator.EQ,
+                1);
+                assert_cmpint((int) MetadataLibraryService.tag_long(metadata, "Exif.Photo.PixelXDimension"),
+                CompareOperator.EQ,
+                48);
+                assert_cmpint((int) MetadataLibraryService.tag_long(metadata, "Exif.Photo.PixelYDimension"),
+                CompareOperator.EQ,
+                64);
             } catch (Error error) {
                 GLib.error("Could not read the tags: %s", error.message);
             }

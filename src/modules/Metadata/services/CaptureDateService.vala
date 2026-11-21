@@ -24,8 +24,8 @@ namespace Redux.Metadata {
                 var metadata = new GExiv2.Metadata();
                 metadata.open_path(file.get_path());
                 foreach (var key in DATE_TAGS) {
-                    if (metadata.has_tag(key)) {
-                        var date = parse_exif_date(metadata.get_tag_string(key));
+                    if (MetadataLibraryService.has_tag(metadata, key)) {
+                        var date = parse_exif_date(MetadataLibraryService.tag_string(metadata, key));
                         if (date != null) {
                             return date;
                         }

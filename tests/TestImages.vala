@@ -47,19 +47,21 @@ namespace Redux.Tests {
 
             var metadata = new GExiv2.Metadata();
             metadata.open_path(file.get_path());
-            metadata.set_tag_string("Exif.Image.Make", "Canon");
-            metadata.set_tag_string("Exif.Image.Model", "EOS R6");
-            metadata.set_tag_string("Exif.Photo.DateTimeOriginal", "2026:05:01 10:00:00");
-            metadata.set_tag_string("Exif.GPSInfo.GPSLatitude", "40/1 25/1 0/1");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Exif.Image.Make", "Canon");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Exif.Image.Model", "EOS R6");
+            Metadata.MetadataLibraryService.set_tag_string(metadata,
+                "Exif.Photo.DateTimeOriginal",
+                "2026:05:01 10:00:00");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Exif.GPSInfo.GPSLatitude", "40/1 25/1 0/1");
             // Set as text so the tags get their standard types, like a camera.
-            metadata.set_tag_string("Exif.Photo.PixelXDimension", "64");
-            metadata.set_tag_string("Exif.Photo.PixelYDimension", "48");
-            metadata.set_tag_string("Exif.Image.Orientation", "6");
-            metadata.set_tag_string("Xmp.dc.creator", "Redux");
-            metadata.set_tag_string("Xmp.xmp.Rating", "5");
-            metadata.set_tag_string("Iptc.Application2.Caption", "Holidays");
-            metadata.set_exif_thumbnail_from_buffer(thumbnail_buffer);
-            metadata.set_comment("Taken with Redux");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Exif.Photo.PixelXDimension", "64");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Exif.Photo.PixelYDimension", "48");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Exif.Image.Orientation", "6");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Xmp.dc.creator", "Redux");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Xmp.xmp.Rating", "5");
+            Metadata.MetadataLibraryService.set_tag_string(metadata, "Iptc.Application2.Caption", "Holidays");
+            Metadata.MetadataLibraryService.set_exif_thumbnail(metadata, thumbnail_buffer);
+            Metadata.MetadataLibraryService.set_comment(metadata, "Taken with Redux");
             metadata.save_file(file.get_path());
 
             var info = file.query_info(FileAttribute.STANDARD_SIZE, FileQueryInfoFlags.NONE);

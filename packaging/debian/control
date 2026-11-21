@@ -1,0 +1,34 @@
+Source: redux
+Section: graphics
+Priority: optional
+Maintainer: Daniel Prieto <dprietob@protonmail.com>
+Build-Depends: debhelper-compat (= 13),
+               meson,
+               valac,
+               gettext,
+               desktop-file-utils,
+               appstream,
+               libgtk-4-dev (>= 4.12),
+               libadwaita-1-dev (>= 1.8),
+               libgdk-pixbuf-2.0-dev (>= 2.42),
+               libwebp-dev (>= 1.0),
+               libgexiv2-dev (>= 0.14),
+               glycin-loaders <!nocheck>,
+               bubblewrap <!nocheck>
+Standards-Version: 4.7.2
+Homepage: https://github.com/dprietob/redux
+Vcs-Browser: https://github.com/dprietob/redux
+Vcs-Git: https://github.com/dprietob/redux.git
+Rules-Requires-Root: no
+
+Package: redux
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         glycin-loaders,
+         hicolor-icon-theme
+Description: Convert, compress and resize images
+ Redux converts batches of images to WebP, JPEG or PNG and makes them
+ lighter: adjust the quality or compression, resize them, rename them with
+ a pattern and remove their metadata. When it finishes, a report shows how
+ much space you saved. Your original images are never modified.

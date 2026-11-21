@@ -61,6 +61,27 @@ dropped and the stored image size is updated. WebP files cannot hold IPTC data.
 Your conversion options are remembered between sessions with GSettings.
 Nothing leaves your computer.
 
+## Installing
+
+The recommended way is Flatpak, which works on any distribution.
+
+Native packages are also attached to every
+[release](https://github.com/dprietob/redux/releases) for the distributions
+that ship the libraries Redux needs (libadwaita 1.8 or newer):
+
+| Distribution | Package |
+| --- | --- |
+| Fedora 43, 44 and 45 | `redux-<version>-1.fc<release>.x86_64.rpm` |
+| Ubuntu 26.04 LTS | `redux_<version>_ubuntu26.04_amd64.deb` |
+| Debian testing | `redux_<version>_debianforky_amd64.deb` |
+
+Install the one for your distribution, which also installs its dependencies:
+
+```shell
+sudo dnf install ./redux-*.rpm      # Fedora
+sudo apt install ./redux_*.deb      # Ubuntu and Debian
+```
+
 ## Developing and Building
 
 Install the build dependencies. On Fedora:
@@ -86,6 +107,18 @@ meson test -C _build
 The tests run in GitHub Actions in a Fedora container rather than in the
 Flatpak build, because glycin cannot sandbox its image loaders while
 `flatpak-builder` builds the app.
+
+To build the `.rpm` and `.deb` packages locally, each inside a clean container
+of its distribution (needs podman or docker), run:
+
+```shell
+packaging/build-packages.sh                  # every distribution
+packaging/build-packages.sh ubuntu:26.04     # only some of them
+```
+
+The packages are left in `dist/`. Pushing a `v*` tag builds them in GitHub
+Actions, installs each one in a clean container and attaches them to the
+release.
 
 To build the Flatpak from the command line:
 

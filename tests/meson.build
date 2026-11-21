@@ -22,7 +22,7 @@ redux_tests = executable(
     dependency('gio-2.0'),
     dependency('gdk-pixbuf-2.0', version: '>= 2.42'),
     dependency('libwebp', version: '>= 1.0'),
-    dependency('gexiv2-0.16'),
+    gexiv2_dependency,
     meson.get_compiler('c').find_library('m'),
   ],
   vala_args: redux_vala_args,

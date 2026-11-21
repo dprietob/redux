@@ -44,7 +44,7 @@ namespace Redux.Metadata {
                 if (tag.category == MetadataCategory.COMMENT) {
                     metadata.clear_comment();
                 } else {
-                    metadata.clear_tag(tag.key);
+                    MetadataLibraryService.clear_tag(metadata, tag.key);
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace Redux.Metadata {
         // is reset, the old thumbnail is dropped and the stored size updated.
         private void adapt_to_output(GExiv2.Metadata metadata, int output_width, int output_height) throws Error
         {
-            metadata.erase_exif_thumbnail();
+            MetadataLibraryService.erase_exif_thumbnail(metadata);
             replace_existing_tags(metadata, ORIENTATION_TAGS, NORMAL_ORIENTATION);
             replace_existing_tags(metadata, WIDTH_TAGS, output_width);
             replace_existing_tags(metadata, HEIGHT_TAGS, output_height);
@@ -66,8 +66,8 @@ namespace Redux.Metadata {
         private void replace_existing_tags(GExiv2.Metadata metadata, string[] keys, long new_value) throws Error
         {
             foreach (var key in keys) {
-                if (metadata.has_tag(key)) {
-                    metadata.set_tag_string(key, new_value.to_string());
+                if (MetadataLibraryService.has_tag(metadata, key)) {
+                    MetadataLibraryService.set_tag_string(metadata, key, new_value.to_string());
                 }
             }
         }

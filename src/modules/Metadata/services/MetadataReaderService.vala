@@ -49,8 +49,8 @@ namespace Redux.Metadata {
                 if (is_automatic(key)) {
                     continue;
                 }
-                var label = GExiv2.Metadata.get_tag_label(key) ?? key;
-                var description = metadata.get_tag_interpreted_string(key) ?? "";
+                var label = MetadataLibraryService.tag_label(key) ?? key;
+                var description = MetadataLibraryService.tag_interpreted_string(metadata, key) ?? "";
                 selection.tags.append(new MetadataTag(key, label, description, category));
             }
         }
@@ -66,7 +66,7 @@ namespace Redux.Metadata {
             metadata.clear_xmp();
             metadata.clear_iptc();
 
-            var comment = metadata.get_comment();
+            var comment = MetadataLibraryService.comment(metadata);
             return comment != null && comment.strip() != "" ? comment : null;
         }
     }

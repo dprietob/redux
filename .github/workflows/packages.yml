@@ -1,0 +1,113 @@
+name: Packages
+
+# Builds the .rpm and .deb packages, one per supported distribution, and
+# attaches them to the GitHub release of the pushed version tag. It can also
+# be started by hand from the Actions tab, which only keeps the packages as
+# workflow artifacts.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build for ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: Fedora 43
+            image: registry.fedoraproject.org/fedora:43
+            script: build-rpm.sh
+          - target: Fedora 44
+            image: registry.fedoraproject.org/fedora:44
+            script: build-rpm.sh
+          - target: Fedora 45
+            image: registry.fedoraproject.org/fedora:45
+            script: build-rpm.sh
+          - target: Ubuntu 26.04
+            image: docker.io/library/ubuntu:26.04
+            script: build-deb.sh
+          - target: Debian testing
+            image: docker.io/library/debian:testing
+            script: build-deb.sh
+    container:
+      image: ${{ matrix.image }}
+      # The tests load images through glycin, which sandboxes its loaders
+      # with bubblewrap.
+      options: --privileged
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Build and test the package
+        run: bash packaging/${{ matrix.script }} . dist
+
+      - name: Keep the package
+        uses: actions/upload-artifact@v7
+        with:
+          name: package-${{ strategy.job-index }}
+          path: dist/*
+          if-no-files-found: error
+
+  install:
+    name: Install on ${{ matrix.target }}
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      # Same order as the build matrix: each job installs the package built
+      # by the build job with the same index, in a clean container.
+      matrix:
+        include:
+          - target: Fedora 43
+            image: registry.fedoraproject.org/fedora:43
+          - target: Fedora 44
+            image: registry.fedoraproject.org/fedora:44
+          - target: Fedora 45
+            image: registry.fedoraproject.org/fedora:45
+          - target: Ubuntu 26.04
+            image: docker.io/library/ubuntu:26.04
+          - target: Debian testing
+            image: docker.io/library/debian:testing
+    container:
+      image: ${{ matrix.image }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Collect the package
+        uses: actions/download-artifact@v7
+        with:
+          name: package-${{ strategy.job-index }}
+          path: dist
+
+      - name: Install and check the package
+        run: bash packaging/test-package.sh dist/* .
+
+  release:
+    name: Attach to the release
+    needs: install
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Collect the packages
+        uses: actions/download-artifact@v7
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Upload them to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --title "Redux ${TAG#v}" --generate-notes
+          gh release upload "$TAG" dist/* --clobber

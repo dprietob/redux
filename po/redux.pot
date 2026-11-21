@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: redux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 00:59+0100\n"
+"POT-Creation-Date: 2026-11-21 01:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -588,10 +588,6 @@ msgstr ""
 
 #: data/io.github.dprietob.redux.desktop.in:10
 msgid "image;picture;photo;convert;compress;resize;webp;jpeg;png;"
-msgstr ""
-
-#: data/io.github.dprietob.redux.metainfo.xml.in:12
-msgid "Daniel Prieto"
 msgstr ""
 
 #: data/io.github.dprietob.redux.metainfo.xml.in:16
