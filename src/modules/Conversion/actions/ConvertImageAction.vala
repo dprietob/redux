@@ -12,6 +12,7 @@ namespace Redux.Conversion {
         private ImageEncoderService image_encoder_service;
         private SizeReductionService size_reduction_service;
         private MetadataWriterService metadata_writer_service;
+        private ImageLoaderService image_loader_service;
 
         public ConvertImageAction ()
         {
@@ -19,6 +20,7 @@ namespace Redux.Conversion {
             image_encoder_service = new ImageEncoderService();
             size_reduction_service = new SizeReductionService();
             metadata_writer_service = new MetadataWriterService();
+            image_loader_service = new ImageLoaderService();
         }
 
         // Never throws: a failure is described by the returned result, so one
@@ -32,7 +34,7 @@ namespace Redux.Conversion {
             };
 
             try {
-                var original = load(source.file);
+                var original = image_loader_service.load(source.file);
                 result.original_width = original.width;
                 result.original_height = original.height;
 
@@ -48,6 +50,9 @@ namespace Redux.Conversion {
                         result.output_size);
                 result.succeeded = true;
             } catch (Error error) {
+                // Also logged, so the full error reaches the terminal and the
+                // system journal, not only the report.
+                message("Could not convert %s: %s", source.file.get_uri(), error.message);
                 result.error_message = error.message;
             }
             return result;
@@ -87,13 +92,6 @@ namespace Redux.Conversion {
         private int64 output_size(File target) throws Error
         {
             return target.query_info(FileAttribute.STANDARD_SIZE, FileQueryInfoFlags.NONE).get_size();
-        }
-
-        // Loads the image upright, following the orientation stored by cameras.
-        private Gdk.Pixbuf load(File file) throws Error
-        {
-            var image = new Gdk.Pixbuf.from_file(file.get_path());
-            return image.apply_embedded_orientation() ?? image;
         }
     }
 }

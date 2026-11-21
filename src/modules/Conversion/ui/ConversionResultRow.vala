@@ -41,7 +41,11 @@ namespace Redux.Conversion {
         {
             status_icon.icon_name = "dialog-error-symbolic";
             status_icon.add_css_class("error");
+            // The whole message is shown and can be copied: its last words
+            // usually hold the actual cause.
             subtitle = result.error_message;
+            subtitle_lines = 0;
+            subtitle_selectable = true;
             reduction_label.visible = false;
         }
     }

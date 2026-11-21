@@ -40,6 +40,7 @@ redux_module_sources = files(
   'src/modules/Images/models/SourceImage.vala',
   'src/modules/Images/services/FileLocationService.vala',
   'src/modules/Images/services/ImageFileService.vala',
+  'src/modules/Images/services/ImageLoaderService.vala',
   'src/modules/Images/actions/LoadImageFilesAction.vala',
   'src/modules/Images/actions/LoadImagePreviewAction.vala',
   'src/modules/Images/controllers/ImageListController.vala',
